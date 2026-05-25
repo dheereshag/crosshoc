@@ -315,7 +315,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
             </div>
           </div>
         </div>
-        <div className="grid auto-rows-fr grid-cols-[repeat(auto-fit,minmax(210px,1fr))] gap-4">
+        <div className="grid auto-rows-fr grid-cols-[repeat(auto-fill,minmax(210px,1fr))] gap-4">
           {visibleGames.map((game) => (
             <GameCard key={game.id} game={game} />
           ))}
