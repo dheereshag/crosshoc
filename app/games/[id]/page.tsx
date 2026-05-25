@@ -12,7 +12,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { games } from "@/constants/catalog";
+import { games, type Game } from "@/constants/catalog";
 import { getReviewsForGame } from "@/constants/reviews";
 import { genreIconComponents } from "@/constants/sidebar";
 import { GameDeckControls } from "@/components/game-deck-controls";
@@ -21,8 +21,8 @@ type PageProps = {
   params: Promise<{ id: string }>;
 };
 
-function getGameImage(id: number) {
-  return `https://picsum.photos/seed/crosshoc-${id}/1200/675`;
+function getGameImage(game: Game) {
+  return game.image;
 }
 
 export default async function GameDetailsPage({ params }: PageProps) {
@@ -66,7 +66,7 @@ export default async function GameDetailsPage({ params }: PageProps) {
         <Card className="h-full overflow-hidden border-border/80 bg-card/70 gap-0 py-0">
           <div className="relative aspect-video w-full max-h-64 border-b border-border/70 bg-muted md:max-h-72">
             <Image
-              src={getGameImage(game.id)}
+              src={getGameImage(game)}
               alt={`${game.title} cover art`}
               fill
               priority

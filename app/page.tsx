@@ -60,7 +60,7 @@ const shuffledGames = [...games].sort(
 );
 
 function getGameImage(game: Game) {
-  return `https://picsum.photos/seed/crosshoc-${game.id}/640/360`;
+  return game.image;
 }
 
 function getPrice(game: Game) {
