@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { GameCardImage } from "@/components/game-card-image";
 import { notFound } from "next/navigation";
@@ -104,7 +103,9 @@ export default async function GameDetailsPage({ params }: PageProps) {
         <Card className="h-full overflow-hidden border-border/80 bg-card/70 gap-0 py-0">
           <div className="border-b border-border/70 bg-muted">
             <GameCardImage
-              images={game.screenshots.length > 0 ? game.screenshots : [game.image]}
+              images={
+                game.screenshots.length > 0 ? game.screenshots : [game.image]
+              }
               title={game.title}
               sizes="(max-width: 1024px) 100vw, 70vw"
               priority
@@ -146,42 +147,40 @@ export default async function GameDetailsPage({ params }: PageProps) {
             href={`/games/${recommendedGame.id}`}
             className="group block flex-1 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
           >
-            <Card className="h-full overflow-hidden border-border/80 bg-card/70 transition-colors group-hover:bg-accent/30">
-              <CardHeader className="space-y-2 pb-2">
+            <Card className="h-full overflow-hidden border-border/80 bg-card/70 transition-colors group-hover:bg-accent/30 gap-0 py-0">
+              <div className="border-b border-border/70 bg-muted">
+                <GameCardImage
+                  images={
+                    recommendedGame.screenshots.length > 0
+                      ? recommendedGame.screenshots
+                      : [recommendedGame.image]
+                  }
+                  title={recommendedGame.title}
+                  sizes="(max-width: 1024px) 100vw, 30vw"
+                />
+              </div>
+              <CardHeader className="space-y-2 pt-4 pb-2">
                 <p className="inline-flex items-center gap-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
                   <SparklesIcon className="size-3.5" />
                   Recommended for you
                 </p>
               </CardHeader>
-              <CardContent className="flex h-full flex-col justify-between pb-4 pt-0">
-                <div className="flex items-stretch gap-3">
-                  <div className="relative h-24 w-32 shrink-0 overflow-hidden rounded-md border border-border/70 bg-muted">
-                    <Image
-                      src={recommendedGame.image}
-                      alt={`${recommendedGame.title} cover art`}
-                      fill
-                      sizes="112px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="min-w-0 flex-1 space-y-2">
-                    <div className="flex items-center justify-between gap-2">
-                      <CardTitle className="line-clamp-1 text-base">
-                        {recommendedGame.title}
-                      </CardTitle>
-                      <StarRating rating={recommendedGame.rating} />
-                    </div>
-                    <p className="line-clamp-2 text-sm text-muted-foreground">
-                      {recommendedGame.description}
-                    </p>
-                    <div className="flex items-center justify-between gap-2 pt-1">
-                      <GenreBadge genre={recommendedGame.genre} />
-                      <span className="inline-flex items-center gap-1 text-sm font-medium text-foreground">
-                        View
-                        <ArrowRightIcon className="size-4" />
-                      </span>
-                    </div>
-                  </div>
+              <CardContent className="flex flex-col gap-2 pb-4 pt-0">
+                <div className="flex items-center justify-between gap-2">
+                  <CardTitle className="line-clamp-1 text-base">
+                    {recommendedGame.title}
+                  </CardTitle>
+                  <StarRating rating={recommendedGame.rating} />
+                </div>
+                <p className="line-clamp-2 text-sm text-muted-foreground">
+                  {recommendedGame.description}
+                </p>
+                <div className="flex items-center justify-between gap-2 pt-1">
+                  <GenreBadge genre={recommendedGame.genre} />
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-foreground">
+                    View
+                    <ArrowRightIcon className="size-4" />
+                  </span>
                 </div>
               </CardContent>
             </Card>
