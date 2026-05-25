@@ -62,7 +62,7 @@ export const sidebarData = {
   user: {
     name: "shadcn",
     email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "https://picsum.photos/seed/crosshoc-user/64/64",
   },
   navMain: [
     {

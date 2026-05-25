@@ -55,6 +55,7 @@ export function FilterBar({ searchParams, genre, sort }: FilterBarProps) {
               variant={active ? "default" : "outline"}
               size="sm"
               className="rounded-full px-3"
+              nativeButton={false}
               render={
                 <Link
                   href={buildHref(searchParams, { genre: item.value, sort })}
@@ -81,6 +82,7 @@ export function FilterBar({ searchParams, genre, sort }: FilterBarProps) {
               variant={active ? "default" : "outline"}
               size="sm"
               className="rounded-full px-3"
+              nativeButton={false}
               render={
                 <Link href={buildHref(searchParams, { sort: item.value })} />
               }

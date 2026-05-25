@@ -7,12 +7,14 @@ type Props = {
   images: string[];
   title: string;
   sizes?: string;
+  priority?: boolean;
 };
 
 export function GameCardImage({
   images,
   title,
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw",
+  priority = false,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -55,6 +57,7 @@ export function GameCardImage({
           alt={`${title} cover art`}
           fill
           sizes={sizes}
+          priority={priority}
           className="object-cover"
         />
       )}

@@ -115,7 +115,7 @@ function getVisibleGames(
   return visibleGames;
 }
 
-function GameCard({ game }: { game: Game }) {
+function GameCard({ game, priority = false }: { game: Game; priority?: boolean }) {
   return (
     <Link
       href={`/games/${game.id}`}
@@ -128,6 +128,7 @@ function GameCard({ game }: { game: Game }) {
               game.screenshots.length > 0 ? game.screenshots : [game.image]
             }
             title={game.title}
+            priority={priority}
           />
         </div>
         <CardHeader className="flex-1 pb-2 pt-4">
@@ -192,8 +193,8 @@ export default async function DashboardPage({ searchParams }: PageProps) {
           />
         </div>
         <div className="grid auto-rows-fr grid-cols-[repeat(auto-fill,minmax(210px,1fr))] gap-4">
-          {visibleGames.map((game) => (
-            <GameCard key={game.id} game={game} />
+          {visibleGames.map((game, index) => (
+            <GameCard key={game.id} game={game} priority={index === 0} />
           ))}
         </div>
       </section>
