@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   AArrowDownIcon,
@@ -31,6 +30,7 @@ import {
   type Game,
   type SortKey,
 } from "@/constants/catalog";
+import { GameCardImage } from "@/components/game-card-image";
 import { genreIconComponents } from "@/constants/sidebar";
 import { cn } from "@/lib/utils";
 
@@ -58,10 +58,6 @@ function buildHref(
 const shuffledGames = [...games].sort(
   (a, b) => ((a.id * 37) % 101) - ((b.id * 37) % 101),
 );
-
-function getGameImage(game: Game) {
-  return game.image;
-}
 
 function getPrice(game: Game) {
   const base = basePriceByGenre[game.genre];
@@ -171,13 +167,12 @@ function GameCard({ game }: { game: Game }) {
       className="group block h-full rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
     >
       <Card className="flex h-full min-w-0 flex-col gap-0 border-border/80 bg-card/70 p-0 shadow-none transition-colors group-hover:bg-accent/30">
-        <div className="relative aspect-video w-full overflow-hidden border-b border-border/70 bg-muted">
-          <Image
-            src={getGameImage(game)}
-            alt={`${game.title} cover art`}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover"
+        <div className="border-b border-border/70 bg-muted">
+          <GameCardImage
+            images={
+              game.screenshots.length > 0 ? game.screenshots : [game.image]
+            }
+            title={game.title}
           />
         </div>
         <CardHeader className="flex-1 pb-2 pt-4">

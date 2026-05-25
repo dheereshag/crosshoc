@@ -14,6 +14,7 @@ export type Game = {
   year: number;
   gradient: string;
   image: string;
+  screenshots: string[];
   badge?: "New" | "Top Rated" | "Trending" | "Editor's Pick";
   description: string;
 };
@@ -67,6 +68,15 @@ export const games: Game[] = [
     gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/766/76669775675948b1eb3f3eb1c1dfc7dc.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/766/76669775675948b1eb3f3eb1c1dfc7dc.jpg",
+      "https://media.rawg.io/media/screenshots/7ce/7ce309d2d08fd171275b934bd391c1e3.jpg",
+      "https://media.rawg.io/media/screenshots/6fa/6fa6431675fefe340c2ca30f109ca065.jpg",
+      "https://media.rawg.io/media/screenshots/a99/a99739a2ea65d2ed6289daa620ad2b89.jpg",
+      "https://media.rawg.io/media/screenshots/ce4/ce44135e2c3187aa8e06d20ad39fc4be.jpg",
+      "https://media.rawg.io/media/screenshots/e6c/e6c993212eee12b9e8dd4133aaffae4c.jpg",
+      "https://media.rawg.io/media/screenshots/de9/de98d054ec8d66d06087d3f130e5dad3.jpg",
+    ],
     badge: "Top Rated",
     description:
       "Reconstruct fragmented testimonies to solve chilling cold-case mysteries.",
@@ -80,6 +90,15 @@ export const games: Game[] = [
     gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/a9c/a9c0a6fb4def5538d39544934bded4b3.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/a9c/a9c0a6fb4def5538d39544934bded4b3.jpg",
+      "https://media.rawg.io/media/screenshots/1e7/1e7c7bc77f42965e1a1912507d97db1e.jpg",
+      "https://media.rawg.io/media/screenshots/f2d/f2d7a823c6664cded659553d8d43eeaa.jpg",
+      "https://media.rawg.io/media/screenshots/439/4393bb504f239979570dc6ccfdc2c169.jpg",
+      "https://media.rawg.io/media/screenshots/341/34166969f3179af0e5fd1c9f75c88800.jpg",
+      "https://media.rawg.io/media/screenshots/eeb/eeb7cbbd6a40d6583495dfcca03c85db.jpg",
+      "https://media.rawg.io/media/screenshots/bfb/bfb8300d761445140959d6d40e516f08.jpg",
+    ],
     badge: "Top Rated",
     description:
       "A fan-crafted 16-bit remake of the classic Sonic handheld adventure.",
@@ -93,6 +112,15 @@ export const games: Game[] = [
     gradient: "from-emerald-700 via-teal-600 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/062/06285b425e61623530c5430f20e5d222.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/062/06285b425e61623530c5430f20e5d222.jpg",
+      "https://media.rawg.io/media/screenshots/80f/80fae78e5c12be23386e1f68786c8b4b.jpg",
+      "https://media.rawg.io/media/screenshots/078/078cfcc88982199f6e1bc6de24279593.jpg",
+      "https://media.rawg.io/media/screenshots/da5/da5c912366c9ca2ca282f55ecd3b33c2.jpg",
+      "https://media.rawg.io/media/screenshots/fc1/fc10d7ec161911a3bb3409cd0599db05.jpg",
+      "https://media.rawg.io/media/screenshots/1de/1def44eac50c83de5d3a0dffbe52b5f9.jpg",
+      "https://media.rawg.io/media/screenshots/6cd/6cd9d62ddb5771993d67a565f51c648d.jpg",
+    ],
     badge: "Top Rated",
     description:
       "A gripping spy-thriller expansion set in Dogtown, the most dangerous district of Night City.",
@@ -106,6 +134,15 @@ export const games: Game[] = [
     gradient: "from-green-600 to-teal-400",
     image:
       "https://media.rawg.io/media/screenshots/9ec/9ec21d4df840d70c1621372f2450e3ca.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/9ec/9ec21d4df840d70c1621372f2450e3ca.jpg",
+      "https://media.rawg.io/media/screenshots/959/959f7935c6c6ded891fb5cc0dd3742b3.jpg",
+      "https://media.rawg.io/media/screenshots/d74/d74d8be2594cdb12ab1e296215d4f072.jpg",
+      "https://media.rawg.io/media/screenshots/d18/d18b91284856c8e511fba1cdce686985.jpg",
+      "https://media.rawg.io/media/screenshots/7de/7deadacbb5cb27b6294fc38f10bb3f14.jpg",
+      "https://media.rawg.io/media/screenshots/4a5/4a55ce7c9214b54cf449947038d65a69.jpg",
+      "https://media.rawg.io/media/screenshots/d08/d08b5bfdb1b1e3d122881acdaeda592d.jpg",
+    ],
     badge: "Trending",
     description:
       "Unravel Cold War secrets aboard an abandoned Soviet lunar base.",
@@ -119,6 +156,15 @@ export const games: Game[] = [
     gradient: "from-gray-700 to-green-600",
     image:
       "https://media.rawg.io/media/games/71d/71df9e759b2246f9769126c98ac997fc.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/71d/71df9e759b2246f9769126c98ac997fc.jpg",
+      "https://media.rawg.io/media/screenshots/723/7232dfba2a746be21a0e8548b5333dd7.jpg",
+      "https://media.rawg.io/media/screenshots/eb5/eb5a0522dbb56b8f698ac3fa8b884341.jpg",
+      "https://media.rawg.io/media/screenshots/b0f/b0f8ff8c24bc46ca70a20ee4b83d9569.jpg",
+      "https://media.rawg.io/media/screenshots/276/276688cddf9531e6cbcccc3368dfa25f.jpg",
+      "https://media.rawg.io/media/screenshots/585/585fd40ad660779a79e2853f3cd7a833.jpg",
+      "https://media.rawg.io/media/screenshots/7cb/7cb256eecd9dd0bb54d4524dc2a9b7ee.jpg",
+    ],
     badge: "Trending",
     description:
       "Experience Joel and Ellie's harrowing cross-country journey in stunning rebuilt detail.",
@@ -132,6 +178,15 @@ export const games: Game[] = [
     gradient: "from-teal-800 to-emerald-500",
     image:
       "https://media.rawg.io/media/screenshots/df8/df8f7f1b8ddf5f4021cda1254d82ab29.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/df8/df8f7f1b8ddf5f4021cda1254d82ab29.jpg",
+      "https://media.rawg.io/media/screenshots/e85/e858f0baed5c6df4df43c0fc08e8cafe.jpg",
+      "https://media.rawg.io/media/screenshots/632/6328c634a6cf9c331e16689dd23ce6fb.jpg",
+      "https://media.rawg.io/media/screenshots/a3c/a3c5af2365d41bb279d53e6e5606478f.jpg",
+      "https://media.rawg.io/media/screenshots/19b/19b28c9d44a6b8b76e9633c7b75ed4d9.jpg",
+      "https://media.rawg.io/media/screenshots/538/5385efec03706b8ba4061d3e5e9faeb4.jpg",
+      "https://media.rawg.io/media/screenshots/129/129f174964951dd991a61d1d9479cd2e.jpg",
+    ],
     badge: "Trending",
     description:
       "The legendary arena shooter returns with remastered visuals and an all-new expansion.",
@@ -145,6 +200,15 @@ export const games: Game[] = [
     gradient: "from-sky-700 to-cyan-500",
     image:
       "https://media.rawg.io/media/screenshots/95d/95df624f84b7bca99b56da01aeea4789.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/95d/95df624f84b7bca99b56da01aeea4789.jpg",
+      "https://media.rawg.io/media/screenshots/2f6/2f6816c288af8ed154a0d0d0e9b21e4d.jpg",
+      "https://media.rawg.io/media/screenshots/965/9650e2922d2c4d5efe3c4bf97c9f0c81.jpg",
+      "https://media.rawg.io/media/screenshots/086/086539247ecadb46414ed2e55eae7639.jpg",
+      "https://media.rawg.io/media/screenshots/5b9/5b91c961775a5c3426f11c8084426879.jpg",
+      "https://media.rawg.io/media/screenshots/974/974d2140200d6bfd19bd2bed4cd3da37.jpg",
+      "https://media.rawg.io/media/screenshots/1de/1dea9477eb9182564ef0e9f1fda02967.jpg",
+    ],
     badge: "Trending",
     description:
       "Survive the nightmarish corridors of a colony starship overrun by a rogue AI.",
@@ -158,6 +222,9 @@ export const games: Game[] = [
     gradient: "from-cyan-700 to-sky-500",
     image:
       "https://media.rawg.io/media/games/412/41289ad8950a417a0aa9a6860152ac22.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/412/41289ad8950a417a0aa9a6860152ac22.jpg",
+    ],
     badge: "New",
     description: "A dreamlike adventure through surreal, hand-crafted worlds.",
   },
@@ -170,6 +237,15 @@ export const games: Game[] = [
     gradient: "from-green-800 to-teal-600",
     image:
       "https://media.rawg.io/media/games/bc3/bc38deccf8bfab8b588d29817c68c1ff.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/bc3/bc38deccf8bfab8b588d29817c68c1ff.jpg",
+      "https://media.rawg.io/media/screenshots/666/6668b544c9cc99de2e1a5e34c9de4482.jpg",
+      "https://media.rawg.io/media/screenshots/9fe/9fec5dc68dc108782850c124f258b307.jpg",
+      "https://media.rawg.io/media/screenshots/af8/af823b182a2a1caf3c6b5657477e230e.jpg",
+      "https://media.rawg.io/media/screenshots/ff6/ff6397c237d93d213a5abdb1de98ca20.jpg",
+      "https://media.rawg.io/media/screenshots/08e/08e814efc0ce157bfe9d993e8385e73f.jpg",
+      "https://media.rawg.io/media/screenshots/338/33801c81159dc90f13235158bc1d7a1e.jpg",
+    ],
     badge: "Trending",
     description:
       "Blink-fast first-person combat in a hallucinogenic nightmare dimension.",
@@ -183,6 +259,15 @@ export const games: Game[] = [
     gradient: "from-teal-700 to-green-500",
     image:
       "https://media.rawg.io/media/games/51a/51a404b9918a0b19fc704a3ca248c69f.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/51a/51a404b9918a0b19fc704a3ca248c69f.jpg",
+      "https://media.rawg.io/media/screenshots/26c/26c298b0426461ebbca4a17d14a8c87b.jpg",
+      "https://media.rawg.io/media/screenshots/33d/33dbe045a82988878cd865b80fcc6269.jpg",
+      "https://media.rawg.io/media/screenshots/cdd/cdd81f8b87c0352e20ab9f8eefba7ddb.jpg",
+      "https://media.rawg.io/media/screenshots/a73/a739f3814e9d57228bd6cdd406012911.jpg",
+      "https://media.rawg.io/media/screenshots/44a/44a9d54fefbef2e21e6b3b8c1c54546b.jpg",
+      "https://media.rawg.io/media/screenshots/d55/d55e1c4da132fb3de2138586f1b75848.jpg",
+    ],
     badge: "Trending",
     description:
       "The seminal survival horror masterpiece rebuilt from the ground up.",
@@ -196,6 +281,14 @@ export const games: Game[] = [
     gradient: "from-yellow-500 via-amber-400 to-orange-400",
     image:
       "https://media.rawg.io/media/games/1ec/1ec196fc63bc5ea94a8b7da52daa9f5f.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/1ec/1ec196fc63bc5ea94a8b7da52daa9f5f.jpg",
+      "https://media.rawg.io/media/screenshots/e00/e004bb4ba27b1418f1790cd72a41e051.jpg",
+      "https://media.rawg.io/media/screenshots/9e8/9e8950ab22c7f13de44010d551737462.jpg",
+      "https://media.rawg.io/media/screenshots/357/3571a0bdfbf8331634200e1d97efe497.jpg",
+      "https://media.rawg.io/media/screenshots/dff/dffa9381efe31b62a8a4f155bd8babbf.jpg",
+      "https://media.rawg.io/media/screenshots/f27/f27d8051758c4318b2591cfa8d533c1c.jpg",
+    ],
     badge: "Trending",
     description: "A compelling puzzle game released in 2022.",
   },
@@ -208,6 +301,14 @@ export const games: Game[] = [
     gradient: "from-rose-700 to-red-400",
     image:
       "https://media.rawg.io/media/games/ed6/ed613937e113a4d43fa0db771e527a2f.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/ed6/ed613937e113a4d43fa0db771e527a2f.jpg",
+      "https://media.rawg.io/media/screenshots/7ea/7ea1b2a87e47df90eaf5ae6847b7c6f5.jpg",
+      "https://media.rawg.io/media/screenshots/22c/22c0b1bab65fc16a2da31963fdf81ca5.jpg",
+      "https://media.rawg.io/media/screenshots/00f/00f3bd2acd50dfba3033704a7eacdfe7.jpg",
+      "https://media.rawg.io/media/screenshots/280/280ce5a48659d0f7739342e9d598803f.jpg",
+      "https://media.rawg.io/media/screenshots/cd5/cd51046ddebe53b6faae1787305e52b1.jpg",
+    ],
     badge: "New",
     description:
       "Face terrifying new horrors in the latest chapter of the iconic horror franchise.",
@@ -221,6 +322,14 @@ export const games: Game[] = [
     gradient: "from-sky-600 to-teal-500",
     image:
       "https://media.rawg.io/media/screenshots/efa/efa54dd8d3e1a8efebfd7dcb4c77e0eb.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/efa/efa54dd8d3e1a8efebfd7dcb4c77e0eb.jpg",
+      "https://media.rawg.io/media/screenshots/249/2499c390f28ce890f6dab2e155ccbae8.jpg",
+      "https://media.rawg.io/media/screenshots/23e/23ef2c07ce96e6b5a7e5beb70683463d.jpg",
+      "https://media.rawg.io/media/screenshots/9c5/9c5ffe2592a1ed1acc870b6993107b50.jpg",
+      "https://media.rawg.io/media/screenshots/2ed/2ed18e538918f33f1593e3fb6b4b1464.jpg",
+      "https://media.rawg.io/media/screenshots/efa/efa54dd8d3e1a8efebfd7dcb4c77e0eb.jpg",
+    ],
     badge: "Trending",
     description:
       "Outsmart enemies in 100 handcrafted dungeon floors of deadly puzzles.",
@@ -234,6 +343,15 @@ export const games: Game[] = [
     gradient: "from-amber-600 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/bd2/bd2269675a8e09060677c6583ae5012a.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/bd2/bd2269675a8e09060677c6583ae5012a.jpg",
+      "https://media.rawg.io/media/screenshots/e10/e10a7bf296ce33706f7c050c5e9e1804.jpg",
+      "https://media.rawg.io/media/screenshots/335/33574bd4f2ff782259eb58687bb64407.jpg",
+      "https://media.rawg.io/media/screenshots/342/3424d3227250cdf2d4a3d8588dca99f6.jpg",
+      "https://media.rawg.io/media/screenshots/40a/40a20bc4222ef420de67f256329468d3.jpg",
+      "https://media.rawg.io/media/screenshots/781/78153f430cabc00df4beea59f2b43780.jpg",
+      "https://media.rawg.io/media/screenshots/5e4/5e41b778eec66453bbdedb1b0cb4f22c.jpg",
+    ],
     badge: "Trending",
     description:
       "Interrogate suspicious visitors at the kingdom gate in this charming strategy adventure.",
@@ -247,6 +365,9 @@ export const games: Game[] = [
     gradient: "from-blue-700 via-indigo-600 to-violet-500",
     image:
       "https://media.rawg.io/media/games/43a/43a9694f5ffe22302bbf1cc93bca4ea1.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/43a/43a9694f5ffe22302bbf1cc93bca4ea1.jpg",
+    ],
     badge: "New",
     description:
       "Breed, battle, and manage an ever-evolving colony of quirky cats.",
@@ -260,6 +381,15 @@ export const games: Game[] = [
     gradient: "from-orange-700 to-amber-400",
     image:
       "https://media.rawg.io/media/screenshots/193/1930910695d1adc6716d88163cb4c088.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/193/1930910695d1adc6716d88163cb4c088.jpg",
+      "https://media.rawg.io/media/screenshots/213/2138b53692ddee7f2e9ddf27a1b2f89c.jpg",
+      "https://media.rawg.io/media/screenshots/41b/41b4ef792703b6d4ff69b84ed7dadee2.jpg",
+      "https://media.rawg.io/media/screenshots/677/67782f9d2543ac93e03ef0fd00e9e1ad.jpg",
+      "https://media.rawg.io/media/screenshots/10c/10c9fb3775cd4a105337f11bcc58766f.jpg",
+      "https://media.rawg.io/media/screenshots/2f0/2f0972a068f9ded25f42e1500d2c8e19.jpg",
+      "https://media.rawg.io/media/screenshots/424/424ea828a9d975bd0ec0ffab060db57b.jpg",
+    ],
     badge: "Trending",
     description:
       "Lightning-fast melee brawling stripped down to its most brutal essentials.",
@@ -273,6 +403,13 @@ export const games: Game[] = [
     gradient: "from-emerald-600 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/2f6/2f6c45362818859574ac0e37edf3d3c4.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/2f6/2f6c45362818859574ac0e37edf3d3c4.jpg",
+      "https://media.rawg.io/media/screenshots/9a7/9a79e8f8376b1046f7fc316e6630e787.jpg",
+      "https://media.rawg.io/media/screenshots/bd7/bd718dcaab5a69a4f1a2cac0f861e27e.jpg",
+      "https://media.rawg.io/media/screenshots/c2f/c2fbfb2553264549c4991f0b3a8dcbe1.jpg",
+      "https://media.rawg.io/media/screenshots/335/335a75b273e4744a7a445148c1247a13.jpg",
+    ],
     badge: "Trending",
     description: "A compelling adventure game released in 2025.",
   },
@@ -285,6 +422,15 @@ export const games: Game[] = [
     gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/d09/d099b508a1cfb5bd2f2928b50e0784a5.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/d09/d099b508a1cfb5bd2f2928b50e0784a5.jpg",
+      "https://media.rawg.io/media/screenshots/6dc/6dc21b83139e586dd56755b352b921c5.jpg",
+      "https://media.rawg.io/media/screenshots/2c7/2c7cd6b1257f8a07b01c8889a2b14a9d.jpg",
+      "https://media.rawg.io/media/screenshots/51d/51d6d1591c47886b09c12544b6b1dc82.jpg",
+      "https://media.rawg.io/media/screenshots/4f6/4f6921b263dcbe0a6ad58d4e2f5f15e8.jpg",
+      "https://media.rawg.io/media/screenshots/5b6/5b6ca3d7560717089b6a52b5b5ce83ac.jpg",
+      "https://media.rawg.io/media/screenshots/e2b/e2bf9482bb198af39cd6ac7431e7e1a7.jpg",
+    ],
     badge: "Trending",
     description:
       "Ellie's brutal revenge odyssey remastered with cutting-edge visuals.",
@@ -298,6 +444,15 @@ export const games: Game[] = [
     gradient: "from-red-800 to-orange-600",
     image:
       "https://media.rawg.io/media/games/9b2/9b20adbf00491d56ad6793654067f2fd.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/9b2/9b20adbf00491d56ad6793654067f2fd.jpg",
+      "https://media.rawg.io/media/screenshots/ca1/ca18d0aae36eb9111d699e5fc301792c.jpg",
+      "https://media.rawg.io/media/screenshots/bed/bed539410f44bb30d7ec90d5c3d3d79d.jpg",
+      "https://media.rawg.io/media/screenshots/4c7/4c78732f954103ddbc7919a7ea08042a.jpg",
+      "https://media.rawg.io/media/screenshots/70e/70e3a7485f7b31744c955213860f8a86.jpg",
+      "https://media.rawg.io/media/screenshots/075/075dcf7acab1045481d17b59c8b17192.jpg",
+      "https://media.rawg.io/media/screenshots/524/524ef9b98451f60200b5f6169577fe06_VxBdSyL.jpg",
+    ],
     badge: "New",
     description:
       "A father and an astronaut child traverse a crumbling Earth on a desperate mission.",
@@ -311,6 +466,15 @@ export const games: Game[] = [
     gradient: "from-yellow-700 to-amber-400",
     image:
       "https://media.rawg.io/media/screenshots/df3/df373c179cd08f0a549ef1f1635b8864.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/df3/df373c179cd08f0a549ef1f1635b8864.jpg",
+      "https://media.rawg.io/media/screenshots/feb/feb364fef8bab063873f08a49362cd86.jpg",
+      "https://media.rawg.io/media/screenshots/32c/32cf1188ef2a730e29e42a602e0d8928.jpg",
+      "https://media.rawg.io/media/screenshots/693/693fe888f87da456bd80279e94240001.jpg",
+      "https://media.rawg.io/media/screenshots/c72/c7277d62de7fb2ae10baff0c0f6e7ac3.jpg",
+      "https://media.rawg.io/media/screenshots/bbb/bbbecd5d86f7b46327fb363e95a2b738.jpg",
+      "https://media.rawg.io/media/screenshots/453/453c569af5a8540b635ee826e0b3a896.jpg",
+    ],
     badge: "Trending",
     description: "A compelling puzzle game released in 2025.",
   },
@@ -323,6 +487,10 @@ export const games: Game[] = [
     gradient: "from-green-600 to-teal-400",
     image:
       "https://media.rawg.io/media/screenshots/aae/aaee2d143052bfafe7cae5806587485d.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/aae/aaee2d143052bfafe7cae5806587485d.jpg",
+      "https://media.rawg.io/media/screenshots/aae/aaee2d143052bfafe7cae5806587485d.jpg",
+    ],
     badge: "Trending",
     description:
       "The beloved JRPG that started the Trails saga, lovingly remade in full 3D.",
@@ -336,6 +504,15 @@ export const games: Game[] = [
     gradient: "from-sky-700 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/9f5/9f537017b13d32459fa129185648a858.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/9f5/9f537017b13d32459fa129185648a858.jpg",
+      "https://media.rawg.io/media/screenshots/788/78853feb214d0438067c393b6877adb7.jpg",
+      "https://media.rawg.io/media/screenshots/767/76785e0b9a0fc4c7e8f6df72cd20e820.jpg",
+      "https://media.rawg.io/media/screenshots/4e5/4e55312d64548ca22e0cbf0d626a071d.jpg",
+      "https://media.rawg.io/media/screenshots/629/6293760ffe07ca7f8884934347b774f2.jpg",
+      "https://media.rawg.io/media/screenshots/a56/a56aec97ecab6c2533650b9a6f605076.jpg",
+      "https://media.rawg.io/media/screenshots/b58/b584f698fd936e15a78a09332ecc08aa.jpg",
+    ],
     badge: "Trending",
     description:
       "Investigate a government conspiracy across a vibrant alien world in this cult classic.",
@@ -349,6 +526,10 @@ export const games: Game[] = [
     gradient: "from-slate-700 to-blue-600",
     image:
       "https://media.rawg.io/media/screenshots/69e/69ece38d22dcc1c44de7ddb7901a1a41.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/69e/69ece38d22dcc1c44de7ddb7901a1a41.jpg",
+      "https://media.rawg.io/media/screenshots/69e/69ece38d22dcc1c44de7ddb7901a1a41.jpg",
+    ],
     badge: "New",
     description:
       "A brand-new chapter of the legendary hex-based fantasy strategy series.",
@@ -362,6 +543,15 @@ export const games: Game[] = [
     gradient: "from-cyan-700 to-sky-500",
     image:
       "https://media.rawg.io/media/screenshots/8db/8db51a9a93c825439443c3252947e7d3.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/8db/8db51a9a93c825439443c3252947e7d3.jpg",
+      "https://media.rawg.io/media/screenshots/ede/ede3939d7b16fb1c3367cdebce06cb91.jpg",
+      "https://media.rawg.io/media/screenshots/7e5/7e53f4ef87fa986164610b0ec7473c36.jpg",
+      "https://media.rawg.io/media/screenshots/9db/9db8e1a450ba47547be8b577f6cad85a.jpg",
+      "https://media.rawg.io/media/screenshots/a74/a74dcd6ca89c8f32304441b0dde8dbd9.jpg",
+      "https://media.rawg.io/media/screenshots/9d8/9d84cf46c3720a4f4bd0ade76283ded6.jpg",
+      "https://media.rawg.io/media/screenshots/fe6/fe67dbdf481a9a3e30e17036a85f3e9d.jpg",
+    ],
     badge: "Trending",
     description:
       "Bend snake-birds through fiendishly clever puzzles in this adorable puzzler.",
@@ -375,6 +565,15 @@ export const games: Game[] = [
     gradient: "from-teal-700 to-green-500",
     image:
       "https://media.rawg.io/media/games/460/460c3df0b652c4fa8ca3f015c1e8a2d7.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/460/460c3df0b652c4fa8ca3f015c1e8a2d7.jpg",
+      "https://media.rawg.io/media/screenshots/840/8401c15cbebdf248b40dae60b3eb2cbf.jpg",
+      "https://media.rawg.io/media/screenshots/9df/9df1f4259319fa7826161498c4d13c5b.jpg",
+      "https://media.rawg.io/media/screenshots/272/272fcfae3ac6358a0991e4b73dece316.jpg",
+      "https://media.rawg.io/media/screenshots/bf1/bf1d83be44584f5168b3a288b6f60e94.jpg",
+      "https://media.rawg.io/media/screenshots/2af/2af06129184a893fcb13d733353c88a3.jpg",
+      "https://media.rawg.io/media/screenshots/cfa/cfa4608c55a80f70ec080d412bd70dc9.jpg",
+    ],
     badge: "Trending",
     description: "A compelling adventure game released in 2023.",
   },
@@ -387,6 +586,15 @@ export const games: Game[] = [
     gradient: "from-rose-600 via-red-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/01b/01b85423bbfb5f8bc6bcf29dc0cfd6d9.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/01b/01b85423bbfb5f8bc6bcf29dc0cfd6d9.jpg",
+      "https://media.rawg.io/media/screenshots/7c0/7c05123051ac759263d2e5df7e70c81c.jpg",
+      "https://media.rawg.io/media/screenshots/3f6/3f667e5a77c1e1624e0284fb0a77d1c5.jpg",
+      "https://media.rawg.io/media/screenshots/43a/43a514cf8e421a5dacf8132d6be012c7.jpg",
+      "https://media.rawg.io/media/screenshots/009/0094e432b1642a1c01ea934a981176d3.jpg",
+      "https://media.rawg.io/media/screenshots/f91/f91df6fa700461a664a68fffa4f70f51.jpg",
+      "https://media.rawg.io/media/screenshots/baf/baf7ffe898003830e6755cffc1921def.jpg",
+    ],
     badge: "Trending",
     description:
       "Chef Saltbaker serves up brutal new bosses, a new playable character, and an island of delights.",
@@ -400,6 +608,14 @@ export const games: Game[] = [
     gradient: "from-orange-600 to-yellow-500",
     image:
       "https://media.rawg.io/media/screenshots/252/252fea2a340c8f398ca56ddb7649a20e.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/252/252fea2a340c8f398ca56ddb7649a20e.jpg",
+      "https://media.rawg.io/media/screenshots/0a0/0a005561eeb8a9e178529ccca3d623f7.jpg",
+      "https://media.rawg.io/media/screenshots/0d0/0d03e16fc04f85784787ed34399a353b.jpg",
+      "https://media.rawg.io/media/screenshots/790/790bda147ae3d788afe4811637df80f2.jpg",
+      "https://media.rawg.io/media/screenshots/1b1/1b1f2f5bef596adc6db68bec6ffc851c.jpg",
+      "https://media.rawg.io/media/screenshots/252/252fea2a340c8f398ca56ddb7649a20e.jpg",
+    ],
     badge: "Trending",
     description:
       "Pinpoint your location from a street-view panorama anywhere on Earth.",
@@ -413,6 +629,15 @@ export const games: Game[] = [
     gradient: "from-orange-600 to-red-500",
     image:
       "https://media.rawg.io/media/screenshots/0ba/0bae7160eedc1f7d85a8d2db70cf1ec9.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/0ba/0bae7160eedc1f7d85a8d2db70cf1ec9.jpg",
+      "https://media.rawg.io/media/screenshots/ba6/ba6675855ee539784357aed3ca095ce2.jpg",
+      "https://media.rawg.io/media/screenshots/bb9/bb9498e278d38066f35128600ead5d38.jpg",
+      "https://media.rawg.io/media/screenshots/88b/88b67b29b5349ce78a6bf9b0d2486125.jpg",
+      "https://media.rawg.io/media/screenshots/abd/abdd2a301e6156406aef61430a28c0a9_myeMjlP.jpg",
+      "https://media.rawg.io/media/screenshots/394/394afcdcc64eff27002f7bc2383c2ade.jpg",
+      "https://media.rawg.io/media/screenshots/cb2/cb27a3f806860ac667e6edf9a1f8dd1d.jpg",
+    ],
     badge: "Trending",
     description:
       "Journey through the Land of Shadow in this sweeping expansion to the award-winning RPG.",
@@ -426,6 +651,15 @@ export const games: Game[] = [
     gradient: "from-sky-600 to-teal-500",
     image:
       "https://media.rawg.io/media/games/09b/09b41c1a2c5761c5b1772a4ae238bb0e.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/09b/09b41c1a2c5761c5b1772a4ae238bb0e.jpg",
+      "https://media.rawg.io/media/screenshots/b84/b84bf73824e8387369157ac7906421bd.jpg",
+      "https://media.rawg.io/media/screenshots/85e/85e8aa29b80f1c126d740acc674ec7a1.jpg",
+      "https://media.rawg.io/media/screenshots/dfe/dfec4b95e0100879f1f2da5c29761470.jpg",
+      "https://media.rawg.io/media/screenshots/8b8/8b84a78f1fdab724272f60116174fa23.jpg",
+      "https://media.rawg.io/media/screenshots/6bb/6bbd1d30d8cdb85abacb47fbb7c2d93f.jpg",
+      "https://media.rawg.io/media/screenshots/b34/b34b5833595e77a8c16fb81fdf62ca52.jpg",
+    ],
     badge: "Trending",
     description:
       "James Sunderland returns to the fog-shrouded town in this faithful psychological horror remake.",
@@ -439,6 +673,15 @@ export const games: Game[] = [
     gradient: "from-purple-700 via-fuchsia-600 to-pink-500",
     image:
       "https://media.rawg.io/media/games/466/4667f17fdee9ebbcea2049e54f8e2b96.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/466/4667f17fdee9ebbcea2049e54f8e2b96.jpg",
+      "https://media.rawg.io/media/screenshots/1e4/1e4dcb884c03242be7dab30fad77d7b2.jpg",
+      "https://media.rawg.io/media/screenshots/22c/22c350e84e9f320b389cdabf0c213f7f.jpg",
+      "https://media.rawg.io/media/screenshots/d8c/d8ce62f48218d47440c1859366860562.jpg",
+      "https://media.rawg.io/media/screenshots/72d/72da1f6013eb7b3f10c624dfeb3dd578.jpg",
+      "https://media.rawg.io/media/screenshots/16b/16bca296df99c20d6d54d67b2e6ad71b.jpg",
+      "https://media.rawg.io/media/screenshots/7bb/7bb0c8b67c9add59d1a13ebb7da790b1.jpg",
+    ],
     badge: "Editor's Pick",
     description:
       "A French-made JRPG where you paint the world to survive a painter's deadly curse.",
@@ -452,6 +695,15 @@ export const games: Game[] = [
     gradient: "from-emerald-600 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg",
+      "https://media.rawg.io/media/screenshots/587/5875f080a704a56dd4183a8e4c6a9dd5.jpg",
+      "https://media.rawg.io/media/screenshots/1d7/1d78e225fcda1198e4342537c5bfe68f.jpg",
+      "https://media.rawg.io/media/screenshots/15f/15f91df39355f11771fb11078d4c4418.jpg",
+      "https://media.rawg.io/media/screenshots/bbd/bbd31c27feac5d9f8380728adda9db03.jpg",
+      "https://media.rawg.io/media/screenshots/c96/c96b9b3a6a8155a5835f99c5a391cd31.jpg",
+      "https://media.rawg.io/media/screenshots/399/399c968a06e9d1fe42aa9a23d69f0d7f.jpg",
+    ],
     description:
       "Nate's globe-trotting finale and Chloe's golden goddess adventure, remastered for PC and PS5.",
   },
@@ -464,6 +716,15 @@ export const games: Game[] = [
     gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/801/801b23ccc4ffac44e91a05990199e686.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/801/801b23ccc4ffac44e91a05990199e686.jpg",
+      "https://media.rawg.io/media/screenshots/6f0/6f018745d9bf4c198844c7135f2ca861.jpg",
+      "https://media.rawg.io/media/screenshots/f76/f76a1bbb173313bdaa77568392e41f08.jpg",
+      "https://media.rawg.io/media/screenshots/1f0/1f0c030e04989fe55564a1bab213c327.jpg",
+      "https://media.rawg.io/media/screenshots/d51/d514892b52869f6a51459d701b5acae6.jpg",
+      "https://media.rawg.io/media/screenshots/d98/d9832ef451dbcfb49e4b80d78eac4249.jpg",
+      "https://media.rawg.io/media/screenshots/502/502f104ff658f340c9fd2711a7221c2c.jpg",
+    ],
     description:
       "Tap along to over 170 iconic vocaloid tracks in razor-sharp HD.",
   },
@@ -476,6 +737,15 @@ export const games: Game[] = [
     gradient: "from-amber-500 via-yellow-400 to-lime-400",
     image:
       "https://media.rawg.io/media/screenshots/f9e/f9e56960654865428323477c3b03712e.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/f9e/f9e56960654865428323477c3b03712e.jpg",
+      "https://media.rawg.io/media/screenshots/89e/89e30aecdfff0151ddc4b48278cd23f6.jpg",
+      "https://media.rawg.io/media/screenshots/7a6/7a68a6c237f31776be3503703e0f48fa.jpg",
+      "https://media.rawg.io/media/screenshots/f5d/f5d3eb2a562ba4e33a385e51583af807.jpg",
+      "https://media.rawg.io/media/screenshots/76a/76ad9526c3b0867d91f6a921376e7ce6.jpg",
+      "https://media.rawg.io/media/screenshots/d00/d00c6a55e85ddc9828ffd3611a5d5c11.jpg",
+      "https://media.rawg.io/media/screenshots/f57/f57c75e2180f6cb3007ccc0ade243a75.jpg",
+    ],
     description:
       "Twin-stick shooting meets Zelda-like exploration in a tiny ship's grand adventure.",
   },
@@ -488,6 +758,9 @@ export const games: Game[] = [
     gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/a57/a571fcbc2b2ef30fb3e13a4272ef3a93.jpeg",
+    screenshots: [
+      "https://media.rawg.io/media/games/a57/a571fcbc2b2ef30fb3e13a4272ef3a93.jpeg",
+    ],
     badge: "New",
     description:
       "A coming-of-age adventure set in the 90s, told through music and memory.",
@@ -501,6 +774,15 @@ export const games: Game[] = [
     gradient: "from-green-600 to-teal-400",
     image:
       "https://media.rawg.io/media/games/02a/02ac22b3b90717dabaa535640c38534c.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/02a/02ac22b3b90717dabaa535640c38534c.jpg",
+      "https://media.rawg.io/media/screenshots/dc1/dc10dd68a2e7472b7ed40feda3a16c54.jpg",
+      "https://media.rawg.io/media/screenshots/ea9/ea9e37dc1b36db3401a6b308d766198b.jpg",
+      "https://media.rawg.io/media/screenshots/e4b/e4bee3c261abe04f869b6f429852a00d.jpg",
+      "https://media.rawg.io/media/screenshots/395/395fdacce19c05718a7df69a227c8580.jpg",
+      "https://media.rawg.io/media/screenshots/640/640ae66a49a93b16ba5d2537e78b75c1.jpg",
+      "https://media.rawg.io/media/screenshots/f5a/f5a69af83f67e75cb404b2dd334e2197.jpg",
+    ],
     description:
       "Two writers trapped inside their own stories must cooperate to escape a publisher's dystopia.",
   },
@@ -513,6 +795,15 @@ export const games: Game[] = [
     gradient: "from-indigo-800 to-blue-500",
     image:
       "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg",
+      "https://media.rawg.io/media/screenshots/a67/a676cdec0eadc42a133ac49e7f2e1aac.jpg",
+      "https://media.rawg.io/media/screenshots/705/705846f6583a6da009a0ae7fcdece36d.jpg",
+      "https://media.rawg.io/media/screenshots/d29/d29b1d2726d69432d2b4180a79b9ee9d.jpg",
+      "https://media.rawg.io/media/screenshots/ed1/ed19ec8ce43f9dd3553df4a6d9301f61.jpg",
+      "https://media.rawg.io/media/screenshots/6c8/6c8983d658a4a24dc8eb9d2f88f1dabf.jpg",
+      "https://media.rawg.io/media/screenshots/92c/92cbe16a795afbc9d9837ed9eae4f22b.jpg",
+    ],
     badge: "Editor's Pick",
     description:
       "Roll the dice on an epic co-op RPG packed with consequence-heavy choices and D&D depth.",
@@ -526,6 +817,15 @@ export const games: Game[] = [
     gradient: "from-sky-700 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/896/896854355c6516444323c9e085d562d7.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/896/896854355c6516444323c9e085d562d7.jpg",
+      "https://media.rawg.io/media/screenshots/e14/e1490a3ee6877ee2fc8a70ab7c42d909.jpg",
+      "https://media.rawg.io/media/screenshots/914/914c6bb6e3fa121af1ec3c38d681edf2.jpg",
+      "https://media.rawg.io/media/screenshots/b43/b436292de3c05878d5dc87423c0cad8f.jpg",
+      "https://media.rawg.io/media/screenshots/3aa/3aa187a278b3725c452fe3a0327fcca4.jpg",
+      "https://media.rawg.io/media/screenshots/6dd/6dd0c702e5cf4ea58d0bfa0d40dee1ba.jpg",
+      "https://media.rawg.io/media/screenshots/fd6/fd6eac6d52850bc8c797e9721493f221.jpg",
+    ],
     description:
       "A young girl unravels family mysteries across two haunting island adventures.",
   },
@@ -538,6 +838,15 @@ export const games: Game[] = [
     gradient: "from-cyan-700 to-sky-500",
     image:
       "https://media.rawg.io/media/screenshots/eec/eec1d91768080988c5f768d9b0d2291c.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/eec/eec1d91768080988c5f768d9b0d2291c.jpg",
+      "https://media.rawg.io/media/screenshots/085/0856b3b03e5502188d981b660f79a6fe.jpg",
+      "https://media.rawg.io/media/screenshots/840/8402b82a9df4862e4bf0abce24d9cb57.jpg",
+      "https://media.rawg.io/media/screenshots/13d/13dc95172e3df5bd2e02533507a5f787.jpg",
+      "https://media.rawg.io/media/screenshots/6f9/6f957b6b6247bebd9be6f8684d322dd8.jpg",
+      "https://media.rawg.io/media/screenshots/ec0/ec0ed218dc82924d83c1032a01c543cd.jpg",
+      "https://media.rawg.io/media/screenshots/9b5/9b5be62504b992306c3b81f5351ee78c.jpg",
+    ],
     description: "A compelling adventure game released in 2022.",
   },
   {
@@ -549,6 +858,14 @@ export const games: Game[] = [
     gradient: "from-orange-600 via-red-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/66d/66d6665c96dde6a76bc869f3828013b8.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/66d/66d6665c96dde6a76bc869f3828013b8.jpg",
+      "https://media.rawg.io/media/screenshots/f0f/f0fd82d33994626f554ae23d0aeee2b7.jpg",
+      "https://media.rawg.io/media/screenshots/fb7/fb776146da4ff8b0e1214cb4b764bb63.jpg",
+      "https://media.rawg.io/media/screenshots/c2f/c2f507b8a30cded0b8380935f072803d.jpg",
+      "https://media.rawg.io/media/screenshots/ec8/ec8bb7b37fc046de531c3ac91502e395.jpg",
+      "https://media.rawg.io/media/screenshots/6f5/6f507992e58631e83dab530ac8b8ed84.jpg",
+    ],
     description:
       "A sleek sci-fi platformer where you swap bodies with enemies to solve physics puzzles.",
   },
@@ -561,6 +878,15 @@ export const games: Game[] = [
     gradient: "from-teal-700 to-green-500",
     image:
       "https://media.rawg.io/media/screenshots/21c/21cb898a6eb030e8b930a6c55b803ebb.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/21c/21cb898a6eb030e8b930a6c55b803ebb.jpg",
+      "https://media.rawg.io/media/screenshots/867/867a7ce4735b8c5c52772ce8f2347c30.jpg",
+      "https://media.rawg.io/media/screenshots/70a/70a2f2fc93f93040094dc3dd8819fa6a.jpg",
+      "https://media.rawg.io/media/screenshots/e77/e7766b4babd7f042b347442dda856e3a.jpg",
+      "https://media.rawg.io/media/screenshots/7f2/7f224991ace3c0109eeb7fffed599740.jpg",
+      "https://media.rawg.io/media/screenshots/abc/abcf22bfbf79beafa971f626c06019e0.jpg",
+      "https://media.rawg.io/media/screenshots/8fa/8fa5675a565a012ea3fbcd17f4d8f494.jpg",
+    ],
     description:
       "A ghost inhabits the world around it to unravel the mysteries of eternity.",
   },
@@ -573,6 +899,15 @@ export const games: Game[] = [
     gradient: "from-cyan-700 to-emerald-600",
     image:
       "https://media.rawg.io/media/games/235/23507cdd4268752b10f4dfc9cba52e9c.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/235/23507cdd4268752b10f4dfc9cba52e9c.jpg",
+      "https://media.rawg.io/media/screenshots/91c/91ce93f0f0f75a2e16e141c09ecc8bfe.jpg",
+      "https://media.rawg.io/media/screenshots/f20/f2041149b0d35fa32f161f7ce52ad0a2.jpg",
+      "https://media.rawg.io/media/screenshots/1c1/1c1a13d4cc3393b2ebba0a7c9b33d036.jpg",
+      "https://media.rawg.io/media/screenshots/1ba/1bac0cfe4289d9a032c0dde2f6c87f7e.jpg",
+      "https://media.rawg.io/media/screenshots/d04/d04985b0ff5dd56fb752a0a797193b39.jpg",
+      "https://media.rawg.io/media/screenshots/41a/41af212e8bee768adc1c022fcec14a34.jpg",
+    ],
     description:
       "Play Ada Wong's parallel spy mission through the events of Resident Evil 4.",
   },
@@ -585,6 +920,15 @@ export const games: Game[] = [
     gradient: "from-rose-700 to-red-400",
     image:
       "https://media.rawg.io/media/games/1c3/1c305096502c475c00276c827f0fd697.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/1c3/1c305096502c475c00276c827f0fd697.jpg",
+      "https://media.rawg.io/media/screenshots/55f/55fe715e129d5365b48b35b5fc8052be.jpg",
+      "https://media.rawg.io/media/screenshots/c3e/c3e2f128960ffdac8d91f097ebf213e4.jpg",
+      "https://media.rawg.io/media/screenshots/ab5/ab5dce69619658d010c7342523c63d69_fmTr8dx.jpg",
+      "https://media.rawg.io/media/screenshots/d19/d193a94e600261aa6a35883ae7258687.jpg",
+      "https://media.rawg.io/media/screenshots/87d/87d0502ad973a922615bb585ead18661.jpg",
+      "https://media.rawg.io/media/screenshots/001/00156acba9a5a3316893c22f4bd15edf.jpg",
+    ],
     description:
       "Kratos and Atreus race to prevent Ragnarök across the nine Norse realms.",
   },
@@ -597,6 +941,14 @@ export const games: Game[] = [
     gradient: "from-yellow-500 via-amber-400 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
+      "https://media.rawg.io/media/screenshots/04d/04dd720ee04c19fab77803696340b888.jpg",
+      "https://media.rawg.io/media/screenshots/f79/f79fc7b0c4568e6a51a325b7a91367aa.jpg",
+      "https://media.rawg.io/media/screenshots/cde/cde6b1d5b041ac8f52557244eeaf1c70.jpg",
+      "https://media.rawg.io/media/screenshots/4c3/4c34d1d696d3f4a666568cd275278089.jpg",
+      "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
+    ],
     description:
       "A heartfelt Filipino slice-of-life visual novel set amid everyday teenage drama.",
   },
@@ -609,6 +961,15 @@ export const games: Game[] = [
     gradient: "from-sky-600 to-teal-500",
     image:
       "https://media.rawg.io/media/games/c18/c180a02a53ce8c8cf23f11f182184103.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/c18/c180a02a53ce8c8cf23f11f182184103.jpg",
+      "https://media.rawg.io/media/screenshots/bdb/bdbd272ec86b99b9c86026b35fe84828.jpg",
+      "https://media.rawg.io/media/screenshots/fb5/fb500d7990ac3a2eb126d5078e45ff23.jpg",
+      "https://media.rawg.io/media/screenshots/675/675b631eddda55c73425d9c8bdebf37b.jpg",
+      "https://media.rawg.io/media/screenshots/35f/35fd00aa0159c836b70c01f2791e9c6d.jpg",
+      "https://media.rawg.io/media/screenshots/02c/02c61b14e0d8b2f0f15a085522137bdb.jpg",
+      "https://media.rawg.io/media/screenshots/14b/14b7daff2f189e2c1019010d2b2645a3.jpg",
+    ],
     description:
       "An Indonesian high-school adventure exploring mental health through magical realism.",
   },
@@ -621,6 +982,10 @@ export const games: Game[] = [
     gradient: "from-emerald-600 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/db4/db4348b029d2cdaf826d7536bd75b71c.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/db4/db4348b029d2cdaf826d7536bd75b71c.jpg",
+      "https://media.rawg.io/media/screenshots/b82/b82e3b723c20c92dbdcde19a8816cce2.jpg",
+    ],
     description:
       "Kong smashes through destructible terrain in a vibrant underground open-world adventure.",
   },
@@ -633,6 +998,13 @@ export const games: Game[] = [
     gradient: "from-amber-600 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/f7a/f7af9c3c70d7acf49430e525e5d3825f.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/f7a/f7af9c3c70d7acf49430e525e5d3825f.jpg",
+      "https://media.rawg.io/media/screenshots/dd3/dd3ea90d0dcdda28c4ea3f552863e2d8.jpg",
+      "https://media.rawg.io/media/screenshots/198/1980d3756fdcac2a54003b5d759dc913.jpg",
+      "https://media.rawg.io/media/screenshots/d09/d091040cff0eb7c3113a57e7590beb5e.jpg",
+      "https://media.rawg.io/media/screenshots/f7a/f7af9c3c70d7acf49430e525e5d3825f.jpg",
+    ],
     description:
       "Stack wobbly goo balls across mind-bending physics puzzles in a beautifully crafted sequel.",
   },
@@ -645,6 +1017,12 @@ export const games: Game[] = [
     gradient: "from-emerald-700 via-teal-600 to-cyan-500",
     image:
       "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
+      "https://media.rawg.io/media/screenshots/24c/24c7a1d89229448f6c0e0d79a05d7e5c.jpg",
+      "https://media.rawg.io/media/screenshots/856/856257407fee5824ea417e6c35e43ba8.jpg",
+      "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
+    ],
     description:
       "Hunt colossal machine creatures across a lush post-apocalyptic landscape, rebuilt for PS5.",
   },
@@ -657,6 +1035,15 @@ export const games: Game[] = [
     gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/7c7/7c7fc7ac07c17fad71095cca1c78bc65.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/7c7/7c7fc7ac07c17fad71095cca1c78bc65.jpg",
+      "https://media.rawg.io/media/screenshots/27c/27c7a1cecbbab1bea1a9d74b49be5955.jpg",
+      "https://media.rawg.io/media/screenshots/142/142537184ce5aaa9e310ab2bcdd6202a.jpg",
+      "https://media.rawg.io/media/screenshots/536/5366720785b5d836692829999e9f8445.jpg",
+      "https://media.rawg.io/media/screenshots/a9b/a9b079f3805d67a960e89af21db7da0a.jpg",
+      "https://media.rawg.io/media/screenshots/e23/e230f05baac230737191c6005a49b688.jpg",
+      "https://media.rawg.io/media/screenshots/7c3/7c3d9752c03944ef92523b23c163ea1f.jpg",
+    ],
     description:
       "Uncover the truth about a cultish society that survived an alien plague.",
   },
@@ -669,6 +1056,15 @@ export const games: Game[] = [
     gradient: "from-orange-700 to-amber-400",
     image:
       "https://media.rawg.io/media/games/077/07790746d9caa0542203febd069ac764.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/077/07790746d9caa0542203febd069ac764.jpg",
+      "https://media.rawg.io/media/screenshots/722/7227bad1c2febf42f525efd951b46ed8.jpg",
+      "https://media.rawg.io/media/screenshots/7e5/7e51730ff7375c04c0db9eedb4d9508d.jpg",
+      "https://media.rawg.io/media/screenshots/39c/39cca99046bc0103e1d12d5bcf846858.jpg",
+      "https://media.rawg.io/media/screenshots/cd8/cd84c89817e707d894a68d119cd51520.jpg",
+      "https://media.rawg.io/media/screenshots/4e6/4e64a81a960594268dd123360c192161.jpg",
+      "https://media.rawg.io/media/screenshots/b03/b03555bfa558788b6d6d2c3c171bbbd4.jpg",
+    ],
     description:
       "Chain together ruthless executions in this hyper-stylised stealth action game.",
   },
@@ -681,6 +1077,9 @@ export const games: Game[] = [
     gradient: "from-green-600 to-teal-400",
     image:
       "https://media.rawg.io/media/games/66f/66fcdc18586ac8c0aa17b2c83fee558d.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/66f/66fcdc18586ac8c0aa17b2c83fee558d.jpg",
+    ],
     description:
       "The biggest Mario Party boards yet, packed with mini-games for the whole family.",
   },
@@ -693,6 +1092,15 @@ export const games: Game[] = [
     gradient: "from-red-800 to-orange-600",
     image:
       "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg",
+      "https://media.rawg.io/media/screenshots/9f9/9f9a0edd1478facde5209abe4000c015.jpg",
+      "https://media.rawg.io/media/screenshots/3f3/3f35cf2130d1d8763ee45dc77ce843b2.jpg",
+      "https://media.rawg.io/media/screenshots/7e1/7e160928dc38f72937951f56e73a1988.jpg",
+      "https://media.rawg.io/media/screenshots/b96/b9656b6e62746c588ea12287fc1c0aed.jpg",
+      "https://media.rawg.io/media/screenshots/404/4048fa94127cec67d8464aaa13f6d588.jpg",
+      "https://media.rawg.io/media/screenshots/79a/79a5026c9032d626d59b57e5d6edb45a_EiUzDAs.jpg",
+    ],
     description:
       "Hornet battles her way through a new kingdom teeming with enemies, hunters, and ancient secrets.",
   },
@@ -705,6 +1113,15 @@ export const games: Game[] = [
     gradient: "from-sky-700 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg",
+      "https://media.rawg.io/media/screenshots/9a8/9a8ecc33989862e3be29132189c3f7f6.jpg",
+      "https://media.rawg.io/media/screenshots/741/741f7625ce8adfe138b43608f1e8e01c.jpg",
+      "https://media.rawg.io/media/screenshots/616/616c2a598520d24c1a56d8b1aa90217b.jpg",
+      "https://media.rawg.io/media/screenshots/cc5/cc5951ae93265c9a3ccd550ce58fbfa8.jpg",
+      "https://media.rawg.io/media/screenshots/0ce/0ce56603d0deb0f66f969ccdee51284b.jpg",
+      "https://media.rawg.io/media/screenshots/ab2/ab2e1086144e9722aba95d012aadcc66.jpg",
+    ],
     description:
       "Continue Henry's medieval Bohemian odyssey in this sprawling open-world RPG sequel.",
   },
@@ -717,6 +1134,15 @@ export const games: Game[] = [
     gradient: "from-rose-600 via-red-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg",
+      "https://media.rawg.io/media/screenshots/36f/36f941f72e2b2a41629f5fb3bd448688.jpg",
+      "https://media.rawg.io/media/screenshots/290/29096848622521df7555850000236cb6.jpg",
+      "https://media.rawg.io/media/screenshots/807/807685454ea8fb87363eedd49677f49b.jpg",
+      "https://media.rawg.io/media/screenshots/2ee/2eea4d4cce2836f689d9d39d2a4a94d5.jpg",
+      "https://media.rawg.io/media/screenshots/de9/de9b28bdd0bdb9937c7f82e55f845bb6.jpg",
+      "https://media.rawg.io/media/screenshots/3a2/3a2e5f31e2061bc566bcfd30fda56a17.jpg",
+    ],
     badge: "Editor's Pick",
     description:
       "Traverse the Lands Between and unravel the mystery of the shattered Elden Ring.",
@@ -730,6 +1156,10 @@ export const games: Game[] = [
     gradient: "from-cyan-700 to-sky-500",
     image:
       "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
+      "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
+    ],
     description: "A compelling adventure game released in 2022.",
   },
   {
@@ -741,6 +1171,14 @@ export const games: Game[] = [
     gradient: "from-yellow-700 to-amber-400",
     image:
       "https://media.rawg.io/media/screenshots/326/326267a294202a9d93e55879a6f61d48.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/326/326267a294202a9d93e55879a6f61d48.jpg",
+      "https://media.rawg.io/media/screenshots/491/491dd2cbacc142ae901d1bda3d458ba2.jpg",
+      "https://media.rawg.io/media/screenshots/ab8/ab888d25e7219795fd036e05288e20aa.jpg",
+      "https://media.rawg.io/media/screenshots/2fc/2fcb186c2587eef3b6498472c659d1b8.jpg",
+      "https://media.rawg.io/media/screenshots/22b/22bad148e80732be27db151f30703e56.jpg",
+      "https://media.rawg.io/media/screenshots/326/326267a294202a9d93e55879a6f61d48.jpg",
+    ],
     description: "A compelling puzzle game released in 2024.",
   },
   {
@@ -752,6 +1190,15 @@ export const games: Game[] = [
     gradient: "from-orange-600 to-yellow-500",
     image:
       "https://media.rawg.io/media/games/e8a/e8a79474fcbcd0d1bc595ec25dd7536f.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/e8a/e8a79474fcbcd0d1bc595ec25dd7536f.jpg",
+      "https://media.rawg.io/media/screenshots/0de/0debf7af58a435b997e503cb6c75fe3f.jpg",
+      "https://media.rawg.io/media/screenshots/b02/b026900460d3eec88c2fd780381fb5b8.jpg",
+      "https://media.rawg.io/media/screenshots/e3d/e3ddd3ed0d1139e27e44e1b57258658f.jpg",
+      "https://media.rawg.io/media/screenshots/828/8289f4f905bcff856a2eb77fb452bf04.jpg",
+      "https://media.rawg.io/media/screenshots/e84/e84ef63acd3d591545e5ab4a603b3703.jpg",
+      "https://media.rawg.io/media/screenshots/853/853d6fa6820b4f63d7b1632058e48bb7.jpg",
+    ],
     description: "A compelling puzzle game released in 2025.",
   },
   {
@@ -763,6 +1210,14 @@ export const games: Game[] = [
     gradient: "from-teal-700 to-green-500",
     image:
       "https://media.rawg.io/media/screenshots/bc8/bc8e49daf53d39b599f5fdb012177569.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/bc8/bc8e49daf53d39b599f5fdb012177569.jpg",
+      "https://media.rawg.io/media/screenshots/cc1/cc168369ac0cad2bad5586deb494600f.jpg",
+      "https://media.rawg.io/media/screenshots/ae8/ae86359dd88f7067dd0ed256590ce07e.jpg",
+      "https://media.rawg.io/media/screenshots/b67/b6727cfdd52bbf5637b049fdf338376b.jpg",
+      "https://media.rawg.io/media/screenshots/5b8/5b87af21dfc8e695ad201e1cf4241ac9.jpg",
+      "https://media.rawg.io/media/screenshots/bc8/bc8e49daf53d39b599f5fdb012177569.jpg",
+    ],
     description:
       "Piece together a centuries-spanning cult conspiracy through crime scene analysis.",
   },
@@ -775,6 +1230,15 @@ export const games: Game[] = [
     gradient: "from-amber-500 via-yellow-400 to-lime-400",
     image:
       "https://media.rawg.io/media/screenshots/d09/d091eb9147f87728c0e6f0bacbbcd2b6.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/d09/d091eb9147f87728c0e6f0bacbbcd2b6.jpg",
+      "https://media.rawg.io/media/screenshots/4df/4df691f147607e6ccc977460eff3dec2.jpg",
+      "https://media.rawg.io/media/screenshots/677/67788a18fcf73eea4ce7b23c6f5819b6.jpg",
+      "https://media.rawg.io/media/screenshots/3d9/3d972f9b9eb2fe4a62d88da73e11ada0.jpg",
+      "https://media.rawg.io/media/screenshots/edb/edb417133375624980dd7b877eba4d05.jpg",
+      "https://media.rawg.io/media/screenshots/441/4412fe20f3b3006e05672953628ee926.jpg",
+      "https://media.rawg.io/media/screenshots/9a5/9a5f9dcad96688e6bd9971565748734b.jpg",
+    ],
     description: "A compelling puzzle game released in 2024.",
   },
   {
@@ -786,6 +1250,15 @@ export const games: Game[] = [
     gradient: "from-sky-600 to-teal-500",
     image:
       "https://media.rawg.io/media/games/1fa/1fa542171e580af49fabd094bd232659.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/1fa/1fa542171e580af49fabd094bd232659.jpg",
+      "https://media.rawg.io/media/screenshots/d5b/d5b1a95b909ef05ed14cf5acf59f4963.jpg",
+      "https://media.rawg.io/media/screenshots/d29/d292cf22c86241a19f38e65fa7d1a36d.jpg",
+      "https://media.rawg.io/media/screenshots/5d7/5d725f20ce5212f4f8ec01b2bc0ca8e4.jpg",
+      "https://media.rawg.io/media/screenshots/5f1/5f157052cbfc20fb0dab123392869715.jpg",
+      "https://media.rawg.io/media/screenshots/21e/21e05d1dfbad0085dbf1a094d5ade36c.jpg",
+      "https://media.rawg.io/media/screenshots/ea2/ea23f760e2825f6a1dab466d64e33f09.jpg",
+    ],
     description:
       "Choose your response to a captive princess — and discover nothing is what it seems.",
   },
@@ -798,6 +1271,15 @@ export const games: Game[] = [
     gradient: "from-yellow-500 via-amber-400 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/a92/a92d76ba93b22b7add9b9502fa52d0ce.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/a92/a92d76ba93b22b7add9b9502fa52d0ce.jpg",
+      "https://media.rawg.io/media/screenshots/791/7919ab8034daac28eb435cb34cb5034a.jpg",
+      "https://media.rawg.io/media/screenshots/f84/f84dbed4ab3bb2fafa57f15d3f7843df.jpg",
+      "https://media.rawg.io/media/screenshots/ae4/ae40635428d032a175b3121eb06f22f0.jpg",
+      "https://media.rawg.io/media/screenshots/3e8/3e87206d7886f9c2eb91d075e85971ab.jpg",
+      "https://media.rawg.io/media/screenshots/d1c/d1cb0e6a8eb6e42d11541bef71d3ad8a.jpg",
+      "https://media.rawg.io/media/screenshots/6d8/6d8547614cf2fb6856a3b673ca9815fa.jpg",
+    ],
     description:
       "The world's greatest detective investigates a mysterious fog and a sabotaged party.",
   },
@@ -810,6 +1292,15 @@ export const games: Game[] = [
     gradient: "from-blue-900 to-indigo-500",
     image:
       "https://media.rawg.io/media/screenshots/5ad/5ade5501c6e154c24af4b257128e1c13.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/5ad/5ade5501c6e154c24af4b257128e1c13.jpg",
+      "https://media.rawg.io/media/screenshots/6fa/6fa29d0f9d324c79b2ae8d931b3d6204.jpg",
+      "https://media.rawg.io/media/screenshots/407/40739b8a4a063c040e5f051f2401388e.jpg",
+      "https://media.rawg.io/media/screenshots/310/3108307835aed2bd2a1804971f8e8f62.jpg",
+      "https://media.rawg.io/media/screenshots/e28/e285fd5528afc5ae7ee651f14e6b722b.jpg",
+      "https://media.rawg.io/media/screenshots/eda/eda9d3c1549135373146bc12d9562348.jpg",
+      "https://media.rawg.io/media/screenshots/f2f/f2fbff15fc20e8ccdc66834eb4fc88c1.jpg",
+    ],
     description: "A compelling strategy game released in 2022.",
   },
   {
@@ -821,6 +1312,15 @@ export const games: Game[] = [
     gradient: "from-amber-600 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/461/461540af873745450cdd3d39dfcc695d.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/461/461540af873745450cdd3d39dfcc695d.jpg",
+      "https://media.rawg.io/media/screenshots/d94/d94f0e5254fed11da348ca6867b017ce.jpg",
+      "https://media.rawg.io/media/screenshots/999/9998f57a8f89c2910e12d9a6d1165cd0.jpg",
+      "https://media.rawg.io/media/screenshots/83f/83fa1f820863e9ec208a14bc9f6e49db.jpg",
+      "https://media.rawg.io/media/screenshots/9b9/9b9e07802851f9ab2883e2c10f95b132.jpg",
+      "https://media.rawg.io/media/screenshots/d72/d72077ae14546a5488a11a939ed3b3f3.jpg",
+      "https://media.rawg.io/media/screenshots/c62/c624cb3a41a58bcaaff19b7368ff2eed.jpg",
+    ],
     description: "A compelling puzzle game released in 2022.",
   },
   {
@@ -832,6 +1332,15 @@ export const games: Game[] = [
     gradient: "from-yellow-700 to-amber-400",
     image:
       "https://media.rawg.io/media/games/465/465d819b711ed1251bdaed0759ef185e.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/465/465d819b711ed1251bdaed0759ef185e.jpg",
+      "https://media.rawg.io/media/screenshots/c68/c68bb3f3637c6cc12ea27cd7cc6a28bd.jpg",
+      "https://media.rawg.io/media/screenshots/9ad/9ad89399f937738337d67f45884bba47.jpg",
+      "https://media.rawg.io/media/screenshots/591/591f7af05520635148404e0c6a05ef4c.jpg",
+      "https://media.rawg.io/media/screenshots/b7c/b7ce884dc7b11b363406ed39052d7a6d.jpg",
+      "https://media.rawg.io/media/screenshots/5fd/5fd37b00ca53dc53e5996bd62053d64f.jpg",
+      "https://media.rawg.io/media/screenshots/e9a/e9ab1b847b8c5ba7f764aa36d6a697a7.jpg",
+    ],
     description:
       "Two siblings' imagination runs wild in a wordless animated adventure.",
   },
@@ -844,6 +1353,15 @@ export const games: Game[] = [
     gradient: "from-emerald-600 to-cyan-500",
     image:
       "https://media.rawg.io/media/screenshots/624/624f7fc033c4afbdff09df3aa10866ac.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/624/624f7fc033c4afbdff09df3aa10866ac.jpg",
+      "https://media.rawg.io/media/screenshots/f7c/f7c11624ff17c66b5ed0f76c98998323.jpg",
+      "https://media.rawg.io/media/screenshots/3d4/3d4f0eebba0790838db946b73d748eb9.jpg",
+      "https://media.rawg.io/media/screenshots/b3d/b3d7cff1499815e4a6d55eb52d6ae6e9.jpg",
+      "https://media.rawg.io/media/screenshots/245/245440625ae59a9c87313f840e5985d0.jpg",
+      "https://media.rawg.io/media/screenshots/b66/b66e71edd66f2a577c5804c3cc83d191.jpg",
+      "https://media.rawg.io/media/screenshots/e48/e48c7bbcf89973a6242ce2d739b84022.jpg",
+    ],
     description:
       "Navigate vampire society and moral dilemmas in a gothic narrative RPG.",
   },
@@ -856,6 +1374,14 @@ export const games: Game[] = [
     gradient: "from-orange-600 to-red-500",
     image:
       "https://media.rawg.io/media/games/073/073b560fa5ab283c03e4a9a698d001af.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/073/073b560fa5ab283c03e4a9a698d001af.jpg",
+      "https://media.rawg.io/media/screenshots/8f5/8f596c58c4377a38ff2258d90377b79e.jpg",
+      "https://media.rawg.io/media/screenshots/3d1/3d1d65fe00989cfc85acdbdd62128f4b.jpg",
+      "https://media.rawg.io/media/screenshots/0aa/0aad525c2290c9a092cdbd63272bdb05.jpg",
+      "https://media.rawg.io/media/screenshots/d4c/d4c30d5e701ac3688528a53085e4c058.jpg",
+      "https://media.rawg.io/media/screenshots/93b/93b0108e7a6b096980830cf01b4b2b0b.jpg",
+    ],
     description:
       "Command Three Houses characters in fast-paced musou battles across a branching war.",
   },
@@ -868,6 +1394,15 @@ export const games: Game[] = [
     gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/556/55684bfd048706f4266d331d70050b37.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/556/55684bfd048706f4266d331d70050b37.jpg",
+      "https://media.rawg.io/media/screenshots/51f/51f7928a2630fc4bbb3dac59b8f31448.jpg",
+      "https://media.rawg.io/media/screenshots/104/10431d15726ed2593401cc70e2115a82.jpg",
+      "https://media.rawg.io/media/screenshots/c0d/c0dafd15ec182acab8f5879665eaa642.jpg",
+      "https://media.rawg.io/media/screenshots/725/725dbbf72f15a32f418a42d2e8ac8b25.jpg",
+      "https://media.rawg.io/media/screenshots/c63/c63fda6df2574a7d071f96082438e820.jpg",
+      "https://media.rawg.io/media/screenshots/c92/c92c2acf519b3dc613c0f0085cc34b34.jpg",
+    ],
     description: "A compelling adventure game released in 2023.",
   },
   {
@@ -879,6 +1414,14 @@ export const games: Game[] = [
     gradient: "from-green-600 to-teal-400",
     image:
       "https://media.rawg.io/media/games/153/153e8d78ac19e959214dadefb8c27310.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/153/153e8d78ac19e959214dadefb8c27310.jpg",
+      "https://media.rawg.io/media/screenshots/829/829957d7e23eda85709922650b91daa8.jpg",
+      "https://media.rawg.io/media/screenshots/ea7/ea7c84ddaca220716bac40aa90dd27f3.jpg",
+      "https://media.rawg.io/media/screenshots/76c/76c9bde826ce1180172f5f82d1a7437c.jpg",
+      "https://media.rawg.io/media/screenshots/52f/52fdb83092551e87ffb17303e6dbb52c.jpg",
+      "https://media.rawg.io/media/screenshots/344/34450dcf901ada55cde6aa59a422de23.jpg",
+    ],
     description: "A compelling adventure game released in 2023.",
   },
   {
@@ -890,6 +1433,14 @@ export const games: Game[] = [
     gradient: "from-violet-700 to-blue-600",
     image:
       "https://media.rawg.io/media/games/29a/29a78d7b6be61673c910d588bf188e2c.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/29a/29a78d7b6be61673c910d588bf188e2c.jpg",
+      "https://media.rawg.io/media/screenshots/8b2/8b2e6f8646c226a8624c6b7c7f457550.jpg",
+      "https://media.rawg.io/media/screenshots/baf/bafed94ac0f5c9ea445d57629085fb68.jpg",
+      "https://media.rawg.io/media/screenshots/be6/be6619c2a6371df944892274a12cb82c.jpg",
+      "https://media.rawg.io/media/screenshots/1ef/1efe8366b01627b8392f3b5f4ae57eab.jpg",
+      "https://media.rawg.io/media/screenshots/819/8190e350e79551705a1bd881b6c36ecb.jpg",
+    ],
     description:
       "Command the Specialized Extracurricular Execution Squad in a fully remade Persona classic.",
   },
@@ -902,6 +1453,11 @@ export const games: Game[] = [
     gradient: "from-orange-600 to-yellow-500",
     image:
       "https://media.rawg.io/media/games/c4e/c4e3ad247e93d3a5dc40aa215a778a9c.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/c4e/c4e3ad247e93d3a5dc40aa215a778a9c.jpg",
+      "https://media.rawg.io/media/screenshots/c45/c45a2a5e4290c13ddefe015f3d46b19a.jpg",
+      "https://media.rawg.io/media/screenshots/e6f/e6fccc52fe023c0c216dd56413faa19d.jpg",
+    ],
     description: "A compelling puzzle game released in 2022.",
   },
   {
@@ -913,6 +1469,15 @@ export const games: Game[] = [
     gradient: "from-blue-700 via-indigo-600 to-violet-500",
     image:
       "https://media.rawg.io/media/games/edf/edf3bd3ffa486f5d6a84bda020765839.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/edf/edf3bd3ffa486f5d6a84bda020765839.jpg",
+      "https://media.rawg.io/media/screenshots/70c/70cbe2dc0b134104e88bd31d98ac4bbb.jpg",
+      "https://media.rawg.io/media/screenshots/d8b/d8b1e07e2bd96a3ea0b53f33b42b26fd.jpg",
+      "https://media.rawg.io/media/screenshots/039/0398115d191e93365e0365ab0634e081.jpg",
+      "https://media.rawg.io/media/screenshots/f91/f9113da56f020e83a1f97fc57856a2f5.jpg",
+      "https://media.rawg.io/media/screenshots/220/220afc7e4f6d9c0efbc06de351a8ff0d.jpg",
+      "https://media.rawg.io/media/screenshots/64f/64fd7baa23071741602bee8f928e43ba.jpg",
+    ],
     description:
       "Command a mighty rogue trader dynasty across the grim darkness of the far future.",
   },
@@ -925,6 +1490,9 @@ export const games: Game[] = [
     gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/b19/b19cdd6be95ffffd63fdd2d1fbac057a.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/b19/b19cdd6be95ffffd63fdd2d1fbac057a.jpg",
+    ],
     description:
       "A joyful 3D platformer celebrating PlayStation history through inspired worlds and characters.",
   },
@@ -937,6 +1505,15 @@ export const games: Game[] = [
     gradient: "from-rose-700 to-red-400",
     image:
       "https://media.rawg.io/media/games/f2f/f2f9f11997ee841550ba2b8ccf3c51e9.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/f2f/f2f9f11997ee841550ba2b8ccf3c51e9.jpg",
+      "https://media.rawg.io/media/screenshots/dd5/dd5a7731f6ebd4587b4d72dee859c19c.jpg",
+      "https://media.rawg.io/media/screenshots/314/31477e1cbaa10f6adda65eff7fed74da.jpg",
+      "https://media.rawg.io/media/screenshots/72e/72e119bc318e08e0b1bdbda4fbc6f801.jpg",
+      "https://media.rawg.io/media/screenshots/f5d/f5dcea6b39338a07549fda89deb49e47.jpg",
+      "https://media.rawg.io/media/screenshots/c11/c117dcc8231d31c4a11db8261a61aa18.jpg",
+      "https://media.rawg.io/media/screenshots/dc7/dc7c3ae2081cca749ad7b086c0ea9225.jpg",
+    ],
     description:
       "Samus Aran's iconic first-person adventure through an alien planet, gorgeously rebuilt.",
   },
@@ -949,6 +1526,15 @@ export const games: Game[] = [
     gradient: "from-sky-700 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/5e9/5e9ce1121cbc4f30cb54cec20820df04.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/5e9/5e9ce1121cbc4f30cb54cec20820df04.jpg",
+      "https://media.rawg.io/media/screenshots/fcc/fccc7dfa436c62ddb5517a6bc496bce5.jpg",
+      "https://media.rawg.io/media/screenshots/9c8/9c8b6ed7ed648fd3ca25a4594d0741b5.jpg",
+      "https://media.rawg.io/media/screenshots/a81/a818142217d593820384cae112c53064.jpg",
+      "https://media.rawg.io/media/screenshots/ca4/ca494759be5c1c4a3b177f7200a89ba9.jpg",
+      "https://media.rawg.io/media/screenshots/5bd/5bdfe10ca60df92cbfc85a2d494aece3.jpg",
+      "https://media.rawg.io/media/screenshots/bf6/bf6562808f75118ed144c899c9e06064.jpg",
+    ],
     description:
       "Decipher ancient languages to bridge civilisations in a Tower of Babel mystery.",
   },
@@ -961,6 +1547,15 @@ export const games: Game[] = [
     gradient: "from-slate-700 to-blue-600",
     image:
       "https://media.rawg.io/media/screenshots/7a2/7a23a81875145336576e24b682d3ede7.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/7a2/7a23a81875145336576e24b682d3ede7.jpg",
+      "https://media.rawg.io/media/screenshots/ad9/ad9201c4a0105eb9ae82189d6ff9acd0.jpg",
+      "https://media.rawg.io/media/screenshots/6f2/6f25135e416b6d3dbb45977347f247b4.jpg",
+      "https://media.rawg.io/media/screenshots/c07/c074c141f5164605b84e2a45cb5822d9.jpg",
+      "https://media.rawg.io/media/screenshots/2a4/2a434144cf8bd9a8600e5cfc776de48f.jpg",
+      "https://media.rawg.io/media/screenshots/461/46189ff0373fa935f2bcdb2b77fa8dad.jpg",
+      "https://media.rawg.io/media/screenshots/7d1/7d14be9ee36ab9d1e67fbea0795ae602.jpg",
+    ],
     description: "A compelling strategy game released in 2023.",
   },
   {
@@ -972,6 +1567,15 @@ export const games: Game[] = [
     gradient: "from-cyan-700 to-sky-500",
     image:
       "https://media.rawg.io/media/games/7ae/7ae5a14cdb4ab222a134c15f4629e430.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/7ae/7ae5a14cdb4ab222a134c15f4629e430.jpg",
+      "https://media.rawg.io/media/screenshots/89b/89b077deb2a3ce38e071fdb5caae69c0.jpg",
+      "https://media.rawg.io/media/screenshots/c71/c718076de2326247d29ea5ed32e67c6c.jpg",
+      "https://media.rawg.io/media/screenshots/74e/74e29808dd23446aae1ab61bb5a429fc.jpg",
+      "https://media.rawg.io/media/screenshots/ea0/ea082dba5c51799204e0c5e55134ecc3.jpg",
+      "https://media.rawg.io/media/screenshots/7d1/7d112ad515211a01639d22eef5093c47.jpg",
+      "https://media.rawg.io/media/screenshots/6ff/6ff530af3788338486569ce723d503bd.jpg",
+    ],
     description:
       "Peter and Miles face Venom in a breathtaking dual-protagonist New York adventure.",
   },
@@ -984,6 +1588,15 @@ export const games: Game[] = [
     gradient: "from-teal-700 to-green-500",
     image:
       "https://media.rawg.io/media/games/480/480295ba922318bb052d169174ec88aa.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/480/480295ba922318bb052d169174ec88aa.jpg",
+      "https://media.rawg.io/media/screenshots/1ba/1ba77befb152970f5b21546aa1aef370.jpg",
+      "https://media.rawg.io/media/screenshots/dde/dde918a415dc05de5335f707723e6f08.jpg",
+      "https://media.rawg.io/media/screenshots/11f/11f517b83221d481fac6f98cf3366677.jpg",
+      "https://media.rawg.io/media/screenshots/298/29887c49ca3032ad6c21c43ff7e875e0.jpg",
+      "https://media.rawg.io/media/screenshots/0a3/0a337262e0cc880a5222cafa9128c6bd.jpg",
+      "https://media.rawg.io/media/screenshots/81d/81d38f9d4f011debb22d25d4b8497960.jpg",
+    ],
     description:
       "A haunting sci-fi survival horror told through fragmented dreams and encrypted signals.",
   },
@@ -996,6 +1609,15 @@ export const games: Game[] = [
     gradient: "from-sky-600 to-teal-500",
     image:
       "https://media.rawg.io/media/games/d00/d0088d5ffce4e167241b65eb18a28cb4.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/d00/d0088d5ffce4e167241b65eb18a28cb4.jpg",
+      "https://media.rawg.io/media/screenshots/c6e/c6e80508286fc81756dd8cd31dbd3379.jpg",
+      "https://media.rawg.io/media/screenshots/dda/dda35c7a483c602ce253ef67703be016.jpg",
+      "https://media.rawg.io/media/screenshots/9f1/9f1b7b864411476b7b26cc62b34da35d.jpg",
+      "https://media.rawg.io/media/screenshots/7e8/7e8572f3b48dd08dc1c9f9667410dcaf.jpg",
+      "https://media.rawg.io/media/screenshots/2ad/2adc2e9ab98d2555a4282c0fb89f4a3c.jpg",
+      "https://media.rawg.io/media/screenshots/21a/21a336614c2a77a5cb063387f58e1af7.jpg",
+    ],
     description:
       "A dead detective manipulates objects to prevent murders in this witty puzzle adventure.",
   },
@@ -1008,6 +1630,15 @@ export const games: Game[] = [
     gradient: "from-emerald-600 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/8fd/8fd2e8317849fd265ad8781c324d4ec2.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/8fd/8fd2e8317849fd265ad8781c324d4ec2.jpg",
+      "https://media.rawg.io/media/screenshots/59e/59e9ba1215b11e43ad64f363bfb7f65b.jpg",
+      "https://media.rawg.io/media/screenshots/e93/e93aa58a1bf6f628507121a206ef856d.jpg",
+      "https://media.rawg.io/media/screenshots/f2a/f2ad5b935bec0757defcbd1245182971.jpg",
+      "https://media.rawg.io/media/screenshots/12d/12d0e3888fde20cb974e2951fad3d4f6.jpg",
+      "https://media.rawg.io/media/screenshots/971/971f056ee50927f331f880271b0ab414.jpg",
+      "https://media.rawg.io/media/screenshots/565/565801fac627e1d6828fe56ea172d5ff.jpg",
+    ],
     badge: "Editor's Pick",
     description:
       "The witch Melinoë wages war on Chronos in a bigger, deeper roguelike sequel.",
@@ -1021,6 +1652,15 @@ export const games: Game[] = [
     gradient: "from-orange-700 to-amber-400",
     image:
       "https://media.rawg.io/media/games/cee/cee02d983e2e1e457caa562420f532fb.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/cee/cee02d983e2e1e457caa562420f532fb.jpg",
+      "https://media.rawg.io/media/screenshots/466/4667e5767784f82f1ef4350b016b04b3.jpg",
+      "https://media.rawg.io/media/screenshots/3f0/3f0f888930401c88053d0ec43e14a8fb.jpg",
+      "https://media.rawg.io/media/screenshots/57d/57dc26114d04ef76025fd6c2017406ac.jpg",
+      "https://media.rawg.io/media/screenshots/213/213010373916a45102068611d9fb15c6.jpg",
+      "https://media.rawg.io/media/screenshots/acd/acd9198b085e1caec3d79cc8d0dd6ccc.jpg",
+      "https://media.rawg.io/media/screenshots/9d1/9d165bb2dc0caa71a995172a69f109aa.jpg",
+    ],
     description:
       "A Taoistic sci-fi Metroidvania where precision parries define every encounter.",
   },
@@ -1033,6 +1673,15 @@ export const games: Game[] = [
     gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg",
+      "https://media.rawg.io/media/screenshots/319/31931839e14e813b3fb46c92aebd4ee5.jpg",
+      "https://media.rawg.io/media/screenshots/611/6117e095de93147d33a32584d1eecf64.jpg",
+      "https://media.rawg.io/media/screenshots/f28/f28d087ea237d04b0f511232746b33fd.jpeg",
+      "https://media.rawg.io/media/screenshots/d0e/d0e7f268e80e05242ec48e276110e1aa.jpeg",
+      "https://media.rawg.io/media/screenshots/e83/e83bce3afbefd7058957d980b84bd1c0.jpeg",
+      "https://media.rawg.io/media/screenshots/4ba/4ba1eff24d2ca57b08f6e510c8286918.jpeg",
+    ],
     description:
       "Side-scrolling madness unleashed through Wonder Flowers that warp reality mid-level.",
   },
@@ -1045,6 +1694,15 @@ export const games: Game[] = [
     gradient: "from-gray-700 to-green-600",
     image:
       "https://media.rawg.io/media/games/360/360ac0a839ab0f0d9a70b35d38264cb0.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/360/360ac0a839ab0f0d9a70b35d38264cb0.jpg",
+      "https://media.rawg.io/media/screenshots/52a/52ab56f49dacec085803b93e20cde2d8.jpg",
+      "https://media.rawg.io/media/screenshots/4ef/4ef5d976b974873c574126ed3e081f99.jpg",
+      "https://media.rawg.io/media/screenshots/3eb/3eb910c77a5597197276f3ea541916d2.jpg",
+      "https://media.rawg.io/media/screenshots/3ea/3eadccae65f82027a0e0ddc1f4ea5d52.jpg",
+      "https://media.rawg.io/media/screenshots/ea6/ea669a514a8fdd905b5d67384561014b.jpg",
+      "https://media.rawg.io/media/screenshots/441/44158afb4810a7141760dc3b03d143ba.jpg",
+    ],
     description:
       "Ink the turf, splat opponents, and customise your squid kid in the latest Splatoon.",
   },
@@ -1057,6 +1715,12 @@ export const games: Game[] = [
     gradient: "from-violet-800 to-purple-500",
     image:
       "https://media.rawg.io/media/games/f0a/f0ac99c638c25a5975cd74919564bda5.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/f0a/f0ac99c638c25a5975cd74919564bda5.jpg",
+      "https://media.rawg.io/media/screenshots/a18/a184248c506dee8c2927bd78966b1190.jpg",
+      "https://media.rawg.io/media/screenshots/b71/b71fba569c141095ce35f81c9b449011.jpg",
+      "https://media.rawg.io/media/screenshots/bd4/bd4ae45c86104d44bf4753bcb848be1f.jpg",
+    ],
     description:
       "The crossbell detective arc begins in this beloved JRPG now playable in English.",
   },
@@ -1069,6 +1733,14 @@ export const games: Game[] = [
     gradient: "from-amber-500 via-yellow-400 to-lime-400",
     image:
       "https://media.rawg.io/media/games/b2d/b2d4e1f3fc468c104efb7c5a576b4206.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/b2d/b2d4e1f3fc468c104efb7c5a576b4206.jpg",
+      "https://media.rawg.io/media/screenshots/7d8/7d8acd844be0eadb9eb3d692241ca77f.jpg",
+      "https://media.rawg.io/media/screenshots/e60/e60463c375578236821572375d01c4e5.jpg",
+      "https://media.rawg.io/media/screenshots/79d/79df0ce8f464bee23a0808b38434c230.jpg",
+      "https://media.rawg.io/media/screenshots/dbc/dbc18dce388e1270a7e337a4c357d026.jpg",
+      "https://media.rawg.io/media/screenshots/f79/f799ad9397f18cfd2f9df08c9db76db3.jpg",
+    ],
     description:
       "Solve elaborate puzzles across a gothic castle through pure co-op communication.",
   },
@@ -1081,6 +1753,15 @@ export const games: Game[] = [
     gradient: "from-green-600 to-teal-400",
     image:
       "https://media.rawg.io/media/games/18f/18fba094d4ba0dda019131ea9b585446.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/18f/18fba094d4ba0dda019131ea9b585446.jpg",
+      "https://media.rawg.io/media/screenshots/eda/eda60996530ac10e728ebb894c2b4406.jpg",
+      "https://media.rawg.io/media/screenshots/4a9/4a98d51ad9c428e397954b03412d3433.jpg",
+      "https://media.rawg.io/media/screenshots/69e/69eda1518342731fcd78a233286fc3d0.jpg",
+      "https://media.rawg.io/media/screenshots/cb3/cb3387455661a68409fab79770877551.jpg",
+      "https://media.rawg.io/media/screenshots/740/740ac3f6e840a3294dabecafdcfc5662.jpg",
+      "https://media.rawg.io/media/screenshots/9a8/9a83e62ec33dd43a6bd9d41552d208bf.jpg",
+    ],
     description:
       "Manage alternate versions of yourself to survive a dying alien world.",
   },
@@ -1093,6 +1774,14 @@ export const games: Game[] = [
     gradient: "from-teal-800 to-emerald-500",
     image:
       "https://media.rawg.io/media/games/a12/a120fc7faed7666f8c320a755137e316.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/a12/a120fc7faed7666f8c320a755137e316.jpg",
+      "https://media.rawg.io/media/screenshots/d80/d80f355d433a4c3e65c03f895cce13fb.jpg",
+      "https://media.rawg.io/media/screenshots/a7f/a7f382410a233f33878f8ba889507424.jpg",
+      "https://media.rawg.io/media/screenshots/e4e/e4e6e0e28de770d8a7741848772a5bc7.jpg",
+      "https://media.rawg.io/media/screenshots/64b/64bd9f163c7e793c79f1df68bccab021.jpg",
+      "https://media.rawg.io/media/screenshots/9af/9af75d8e658125b90f9cf3d96d434ae5.jpg",
+    ],
     description:
       "Sprint, slay demons, and shave milliseconds off your best time in this card-shooter hybrid.",
   },
@@ -1105,6 +1794,15 @@ export const games: Game[] = [
     gradient: "from-indigo-800 to-blue-500",
     image:
       "https://media.rawg.io/media/screenshots/e4d/e4d2d9720f0962ca4f6a6dd02cef331e.jpeg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/e4d/e4d2d9720f0962ca4f6a6dd02cef331e.jpeg",
+      "https://media.rawg.io/media/screenshots/8a8/8a886e7c0291de9c8ed8c63224013342.jpeg",
+      "https://media.rawg.io/media/screenshots/a05/a053a8022c0e4f70f6c9ac93bcd16d5b.jpeg",
+      "https://media.rawg.io/media/screenshots/58a/58af778cfacb2e7b933027f16bee8e63.jpeg",
+      "https://media.rawg.io/media/screenshots/741/74133e03d3d4f9f26e406a0360363a1c.jpeg",
+      "https://media.rawg.io/media/screenshots/c70/c706916cf1e6a106d26cc8a74ce39b54.jpeg",
+      "https://media.rawg.io/media/screenshots/c27/c2764e10b3757383fc1503bd88f41c83.jpeg",
+    ],
     description:
       "Lead a liberation army across a beautifully illustrated fantasy world.",
   },
@@ -1117,6 +1815,15 @@ export const games: Game[] = [
     gradient: "from-red-800 to-orange-600",
     image:
       "https://media.rawg.io/media/games/018/01897340a06b9ed8e92ed1cc1b1eecb9.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/018/01897340a06b9ed8e92ed1cc1b1eecb9.jpg",
+      "https://media.rawg.io/media/screenshots/8f1/8f19f2c0d824633e97bfe32117a8cdd1.jpg",
+      "https://media.rawg.io/media/screenshots/5b4/5b47eb35a77ed3dbdc0f7854268666a7.jpg",
+      "https://media.rawg.io/media/screenshots/a50/a500d5b322fab4bc1ae9f134a1fcba8f.jpg",
+      "https://media.rawg.io/media/screenshots/494/4941d68bbf3c57444deb99383a6de51a.jpg",
+      "https://media.rawg.io/media/screenshots/051/05130fce78273b4c4bae87b74d1994ec.jpg",
+      "https://media.rawg.io/media/screenshots/6bb/6bb96822b69428fd474ad54da6dfbefa.jpg",
+    ],
     description:
       "Rip and tear through medieval citadels as a primal armoured Doom Slayer.",
   },
@@ -1129,6 +1836,15 @@ export const games: Game[] = [
     gradient: "from-sky-700 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/b85/b85bc300d42588af66fb516b7563f74f.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/b85/b85bc300d42588af66fb516b7563f74f.jpg",
+      "https://media.rawg.io/media/screenshots/7a9/7a97a649fde5f258651ae5e69abf0ed0.jpg",
+      "https://media.rawg.io/media/screenshots/372/372b0916c1ce240a4406373c120abd8f.jpg",
+      "https://media.rawg.io/media/screenshots/9c4/9c4d0e73de232433f8b977c39ca65d45.jpg",
+      "https://media.rawg.io/media/screenshots/a25/a25a14bc153866bd1dc9f776426c7b5b.jpg",
+      "https://media.rawg.io/media/screenshots/8a8/8a87fa3c9a671416715d9ba29789cd7f.jpg",
+      "https://media.rawg.io/media/screenshots/901/901efd17e514cede763eeb9837a80614.jpg",
+    ],
     description: "A compelling adventure game released in 2025.",
   },
   {
@@ -1140,6 +1856,15 @@ export const games: Game[] = [
     gradient: "from-cyan-700 to-sky-500",
     image:
       "https://media.rawg.io/media/games/4e4/4e42fc297c028630262a4abcc7769576.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/4e4/4e42fc297c028630262a4abcc7769576.jpg",
+      "https://media.rawg.io/media/screenshots/c1d/c1d9ec44b9a8b81633c6923cf663e157.jpg",
+      "https://media.rawg.io/media/screenshots/166/1664da118853afa957f984866be8561f.jpg",
+      "https://media.rawg.io/media/screenshots/8e9/8e94169ee4479449d753be728151ca75.jpg",
+      "https://media.rawg.io/media/screenshots/9b9/9b9692d1b8bb1e0abc89a7d442325253.jpg",
+      "https://media.rawg.io/media/screenshots/e6f/e6f520e663649b31257b11f68212e092.jpg",
+      "https://media.rawg.io/media/screenshots/39d/39d3a158501f55f44182a39c610697ae.jpg",
+    ],
     description: "A compelling adventure game released in 2023.",
   },
   {
@@ -1151,6 +1876,12 @@ export const games: Game[] = [
     gradient: "from-teal-700 to-green-500",
     image:
       "https://media.rawg.io/media/games/ea6/ea6a1382b15d749e15fdfbf0aece7689.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/ea6/ea6a1382b15d749e15fdfbf0aece7689.jpg",
+      "https://media.rawg.io/media/screenshots/16b/16b2cb24c12e995b8842c6c1542e3aa1.jpg",
+      "https://media.rawg.io/media/screenshots/ac9/ac93d0f12fe3681dc37becad9885ef5e.jpg",
+      "https://media.rawg.io/media/screenshots/217/217828b40ae05d789a1bcd9fdb7bd9fa.jpg",
+    ],
     description: "A compelling adventure game released in 2023.",
   },
   {
@@ -1162,6 +1893,14 @@ export const games: Game[] = [
     gradient: "from-sky-600 to-teal-500",
     image:
       "https://media.rawg.io/media/games/5eb/5eb783656623aa13d6fc65e470dd5dba.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/5eb/5eb783656623aa13d6fc65e470dd5dba.jpg",
+      "https://media.rawg.io/media/screenshots/7de/7deaff1818f5ae1d6ecb72f35a8ec2c1.jpg",
+      "https://media.rawg.io/media/screenshots/bc1/bc12059ecdcb9709f4bc4b35b5c18856_FSPEIVC.jpg",
+      "https://media.rawg.io/media/screenshots/f89/f899364f64e83da38f552e3fea16b125_6Wh2aAv.jpg",
+      "https://media.rawg.io/media/screenshots/8d9/8d944744ce9fc7d307a008de166ae051.jpg",
+      "https://media.rawg.io/media/screenshots/4f5/4f53dea6cdd1b50ff5dd035ffcb04a57.jpg",
+    ],
     description: "A compelling adventure game released in 2024.",
   },
   {
@@ -1173,6 +1912,15 @@ export const games: Game[] = [
     gradient: "from-rose-600 via-red-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/5b9/5b963d7633cd640fa2dbc4069d1c6377.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/5b9/5b963d7633cd640fa2dbc4069d1c6377.jpg",
+      "https://media.rawg.io/media/screenshots/6b8/6b8fe21f070edc4c9184062f9dc714e3.jpg",
+      "https://media.rawg.io/media/screenshots/cae/caefb537267fb10f3fe0413f16c733ed.jpg",
+      "https://media.rawg.io/media/screenshots/3e0/3e08d7746359b512714b510a1ee30163_WTYwMbp.jpg",
+      "https://media.rawg.io/media/screenshots/24c/24ce827e6ddae7317ced5e2d98e11d5e.jpg",
+      "https://media.rawg.io/media/screenshots/df2/df20dab4bfbfd611aa496116cca810bc.jpg",
+      "https://media.rawg.io/media/screenshots/1eb/1eb720bb7d9eea3f352fbf881666aaeb.jpg",
+    ],
     description:
       "A writer trapped in a dark story must rewrite reality to escape a nightmare.",
   },
@@ -1185,6 +1933,14 @@ export const games: Game[] = [
     gradient: "from-yellow-500 via-amber-400 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/5cc/5cc0fe59150a7d40b476c16115fc30e1.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/5cc/5cc0fe59150a7d40b476c16115fc30e1.jpg",
+      "https://media.rawg.io/media/screenshots/795/795993853c3ef2f16f0148208c9b1c82.jpg",
+      "https://media.rawg.io/media/screenshots/b2c/b2cd0a84ed43e4f0babccdfea41a387d.jpg",
+      "https://media.rawg.io/media/screenshots/7db/7db483cd200418f88b934203c189a628.jpg",
+      "https://media.rawg.io/media/screenshots/6fb/6fb94b6852ddd037a4e7bb3c9b7c7579.jpg",
+      "https://media.rawg.io/media/screenshots/5cc/5cc0fe59150a7d40b476c16115fc30e1.jpg",
+    ],
     description: "A compelling puzzle game released in 2022.",
   },
   {
@@ -1196,6 +1952,15 @@ export const games: Game[] = [
     gradient: "from-orange-600 to-red-500",
     image:
       "https://media.rawg.io/media/screenshots/880/880bec24bf308de14746c9966e09d719.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/880/880bec24bf308de14746c9966e09d719.jpg",
+      "https://media.rawg.io/media/screenshots/c84/c842dbb0dcd7e2689ca2f587ef28f99f.jpg",
+      "https://media.rawg.io/media/screenshots/803/803e27956c7eedeab3277da5d7cbce3a.jpg",
+      "https://media.rawg.io/media/screenshots/ef2/ef2b954dbf7f9c7bdf1083ed11489519.jpg",
+      "https://media.rawg.io/media/screenshots/a53/a5330b449da8ea86530e58ff05761b23.jpg",
+      "https://media.rawg.io/media/screenshots/739/739932ef227bbfc308e520af26cef77a.jpg",
+      "https://media.rawg.io/media/screenshots/35a/35a316f71d0f8892691427f5809d96e3.jpg",
+    ],
     badge: "New",
     description:
       "Bond with monstie companions and unravel a mystery reshaping the monster world.",
@@ -1209,6 +1974,15 @@ export const games: Game[] = [
     gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/798/798705b4f25e958e4ab8edf570e215f8.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/798/798705b4f25e958e4ab8edf570e215f8.jpg",
+      "https://media.rawg.io/media/screenshots/592/592546d38aa4b289309d9d506c2c59e4.jpg",
+      "https://media.rawg.io/media/screenshots/f5d/f5dcf68bf10a1035375c362858c0195b.jpg",
+      "https://media.rawg.io/media/screenshots/763/7635d82eaea7ad22e30d07952befabe9.jpg",
+      "https://media.rawg.io/media/screenshots/488/48882fc47c6393a60c6f4441969f05b9.jpg",
+      "https://media.rawg.io/media/screenshots/7bb/7bb0f128f5608cf772d19a336490d6d7.jpg",
+      "https://media.rawg.io/media/screenshots/ea7/ea77ee754498a243179669b3579ea021.jpg",
+    ],
     description: "A compelling action game released in 2025.",
   },
   {
@@ -1220,6 +1994,15 @@ export const games: Game[] = [
     gradient: "from-emerald-600 to-cyan-500",
     image:
       "https://media.rawg.io/media/screenshots/840/84070ec840c2209ebbed054efd82eb13.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/840/84070ec840c2209ebbed054efd82eb13.jpg",
+      "https://media.rawg.io/media/screenshots/aeb/aebfb82e4ac06e6f627c0bda8dcb778b.jpg",
+      "https://media.rawg.io/media/screenshots/f3e/f3e794992a8149920845d220d3dbfe7b.jpg",
+      "https://media.rawg.io/media/screenshots/021/0217768c10b993609c73a4c81f5fe742.jpg",
+      "https://media.rawg.io/media/screenshots/aa4/aa4d1999a9ddd099a3bc7c93c3241bfd.jpg",
+      "https://media.rawg.io/media/screenshots/20a/20a42adb974547e92fc9ada9b77d2850.jpg",
+      "https://media.rawg.io/media/screenshots/59b/59b46229187e62b6fbde0cb357d517fd.jpg",
+    ],
     description:
       "Solve puzzles by recording your own hands as looping robot helpers.",
   },
@@ -1232,6 +2015,14 @@ export const games: Game[] = [
     gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/55b/55bda84104dd31bcd7477f234b573594.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/55b/55bda84104dd31bcd7477f234b573594.jpg",
+      "https://media.rawg.io/media/screenshots/22c/22cc7f535f6d892005fac122f3a40278.jpg",
+      "https://media.rawg.io/media/screenshots/3b4/3b423a761de8cb95aba2a9e5e1b1d5cd.jpg",
+      "https://media.rawg.io/media/screenshots/12f/12f423902d2f7ca4e11ad5174b501128.jpg",
+      "https://media.rawg.io/media/screenshots/f0e/f0e5ca1ac9941aad31411468c6227c6d.jpg",
+      "https://media.rawg.io/media/screenshots/55b/55bda84104dd31bcd7477f234b573594.jpg",
+    ],
     description: "A compelling adventure game released in 2023.",
   },
   {
@@ -1243,6 +2034,9 @@ export const games: Game[] = [
     gradient: "from-green-600 to-teal-400",
     image:
       "https://media.rawg.io/media/games/ef0/ef095574ebf35dbe30cbb85f3798b4e5.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/ef0/ef095574ebf35dbe30cbb85f3798b4e5.jpg",
+    ],
     description:
       "Zelda copies objects and enemies as Echoes to puzzle her way through a rift-torn Hyrule.",
   },
@@ -1255,6 +2049,14 @@ export const games: Game[] = [
     gradient: "from-sky-700 to-cyan-500",
     image:
       "https://media.rawg.io/media/screenshots/159/159ef6e50522aaf27650cc418a1bf411.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/159/159ef6e50522aaf27650cc418a1bf411.jpg",
+      "https://media.rawg.io/media/screenshots/da4/da464c61e70ca39d39b1710e59222be5.jpg",
+      "https://media.rawg.io/media/screenshots/2a0/2a05ba5c5f8b9853b847bf7595161b3e.jpg",
+      "https://media.rawg.io/media/screenshots/b94/b94083aaf6194e251a1c0a2bacd649c1.jpg",
+      "https://media.rawg.io/media/screenshots/e5a/e5a3c757cbc201d0616666bacbc4183a.jpg",
+      "https://media.rawg.io/media/screenshots/159/159ef6e50522aaf27650cc418a1bf411.jpg",
+    ],
     description: "A compelling adventure game released in 2024.",
   },
   {
@@ -1266,6 +2068,12 @@ export const games: Game[] = [
     gradient: "from-cyan-700 to-sky-500",
     image:
       "https://media.rawg.io/media/screenshots/7ab/7ab4d3a9c687a4245b37343e381777b5.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/7ab/7ab4d3a9c687a4245b37343e381777b5.jpg",
+      "https://media.rawg.io/media/screenshots/1fc/1fc205348dd5ac9bb865465ce1d8f9dd.jpg",
+      "https://media.rawg.io/media/screenshots/8af/8af72ad48469dcb39e968dce18c1c25f.jpg",
+      "https://media.rawg.io/media/screenshots/7ab/7ab4d3a9c687a4245b37343e381777b5.jpg",
+    ],
     description:
       "Escape the toy factory and survive Huggy Wuggy in this creepy 2D horror.",
   },
@@ -1278,6 +2086,15 @@ export const games: Game[] = [
     gradient: "from-blue-900 to-indigo-500",
     image:
       "https://media.rawg.io/media/screenshots/2dc/2dca6588235a31df977f69b273848641.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/2dc/2dca6588235a31df977f69b273848641.jpg",
+      "https://media.rawg.io/media/screenshots/74a/74ae2cf7566127af97838c31f325e6ce.jpg",
+      "https://media.rawg.io/media/screenshots/b6c/b6cbd22d3e6aaccf4ac9c3a67678c232.jpg",
+      "https://media.rawg.io/media/screenshots/831/831eac627821144974ec2246c5d14506.jpg",
+      "https://media.rawg.io/media/screenshots/abf/abfa049a38d5ab38c403dd76d2d933ca.jpg",
+      "https://media.rawg.io/media/screenshots/857/857eec2bf4b51953521706308bcb5c3f.jpg",
+      "https://media.rawg.io/media/screenshots/815/8157b5ae3544a702dfb440fec9379ae3.jpg",
+    ],
     description: "A compelling strategy game released in 2024.",
   },
   {
@@ -1289,6 +2106,15 @@ export const games: Game[] = [
     gradient: "from-teal-700 to-green-500",
     image:
       "https://media.rawg.io/media/screenshots/797/797fc5d525fd1ec461268f43aad06dfd.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/797/797fc5d525fd1ec461268f43aad06dfd.jpg",
+      "https://media.rawg.io/media/screenshots/a6b/a6bf8c1476e9e5bd2660679c9fb64e4a.jpg",
+      "https://media.rawg.io/media/screenshots/a1c/a1c4f76c07409649474283059e439280.jpg",
+      "https://media.rawg.io/media/screenshots/f35/f35a234b92ffe951c4eb7fa2b86303db.jpg",
+      "https://media.rawg.io/media/screenshots/3a8/3a856cc6aafbe5cb17953ac3304650a7.jpg",
+      "https://media.rawg.io/media/screenshots/08b/08bf0372deb73a616c588df6ca1b98d2.jpg",
+      "https://media.rawg.io/media/screenshots/2f1/2f1f0043c3b5aad20c94d47672a90016.jpg",
+    ],
     description:
       "Sonic's greatest hits remixed, plus Shadow's gripping standalone origin campaign.",
   },
@@ -1301,6 +2127,15 @@ export const games: Game[] = [
     gradient: "from-amber-600 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/72d/72d5532d7533c105b9900cca2e23f773.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/72d/72d5532d7533c105b9900cca2e23f773.jpg",
+      "https://media.rawg.io/media/screenshots/d3a/d3a3a1b930e48973d037519eadd2a208.jpg",
+      "https://media.rawg.io/media/screenshots/ac0/ac0d67dc097d49b37d2c997e643fe17d.jpg",
+      "https://media.rawg.io/media/screenshots/656/6560d8e4170e4529fdccbd4993fca540.jpg",
+      "https://media.rawg.io/media/screenshots/432/432a0183f7a9497585c0a5485bd289cd.jpg",
+      "https://media.rawg.io/media/screenshots/91f/91f9440855fbdd51a1bf52271224db77.jpg",
+      "https://media.rawg.io/media/screenshots/f00/f00854f141aa969abef379d740ef3ff3.jpg",
+    ],
     description: "A compelling puzzle game released in 2023.",
   },
   {
@@ -1312,6 +2147,14 @@ export const games: Game[] = [
     gradient: "from-rose-700 to-red-400",
     image:
       "https://media.rawg.io/media/games/3f4/3f47e8c4e97f884f032b686021530478.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/3f4/3f47e8c4e97f884f032b686021530478.jpg",
+      "https://media.rawg.io/media/screenshots/b49/b497b8e981eb23bb2908f5467812e238.jpg",
+      "https://media.rawg.io/media/screenshots/a5f/a5f2aa5bdb748c7eb7f87c441232505f.jpg",
+      "https://media.rawg.io/media/screenshots/ba5/ba5288598aa8c9dfabe8e682c8baed5e.jpg",
+      "https://media.rawg.io/media/screenshots/1bc/1bc61ef22310067ca4adf0ba0d708ca9.jpg",
+      "https://media.rawg.io/media/screenshots/36d/36d195e2b13f280b8efb3f6ee53448d3.jpg",
+    ],
     description:
       "Kong's legendary platformer adventure returns in crisp high-definition.",
   },
@@ -1324,6 +2167,15 @@ export const games: Game[] = [
     gradient: "from-orange-700 to-amber-400",
     image:
       "https://media.rawg.io/media/games/8fd/8fddf3eec9b26d7d40965d57da53cce0.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/8fd/8fddf3eec9b26d7d40965d57da53cce0.jpg",
+      "https://media.rawg.io/media/screenshots/c21/c213369fd9cdf8d655a408114f3521d4.jpg",
+      "https://media.rawg.io/media/screenshots/13b/13b00e75e0fca7bd7645554a700cf8c2.jpg",
+      "https://media.rawg.io/media/screenshots/49a/49a83e606d01782ade047b6b4ee3236e.jpg",
+      "https://media.rawg.io/media/screenshots/c7d/c7d90d8117dce79c7409d485ac021dd1.jpg",
+      "https://media.rawg.io/media/screenshots/2a2/2a208babc05d1be733872dbe22171abe.jpg",
+      "https://media.rawg.io/media/screenshots/ce8/ce8083228a726b436b36b794e801015b.jpg",
+    ],
     description:
       "A retired soldier grapples across a neon megacity to unravel a corporate conspiracy.",
   },
@@ -1336,6 +2188,15 @@ export const games: Game[] = [
     gradient: "from-sky-600 to-teal-500",
     image:
       "https://media.rawg.io/media/games/ca7/ca7ca88681ad87eccd12e2acc65a2f6d.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/ca7/ca7ca88681ad87eccd12e2acc65a2f6d.jpg",
+      "https://media.rawg.io/media/screenshots/d1b/d1b34773a00141a80d0e5ff424641f52.jpg",
+      "https://media.rawg.io/media/screenshots/c58/c58d8ba2034214cad497f9040f863a63.jpg",
+      "https://media.rawg.io/media/screenshots/9bb/9bb419a676fc4371894b60a97742a90b.jpg",
+      "https://media.rawg.io/media/screenshots/a70/a70902aadc941df1255f031bd5c6a751.jpg",
+      "https://media.rawg.io/media/screenshots/f9e/f9ed532cb116ba817b6dff4d8aaa7e3b.jpg",
+      "https://media.rawg.io/media/screenshots/ba8/ba862e937b57824461d1f2671e317566.jpg",
+    ],
     description:
       "Ride, skate, and paint your crew's tag across a vibrant futuristic city.",
   },
@@ -1348,6 +2209,12 @@ export const games: Game[] = [
     gradient: "from-green-800 to-teal-600",
     image:
       "https://media.rawg.io/media/screenshots/b7f/b7ffcaad681e81cc93a885054588af94.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/b7f/b7ffcaad681e81cc93a885054588af94.jpg",
+      "https://media.rawg.io/media/screenshots/1ce/1ce92b5278fbda7540b6978390b2f488.jpg",
+      "https://media.rawg.io/media/screenshots/f2e/f2e4f1246835e9454539fabc70f20e5c.jpg",
+      "https://media.rawg.io/media/screenshots/b7f/b7ffcaad681e81cc93a885054588af94.jpg",
+    ],
     description: "A compelling shooter game released in 2022.",
   },
   {
@@ -1359,6 +2226,15 @@ export const games: Game[] = [
     gradient: "from-emerald-600 to-cyan-500",
     image:
       "https://media.rawg.io/media/screenshots/b4a/b4a2f7a51a91f2298586afab99b3b164.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/b4a/b4a2f7a51a91f2298586afab99b3b164.jpg",
+      "https://media.rawg.io/media/screenshots/39f/39fb9994982fa466953575e497972a4e.jpg",
+      "https://media.rawg.io/media/screenshots/632/6324eccef99f684935713d04a1d0588d.jpg",
+      "https://media.rawg.io/media/screenshots/0ca/0ca53ca0664582c5a7503dac0ad8fd42.jpg",
+      "https://media.rawg.io/media/screenshots/737/737c1ed6225399065f2c3a4bfa54e94e.jpg",
+      "https://media.rawg.io/media/screenshots/e97/e97f50f55a15edecf8e31b49ff7fd433.jpg",
+      "https://media.rawg.io/media/screenshots/339/339ac5e2748113a8326495a6cc1f0195.jpg",
+    ],
     description:
       "Survive the night shift at the Swamp's most peculiar establishment.",
   },
@@ -1371,6 +2247,15 @@ export const games: Game[] = [
     gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/c28/c28f9a27ef017d2086fef7ed2ab984b3.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/c28/c28f9a27ef017d2086fef7ed2ab984b3.jpg",
+      "https://media.rawg.io/media/screenshots/30b/30b886d1505cc0aeed15ab29900f3a19.jpg",
+      "https://media.rawg.io/media/screenshots/069/0698873cc958d5e7b368f2fe6dfa877f.jpg",
+      "https://media.rawg.io/media/screenshots/e1a/e1a1ff4b31b2c762749b7ddfd29a6763.jpg",
+      "https://media.rawg.io/media/screenshots/fe8/fe8e1d6147dbd8d399724b2d9b50c003.jpg",
+      "https://media.rawg.io/media/screenshots/4e5/4e57c9a271623b1d0fe793fc5456c2de.jpg",
+      "https://media.rawg.io/media/screenshots/5f0/5f0a889136952d2bb91fa06db37ad1a5.jpg",
+    ],
     description:
       "A disturbing horror adventure about sacrifice, grief, and uneasy bargains.",
   },
@@ -1383,6 +2268,15 @@ export const games: Game[] = [
     gradient: "from-yellow-700 to-amber-400",
     image:
       "https://media.rawg.io/media/screenshots/2ce/2ce6d3cd3017ff5fb0d0ad1ff880d6a8.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/2ce/2ce6d3cd3017ff5fb0d0ad1ff880d6a8.jpg",
+      "https://media.rawg.io/media/screenshots/7ff/7ff13013a5a0e5453abdbad1fce2edec.jpg",
+      "https://media.rawg.io/media/screenshots/0a0/0a01835acab601ed8986d1819d4f37af.jpg",
+      "https://media.rawg.io/media/screenshots/882/882cff5f5327cb3b9b5cdfec2368b25d.jpg",
+      "https://media.rawg.io/media/screenshots/dcb/dcbed7f907a2db5f41db7a8b23be8da6.jpg",
+      "https://media.rawg.io/media/screenshots/8a4/8a46b35732ee23fec35c362a6e0b8d30.jpg",
+      "https://media.rawg.io/media/screenshots/c50/c50e86a2bc7cfe4e74518560fabde43b.jpg",
+    ],
     description: "A compelling puzzle game released in 2023.",
   },
   {
@@ -1394,6 +2288,15 @@ export const games: Game[] = [
     gradient: "from-purple-900 to-fuchsia-600",
     image:
       "https://media.rawg.io/media/games/ae7/ae7cfc9a66232839112663899d2c8d8d.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/ae7/ae7cfc9a66232839112663899d2c8d8d.jpg",
+      "https://media.rawg.io/media/screenshots/39e/39e3f875efaa7e216cfde29e50378ef2.jpg",
+      "https://media.rawg.io/media/screenshots/108/10842320f67cbb53a1a165ad322fd7de.jpg",
+      "https://media.rawg.io/media/screenshots/cd3/cd3f7e41b8b4b56818e1c2e9d7870954.jpg",
+      "https://media.rawg.io/media/screenshots/3e4/3e4d85c52fc2a5c968de1a3c7ea52d06.jpg",
+      "https://media.rawg.io/media/screenshots/b2f/b2fc926a2612b7abcf058636f2a1805a.jpg",
+      "https://media.rawg.io/media/screenshots/36e/36ec533ef6ac8b9e895b18451b1686c7.jpg",
+    ],
     description:
       "Two nations locked in endless war discover a truth that will change everything.",
   },
@@ -1406,6 +2309,14 @@ export const games: Game[] = [
     gradient: "from-green-600 to-teal-400",
     image:
       "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg",
+      "https://media.rawg.io/media/screenshots/207/20782c3c3da967ca955dfa0e942d0acc.jpg",
+      "https://media.rawg.io/media/screenshots/749/74924dc8952b98f7a0ca7d77210b4578_cEVEMbe.jpg",
+      "https://media.rawg.io/media/screenshots/245/2450ea407bc2934863020c170717cc9c.jpg",
+      "https://media.rawg.io/media/screenshots/4e0/4e0b5ba1ef94973b14cede218159b82c.jpg",
+      "https://media.rawg.io/media/screenshots/f29/f29eace60587e49e7b6f91875c7fadae.jpg",
+    ],
     description: "A compelling adventure game released in 2024.",
   },
   {
@@ -1417,6 +2328,14 @@ export const games: Game[] = [
     gradient: "from-sky-700 to-cyan-500",
     image:
       "https://media.rawg.io/media/games/0c1/0c10aa5a41d64c0bb6ca9fe30173488d.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/0c1/0c10aa5a41d64c0bb6ca9fe30173488d.jpg",
+      "https://media.rawg.io/media/screenshots/ac6/ac6a0f5cf10cbfd84cdf699ac3a0a946.jpg",
+      "https://media.rawg.io/media/screenshots/af2/af224277a62d4fa0a521c079907f707f.jpg",
+      "https://media.rawg.io/media/screenshots/8d4/8d44c6103501dfcbd40a78ef77c146af.jpg",
+      "https://media.rawg.io/media/screenshots/af3/af3bbb759d8d7c154881b8b418ecf580.jpg",
+      "https://media.rawg.io/media/screenshots/041/041a54bc965e6e2bffcc3bbbfd8c47a1.jpg",
+    ],
     description:
       "Kazuma Kiryu takes on deadly criminal organisations in a globe-spanning spy action thriller.",
   },

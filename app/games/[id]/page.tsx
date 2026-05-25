@@ -135,7 +135,7 @@ export default async function GameDetailsPage({ params }: PageProps) {
                 <div className="flex items-stretch gap-3">
                   <div className="relative h-24 w-32 shrink-0 overflow-hidden rounded-md border border-border/70 bg-muted">
                     <Image
-                      src={getGameImage(recommendedGame.id)}
+                      src={getGameImage(recommendedGame)}
                       alt={`${recommendedGame.title} cover art`}
                       fill
                       sizes="112px"

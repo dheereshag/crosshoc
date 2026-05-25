@@ -398,27 +398,6 @@
         ]
     },
     {
-        "slug": "esoteric-ebb",
-        "name": "Esoteric Ebb",
-        "released": "2026-03-03",
-        "background_image": "https://media.rawg.io/media/games/412/41289ad8950a417a0aa9a6860152ac22.jpg",
-        "rating": 4.62,
-        "id": 1016144,
-        "short_screenshots": [
-            {
-                "id": -1,
-                "image": "https://media.rawg.io/media/games/412/41289ad8950a417a0aa9a6860152ac22.jpg"
-            }
-        ],
-        "genres": [
-            {
-                "id": 3,
-                "name": "Adventure",
-                "slug": "adventure"
-            }
-        ]
-    },
-    {
         "slug": "hyper-demon",
         "name": "HYPER DEMON",
         "released": "2022-09-19",
@@ -769,27 +748,6 @@
                 "id": 3,
                 "name": "Adventure",
                 "slug": "adventure"
-            }
-        ]
-    },
-    {
-        "slug": "mewgenics",
-        "name": "Mewgenics",
-        "released": "2026-02-10",
-        "background_image": "https://media.rawg.io/media/games/43a/43a9694f5ffe22302bbf1cc93bca4ea1.jpg",
-        "rating": 4.57,
-        "id": 1015735,
-        "short_screenshots": [
-            {
-                "id": -1,
-                "image": "https://media.rawg.io/media/games/43a/43a9694f5ffe22302bbf1cc93bca4ea1.jpg"
-            }
-        ],
-        "genres": [
-            {
-                "id": 10,
-                "name": "Strategy",
-                "slug": "strategy"
             }
         ]
     },
@@ -1749,27 +1707,6 @@
         ]
     },
     {
-        "slug": "mixtape",
-        "name": "Mixtape",
-        "released": "2026-05-07",
-        "background_image": "https://media.rawg.io/media/games/a57/a571fcbc2b2ef30fb3e13a4272ef3a93.jpeg",
-        "rating": 4.46,
-        "id": 103715,
-        "short_screenshots": [
-            {
-                "id": -1,
-                "image": "https://media.rawg.io/media/games/a57/a571fcbc2b2ef30fb3e13a4272ef3a93.jpeg"
-            }
-        ],
-        "genres": [
-            {
-                "id": 3,
-                "name": "Adventure",
-                "slug": "adventure"
-            }
-        ]
-    },
-    {
         "slug": "split-fiction",
         "name": "Split Fiction",
         "released": "2025-03-06",
@@ -2195,7 +2132,7 @@
     },
     {
         "slug": "god-of-war-ragnarok",
-        "name": "God of War: Ragnar\u00f6k",
+        "name": "God of War: Ragnarök",
         "released": "2022-11-09",
         "background_image": "https://media.rawg.io/media/games/1c3/1c305096502c475c00276c827f0fd697.jpg",
         "rating": 4.43,
@@ -2565,32 +2502,6 @@
         ]
     },
     {
-        "slug": "super-mario-party-jamboree",
-        "name": "Super Mario Party Jamboree",
-        "released": "2024-10-17",
-        "background_image": "https://media.rawg.io/media/games/66f/66fcdc18586ac8c0aa17b2c83fee558d.jpg",
-        "rating": 4.4,
-        "id": 989033,
-        "short_screenshots": [
-            {
-                "id": -1,
-                "image": "https://media.rawg.io/media/games/66f/66fcdc18586ac8c0aa17b2c83fee558d.jpg"
-            }
-        ],
-        "genres": [
-            {
-                "id": 3,
-                "name": "Adventure",
-                "slug": "adventure"
-            },
-            {
-                "id": 28,
-                "name": "Board Games",
-                "slug": "board-games"
-            }
-        ]
-    },
-    {
         "slug": "hollow-knight-silksong",
         "name": "Hollow Knight: Silksong",
         "released": "2025-09-04",
@@ -2832,7 +2743,7 @@
     },
     {
         "slug": "one-iced-latte-with-your-breast-milk-please",
-        "name": "One Iced Latte With Your Breast Milk, Please! \u2615",
+        "name": "One Iced Latte With Your Breast Milk, Please! ☕",
         "released": "2025-03-05",
         "background_image": "https://media.rawg.io/media/screenshots/1a5/1a582842654560cde2979cc25cea0e9b.jpg",
         "rating": 4.38,
@@ -3680,32 +3591,6 @@
                 "id": 5,
                 "name": "RPG",
                 "slug": "role-playing-games-rpg"
-            }
-        ]
-    },
-    {
-        "slug": "astro-bot",
-        "name": "Astro Bot",
-        "released": "2024-09-06",
-        "background_image": "https://media.rawg.io/media/games/b19/b19cdd6be95ffffd63fdd2d1fbac057a.jpg",
-        "rating": 4.37,
-        "id": 982817,
-        "short_screenshots": [
-            {
-                "id": -1,
-                "image": "https://media.rawg.io/media/games/b19/b19cdd6be95ffffd63fdd2d1fbac057a.jpg"
-            }
-        ],
-        "genres": [
-            {
-                "id": 83,
-                "name": "Platformer",
-                "slug": "platformer"
-            },
-            {
-                "id": 4,
-                "name": "Action",
-                "slug": "action"
             }
         ]
     },
@@ -4998,27 +4883,6 @@
                 "name": "Indie",
                 "slug": "indie"
             },
-            {
-                "id": 3,
-                "name": "Adventure",
-                "slug": "adventure"
-            }
-        ]
-    },
-    {
-        "slug": "the-legend-of-zelda-echoes-of-wisdom",
-        "name": "The Legend of Zelda: Echoes of Wisdom",
-        "released": "2024-09-26",
-        "background_image": "https://media.rawg.io/media/games/ef0/ef095574ebf35dbe30cbb85f3798b4e5.jpg",
-        "rating": 4.33,
-        "id": 983717,
-        "short_screenshots": [
-            {
-                "id": -1,
-                "image": "https://media.rawg.io/media/games/ef0/ef095574ebf35dbe30cbb85f3798b4e5.jpg"
-            }
-        ],
-        "genres": [
             {
                 "id": 3,
                 "name": "Adventure",
