@@ -260,7 +260,7 @@ export default async function DashboardPage({ searchParams }: PageProps) {
   };
 
   return (
-    <div className="px-6 pb-10 pt-2 md:px-10">
+    <div className="px-6 pb-10 pt-2 md:px-8">
       <section>
         <div className="mb-4 flex flex-col gap-3">
           <div className="flex items-center justify-between gap-2">
