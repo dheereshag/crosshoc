@@ -1,19 +1,5 @@
 import Link from "next/link";
-import {
-  AArrowDownIcon,
-  ArrowUpDownIcon,
-  CalendarIcon,
-  CalendarDaysIcon,
-  Clock3Icon,
-  FilterIcon,
-  FlameIcon,
-  LayoutGridIcon,
-  ListIcon,
-  ReceiptTextIcon,
-  SparklesIcon,
-  StarIcon,
-  type LucideIcon,
-} from "lucide-react";
+import { CalendarIcon, ListIcon, ReceiptTextIcon } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -21,53 +7,27 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
-  basePriceByGenre,
+  computeBasePrice,
   games,
-  genres,
-  sortOptions,
   type Game,
   type SortKey,
 } from "@/constants/catalog";
 import { GameCardImage } from "@/components/game-card-image";
-import { genreIconComponents } from "@/constants/sidebar";
-import { cn } from "@/lib/utils";
+import { StarRating } from "@/components/star-rating";
+import { GenreBadge } from "@/components/genre-badge";
+import { FilterBar } from "@/components/filter-bar";
 
 type PageProps = {
   searchParams?: Promise<Record<string, string | undefined>>;
 };
-
-function buildHref(
-  currentParams: Record<string, string | undefined>,
-  updates: Record<string, string | undefined>,
-) {
-  const params = new URLSearchParams();
-  const merged = { ...currentParams, ...updates };
-
-  Object.entries(merged).forEach(([key, value]) => {
-    if (value) {
-      params.set(key, value);
-    }
-  });
-
-  const queryString = params.toString();
-  return queryString ? `/?${queryString}` : "/";
-}
 
 const shuffledGames = [...games].sort(
   (a, b) => ((a.id * 37) % 101) - ((b.id * 37) % 101),
 );
 
 function getPrice(game: Game) {
-  const base = basePriceByGenre[game.genre];
-  const recencyAdjustment = game.year === 2025 ? 0 : -8;
-  const parityAdjustment = game.id % 2 === 0 ? 2 : 0;
-  const value = Math.max(
-    12,
-    Math.floor((base + recencyAdjustment + parityAdjustment) * 0.35),
-  );
-  return `${value}.99`;
+  return `${computeBasePrice(game)}.99`;
 }
 
 function getVisibleGames(
@@ -139,28 +99,7 @@ function getVisibleGames(
   return visibleGames;
 }
 
-function getChipButtonClass(active: boolean) {
-  const base =
-    "inline-flex h-7 items-center justify-center gap-1 rounded-full border text-[0.8rem] font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50";
-  const variant = active
-    ? "border-transparent bg-primary text-primary-foreground"
-    : "border-border bg-background hover:bg-muted hover:text-foreground";
-
-  return cn(base, variant, "px-3");
-}
-
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <span className="flex items-center gap-1 text-muted-foreground text-xs font-medium">
-      <StarIcon className="size-3" />
-      {rating.toFixed(1)}
-    </span>
-  );
-}
-
 function GameCard({ game }: { game: Game }) {
-  const GenreIcon = genreIconComponents[game.genre];
-
   return (
     <Link
       href={`/games/${game.id}`}
@@ -186,13 +125,7 @@ function GameCard({ game }: { game: Game }) {
         </CardHeader>
         <CardContent className="space-y-3 pb-5 pt-0">
           <div className="flex flex-wrap items-center justify-end gap-2 text-xs">
-            <Badge
-              variant="secondary"
-              className="inline-flex items-center gap-1 font-medium text-foreground/80"
-            >
-              <GenreIcon className="size-3.5" />
-              <span>{game.genre}</span>
-            </Badge>
+            <GenreBadge genre={game.genre} />
           </div>
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1">
@@ -225,34 +158,18 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     : undefined;
   const sort = (normalizedSort as SortKey | undefined) ?? "relevance";
   const visibleGames = getVisibleGames(section, genre, sort);
+
+  const titleBySection: Record<string, string> = {
+    new: "New Releases",
+    top: "Top Games",
+    genres: "Genres",
+    support: "Support",
+    feedback: "Feedback",
+    projects: "Projects",
+  };
   const title = genre
     ? `${genre} Games`
-    : section === "new"
-      ? "New Releases"
-      : section === "top"
-        ? "Top Games"
-        : section === "genres"
-          ? "Genres"
-          : section === "support"
-            ? "Support"
-            : section === "feedback"
-              ? "Feedback"
-              : section === "projects"
-                ? "Projects"
-                : "Game Leases";
-
-  const filterChips = [
-    { label: "All", value: undefined },
-    ...genres.map((genreName) => ({ label: genreName, value: genreName })),
-  ];
-  const sortOptionIcons: Record<SortKey, LucideIcon> = {
-    relevance: SparklesIcon,
-    "date-added": Clock3Icon,
-    name: AArrowDownIcon,
-    "release-date": CalendarDaysIcon,
-    popularity: FlameIcon,
-    "average-rating": StarIcon,
-  };
+    : (titleBySection[section] ?? "Game Leases");
 
   return (
     <div className="px-6 pb-10 pt-2 md:px-8">
@@ -267,53 +184,11 @@ export default async function DashboardPage({ searchParams }: PageProps) {
               {visibleGames.length} active listings
             </span>
           </div>
-          <div className="flex flex-col gap-3 rounded-xl border border-border/70 bg-card/50 p-3">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                <FilterIcon className="size-3.5" />
-                Filter
-              </span>
-              {filterChips.map((item) => {
-                const active = (genre ?? undefined) === item.value;
-                const Icon = item.value
-                  ? genreIconComponents[item.value as Game["genre"]]
-                  : LayoutGridIcon;
-                return (
-                  <a
-                    key={item.label}
-                    href={buildHref(resolvedSearchParams, {
-                      genre: item.value,
-                      sort,
-                    })}
-                    className={getChipButtonClass(active)}
-                  >
-                    <Icon className="size-3.5" />
-                    <span>{item.label}</span>
-                  </a>
-                );
-              })}
-            </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                <ArrowUpDownIcon className="size-3.5" />
-                Order by
-              </span>
-              {sortOptions.map((item) => {
-                const active = sort === item.value;
-                const Icon = sortOptionIcons[item.value];
-                return (
-                  <a
-                    key={item.value}
-                    href={buildHref(resolvedSearchParams, { sort: item.value })}
-                    className={getChipButtonClass(active)}
-                  >
-                    <Icon className="size-3.5" />
-                    <span>{item.label}</span>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+          <FilterBar
+            searchParams={resolvedSearchParams}
+            genre={genre}
+            sort={sort}
+          />
         </div>
         <div className="grid auto-rows-fr grid-cols-[repeat(auto-fill,minmax(210px,1fr))] gap-4">
           {visibleGames.map((game) => (

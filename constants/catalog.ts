@@ -73,6 +73,17 @@ export const basePriceByGenre: Record<Game["genre"], number> = {
   Arcade: 29,
 };
 
+/** Shared base price calculation used by catalog listing and deck controls. */
+export function computeBasePrice(game: Game): number {
+  const base = basePriceByGenre[game.genre];
+  const recencyAdjustment = game.year === 2025 ? 0 : -8;
+  const parityAdjustment = game.id % 2 === 0 ? 2 : 0;
+  return Math.max(
+    12,
+    Math.floor((base + recencyAdjustment + parityAdjustment) * 0.35),
+  );
+}
+
 export const games: Game[] = [
   {
     id: 1,

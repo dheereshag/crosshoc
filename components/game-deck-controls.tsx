@@ -13,8 +13,8 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { basePriceByGenre, type Game } from "@/constants/catalog";
-import { cn } from "@/lib/utils";
+import { computeBasePrice, type Game } from "@/constants/catalog";
+import { cn, pluralize } from "@/lib/utils";
 
 type GameDeckControlsProps = {
   game: Game;
@@ -31,15 +31,7 @@ const leasePeriodDiscounts: Record<(typeof leasePeriods)[number], number> = {
 }
 
 function getLeasePrice(game: Game) {
-  const base = basePriceByGenre[game.genre]
-  const recencyAdjustment = game.year === 2025 ? 0 : -8
-  const parityAdjustment = game.id % 2 === 0 ? 2 : 0
-  const value = Math.max(
-    12,
-    Math.floor((base + recencyAdjustment + parityAdjustment) * 0.35),
-  )
-
-  return value
+  return computeBasePrice(game);
 }
 
 function getLeasePeriodPrice(game: Game, months: (typeof leasePeriods)[number]) {
@@ -97,9 +89,7 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
                   className="h-auto w-full flex-col items-start gap-0.5 px-3 py-2 text-left"
                   onClick={() => setLeasePeriod(months)}
                 >
-                  <span>
-                    {months} {months === 1 ? "month" : "months"}
-                  </span>
+                  <span>{pluralize(months, "month")}</span>
                   <span className="text-[0.72rem] font-normal opacity-80">
                     ${periodPrice}
                   </span>
@@ -143,7 +133,7 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
             type="button"
             onClick={() => {
               toast.success("Added to Deck", {
-                description: `${game.title} · ${copies} ${copies === 1 ? "copy" : "copies"} · ${leasePeriod} ${leasePeriod === 1 ? "month" : "months"}`,
+                description: `${game.title} · ${pluralize(copies, "copy", "copies")} · ${pluralize(leasePeriod, "month")}`,
               });
             }}
             className="sm:min-w-44"

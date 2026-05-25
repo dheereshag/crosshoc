@@ -10,19 +10,58 @@ import {
   StarIcon,
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { games, type Game } from "@/constants/catalog";
-import { getReviewsForGame } from "@/constants/reviews";
-import { genreIconComponents } from "@/constants/sidebar";
+import { getReviewsForGame, type Review } from "@/constants/reviews";
+import { GenreBadge } from "@/components/genre-badge";
+import { StarRating } from "@/components/star-rating";
 import { GameDeckControls } from "@/components/game-deck-controls";
 
 type PageProps = {
   params: Promise<{ id: string }>;
 };
 
-function getGameImage(game: Game) {
-  return game.image;
+function StatBlock({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value: string | number;
+}) {
+  return (
+    <div className="rounded-lg border border-border/70 bg-background/70 p-4">
+      <p className="inline-flex items-center gap-1 text-xs uppercase tracking-wide text-muted-foreground">
+        <Icon className="size-3" />
+        {label}
+      </p>
+      <p className="mt-2 text-3xl font-semibold leading-none text-foreground md:text-4xl">
+        {value}
+      </p>
+    </div>
+  );
+}
+
+function ReviewCard({ review }: { review: Review }) {
+  return (
+    <div className="rounded-lg border border-border/70 bg-background/70 p-4">
+      <div className="mb-2 flex items-start justify-between gap-2">
+        <div className="inline-flex items-center gap-2">
+          <Avatar size="sm">
+            <AvatarImage src={review.avatar} alt={`${review.author} avatar`} />
+            <AvatarFallback>
+              {review.author.slice(0, 2).toUpperCase()}
+            </AvatarFallback>
+          </Avatar>
+          <p className="text-sm font-medium text-foreground">{review.author}</p>
+        </div>
+        <StarRating rating={review.rating} />
+      </div>
+      <p className="mb-2 text-xs text-muted-foreground">{review.postedOn}</p>
+      <p className="text-sm text-foreground/90">{review.comment}</p>
+    </div>
+  );
 }
 
 export default async function GameDetailsPage({ params }: PageProps) {
@@ -39,7 +78,6 @@ export default async function GameDetailsPage({ params }: PageProps) {
     notFound();
   }
 
-  const GenreIcon = genreIconComponents[game.genre];
   const reviews = getReviewsForGame(game);
   const recommendedGame =
     [...games]
@@ -48,7 +86,6 @@ export default async function GameDetailsPage({ params }: PageProps) {
     [...games]
       .filter((item) => item.id !== game.id)
       .sort((a, b) => b.rating - a.rating)[0];
-  const RecommendedGenreIcon = genreIconComponents[recommendedGame.genre];
 
   return (
     <div className="px-6 pb-10 pt-2 md:px-10">
@@ -66,7 +103,7 @@ export default async function GameDetailsPage({ params }: PageProps) {
         <Card className="h-full overflow-hidden border-border/80 bg-card/70 gap-0 py-0">
           <div className="relative aspect-video w-full max-h-64 border-b border-border/70 bg-muted md:max-h-72">
             <Image
-              src={getGameImage(game)}
+              src={game.image}
               alt={`${game.title} cover art`}
               fill
               priority
@@ -80,13 +117,7 @@ export default async function GameDetailsPage({ params }: PageProps) {
               <CardTitle className="text-2xl tracking-tight">
                 {game.title}
               </CardTitle>
-              <Badge
-                variant="secondary"
-                className="inline-flex items-center gap-1 font-medium text-foreground/80"
-              >
-                <GenreIcon className="size-3.5" />
-                <span>{game.genre}</span>
-              </Badge>
+              <GenreBadge genre={game.genre} />
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground">
               {game.description}
@@ -95,24 +126,16 @@ export default async function GameDetailsPage({ params }: PageProps) {
 
           <CardContent className="pb-4 pt-2">
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-lg border border-border/70 bg-background/70 p-4">
-                <p className="inline-flex items-center gap-1 text-xs uppercase tracking-wide text-muted-foreground">
-                  <StarIcon className="size-3" />
-                  Average rating
-                </p>
-                <p className="mt-2 text-3xl font-semibold leading-none text-foreground md:text-4xl">
-                  {game.rating.toFixed(1)}
-                </p>
-              </div>
-              <div className="rounded-lg border border-border/70 bg-background/70 p-4">
-                <p className="inline-flex items-center gap-1 text-xs uppercase tracking-wide text-muted-foreground">
-                  <CalendarIcon className="size-3" />
-                  Release year
-                </p>
-                <p className="mt-2 text-3xl font-semibold leading-none text-foreground md:text-4xl">
-                  {game.year}
-                </p>
-              </div>
+              <StatBlock
+                icon={StarIcon}
+                label="Average rating"
+                value={game.rating.toFixed(1)}
+              />
+              <StatBlock
+                icon={CalendarIcon}
+                label="Release year"
+                value={game.year}
+              />
             </div>
           </CardContent>
         </Card>
@@ -135,7 +158,7 @@ export default async function GameDetailsPage({ params }: PageProps) {
                 <div className="flex items-stretch gap-3">
                   <div className="relative h-24 w-32 shrink-0 overflow-hidden rounded-md border border-border/70 bg-muted">
                     <Image
-                      src={getGameImage(recommendedGame)}
+                      src={recommendedGame.image}
                       alt={`${recommendedGame.title} cover art`}
                       fill
                       sizes="112px"
@@ -147,22 +170,13 @@ export default async function GameDetailsPage({ params }: PageProps) {
                       <CardTitle className="line-clamp-1 text-base">
                         {recommendedGame.title}
                       </CardTitle>
-                      <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground">
-                        <StarIcon className="size-3" />
-                        {recommendedGame.rating.toFixed(1)}
-                      </span>
+                      <StarRating rating={recommendedGame.rating} />
                     </div>
                     <p className="line-clamp-2 text-sm text-muted-foreground">
                       {recommendedGame.description}
                     </p>
                     <div className="flex items-center justify-between gap-2 pt-1">
-                      <Badge
-                        variant="secondary"
-                        className="inline-flex items-center gap-1 font-medium text-foreground/80"
-                      >
-                        <RecommendedGenreIcon className="size-3.5" />
-                        <span>{recommendedGame.genre}</span>
-                      </Badge>
+                      <GenreBadge genre={recommendedGame.genre} />
                       <span className="inline-flex items-center gap-1 text-sm font-medium text-foreground">
                         View
                         <ArrowRightIcon className="size-4" />
@@ -189,35 +203,7 @@ export default async function GameDetailsPage({ params }: PageProps) {
         <CardContent>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {reviews.map((review) => (
-              <div
-                key={review.id}
-                className="rounded-lg border border-border/70 bg-background/70 p-4"
-              >
-                <div className="mb-2 flex items-start justify-between gap-2">
-                  <div className="inline-flex items-center gap-2">
-                    <Avatar size="sm">
-                      <AvatarImage
-                        src={review.avatar}
-                        alt={`${review.author} avatar`}
-                      />
-                      <AvatarFallback>
-                        {review.author.slice(0, 2).toUpperCase()}
-                      </AvatarFallback>
-                    </Avatar>
-                    <p className="text-sm font-medium text-foreground">
-                      {review.author}
-                    </p>
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground">
-                    <StarIcon className="size-3" />
-                    {review.rating.toFixed(1)}
-                  </span>
-                </div>
-                <p className="mb-2 text-xs text-muted-foreground">
-                  {review.postedOn}
-                </p>
-                <p className="text-sm text-foreground/90">{review.comment}</p>
-              </div>
+              <ReviewCard key={review.id} review={review} />
             ))}
           </div>
         </CardContent>
