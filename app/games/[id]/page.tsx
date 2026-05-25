@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { GameCardImage } from "@/components/game-card-image";
 import { notFound } from "next/navigation";
 import {
   ArrowRightIcon,
@@ -101,14 +102,12 @@ export default async function GameDetailsPage({ params }: PageProps) {
 
       <div className="grid gap-4 xl:grid-cols-[minmax(0,1.6fr)_minmax(360px,1fr)] xl:items-stretch">
         <Card className="h-full overflow-hidden border-border/80 bg-card/70 gap-0 py-0">
-          <div className="relative aspect-video w-full max-h-64 border-b border-border/70 bg-muted md:max-h-72">
-            <Image
-              src={game.image}
-              alt={`${game.title} cover art`}
-              fill
-              priority
+          <div className="border-b border-border/70 bg-muted">
+            <GameCardImage
+              images={game.screenshots.length > 0 ? game.screenshots : [game.image]}
+              title={game.title}
               sizes="(max-width: 1024px) 100vw, 70vw"
-              className="object-cover"
+              priority
             />
           </div>
 

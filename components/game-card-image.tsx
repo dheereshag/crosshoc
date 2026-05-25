@@ -80,7 +80,7 @@ export function GameCardImage({
 
       {/* Pip indicators — only shown when there are multiple images */}
       {hasMultiple && (
-        <div className="absolute inset-x-0 bottom-0 flex items-end gap-0.5 px-2 pb-1.5 opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+        <div className={["absolute inset-x-0 bottom-0 flex items-end gap-0.5 px-2 pb-1.5 transition-opacity duration-150", isHovered ? "opacity-100" : "opacity-0"].join(" ")}>
           {images.map((_, i) => (
             <div
               key={i}
