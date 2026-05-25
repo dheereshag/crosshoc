@@ -19,7 +19,12 @@ import {
   PuzzleIcon,
   CarIcon,
   DumbbellIcon,
-} from "lucide-react"
+  CpuIcon,
+  SmileIcon,
+  SparklesIcon,
+  Gamepad2Icon,
+  ZapIcon,
+} from "lucide-react";
 
 export const genreIconComponents = {
   Action: SwordsIcon,
@@ -30,7 +35,12 @@ export const genreIconComponents = {
   Puzzle: PuzzleIcon,
   Racing: CarIcon,
   Sports: DumbbellIcon,
-} as const
+  Simulation: CpuIcon,
+  Casual: SmileIcon,
+  Indie: SparklesIcon,
+  Platformer: Gamepad2Icon,
+  Arcade: ZapIcon,
+} as const;
 
 export const genreIconMap = {
   Action: <SwordsIcon />,
@@ -41,7 +51,12 @@ export const genreIconMap = {
   Puzzle: <PuzzleIcon />,
   Racing: <CarIcon />,
   Sports: <DumbbellIcon />,
-} as const
+  Simulation: <CpuIcon />,
+  Casual: <SmileIcon />,
+  Indie: <SparklesIcon />,
+  Platformer: <Gamepad2Icon />,
+  Arcade: <ZapIcon />,
+} as const;
 
 export const sidebarData = {
   user: {
@@ -113,6 +128,15 @@ export const sidebarData = {
         { title: "Puzzle", url: "/?genre=Puzzle", icon: <PuzzleIcon /> },
         { title: "Racing", url: "/?genre=Racing", icon: <CarIcon /> },
         { title: "Sports", url: "/?genre=Sports", icon: <DumbbellIcon /> },
+        { title: "Simulation", url: "/?genre=Simulation", icon: <CpuIcon /> },
+        { title: "Casual", url: "/?genre=Casual", icon: <SmileIcon /> },
+        { title: "Indie", url: "/?genre=Indie", icon: <SparklesIcon /> },
+        {
+          title: "Platformer",
+          url: "/?genre=Platformer",
+          icon: <Gamepad2Icon />,
+        },
+        { title: "Arcade", url: "/?genre=Arcade", icon: <ZapIcon /> },
       ],
     },
   ],
@@ -128,4 +152,4 @@ export const sidebarData = {
       icon: <SendIcon />,
     },
   ],
-}
+};

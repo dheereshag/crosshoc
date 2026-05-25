@@ -9,7 +9,12 @@ export type Game = {
     | "Adventure"
     | "Puzzle"
     | "Racing"
-    | "Sports";
+    | "Sports"
+    | "Simulation"
+    | "Casual"
+    | "Indie"
+    | "Platformer"
+    | "Arcade";
   rating: number;
   year: number;
   gradient: string;
@@ -36,6 +41,11 @@ export const genres = [
   "Puzzle",
   "Racing",
   "Sports",
+  "Simulation",
+  "Casual",
+  "Indie",
+  "Platformer",
+  "Arcade",
 ] as const;
 
 export const sortOptions: Array<{ label: string; value: SortKey }> = [
@@ -56,6 +66,11 @@ export const basePriceByGenre: Record<Game["genre"], number> = {
   Puzzle: 29,
   Racing: 54,
   Sports: 59,
+  Simulation: 49,
+  Casual: 19,
+  Indie: 24,
+  Platformer: 39,
+  Arcade: 29,
 };
 
 export const games: Game[] = [
@@ -65,7 +80,7 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 9.7,
     year: 2024,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/766/76669775675948b1eb3f3eb1c1dfc7dc.jpg",
     screenshots: [
@@ -79,15 +94,33 @@ export const games: Game[] = [
     ],
     badge: "Top Rated",
     description:
-      "Reconstruct fragmented testimonies to solve chilling cold-case mysteries.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 2,
+    title: "Charlie (Hazbin Hotel) mega porn pack 1",
+    genre: "Adventure",
+    rating: 9.5,
+    year: 2023,
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
+    image:
+      "https://media.rawg.io/media/screenshots/835/83550ad86fa4dcda9beafd9ba68f0f68.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/835/83550ad86fa4dcda9beafd9ba68f0f68.jpg",
+      "https://media.rawg.io/media/screenshots/984/98423ac919f4cb64fe0c7cce9ef343dc.jpg",
+      "https://media.rawg.io/media/screenshots/835/83550ad86fa4dcda9beafd9ba68f0f68.jpg",
+    ],
+    badge: "Top Rated",
+    description:
+      "An immersive adventure filled with exploration and discovery.",
+  },
+  {
+    id: 3,
     title: "Sonic Triple Trouble 16-Bit (NoahNCopeland)",
-    genre: "Action",
+    genre: "Platformer",
     rating: 9.4,
     year: 2022,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/a9c/a9c0a6fb4def5538d39544934bded4b3.jpg",
     screenshots: [
@@ -101,15 +134,15 @@ export const games: Game[] = [
     ],
     badge: "Top Rated",
     description:
-      "A fan-crafted 16-bit remake of the classic Sonic handheld adventure.",
+      "Precision platforming with tight controls and creative level design.",
   },
   {
-    id: 3,
+    id: 4,
     title: "Cyberpunk 2077: Phantom Liberty",
     genre: "Shooter",
     rating: 9.4,
     year: 2023,
-    gradient: "from-emerald-700 via-teal-600 to-cyan-500",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/062/06285b425e61623530c5430f20e5d222.jpg",
     screenshots: [
@@ -123,15 +156,15 @@ export const games: Game[] = [
     ],
     badge: "Top Rated",
     description:
-      "A gripping spy-thriller expansion set in Dogtown, the most dangerous district of Night City.",
+      "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
-    id: 4,
+    id: 5,
     title: "Red Matter 2",
-    genre: "Adventure",
+    genre: "Action",
     rating: 9.3,
     year: 2022,
-    gradient: "from-green-600 to-teal-400",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/9ec/9ec21d4df840d70c1621372f2450e3ca.jpg",
     screenshots: [
@@ -145,15 +178,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Unravel Cold War secrets aboard an abandoned Soviet lunar base.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 5,
+    id: 6,
     title: "The Last of Us Part I",
     genre: "Shooter",
     rating: 9.3,
     year: 2022,
-    gradient: "from-gray-700 to-green-600",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/71d/71df9e759b2246f9769126c98ac997fc.jpg",
     screenshots: [
@@ -167,15 +200,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Experience Joel and Ellie's harrowing cross-country journey in stunning rebuilt detail.",
+      "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
-    id: 6,
+    id: 7,
     title: "Quake II: Enhanced Edition",
     genre: "Shooter",
     rating: 9.3,
     year: 2023,
-    gradient: "from-teal-800 to-emerald-500",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/df8/df8f7f1b8ddf5f4021cda1254d82ab29.jpg",
     screenshots: [
@@ -189,15 +222,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "The legendary arena shooter returns with remastered visuals and an all-new expansion.",
+      "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
-    id: 7,
+    id: 8,
     title: "System Shock 2: 25th Anniversary Remaster",
-    genre: "Adventure",
+    genre: "Action",
     rating: 9.2,
     year: 2025,
-    gradient: "from-sky-700 to-cyan-500",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/screenshots/95d/95df624f84b7bca99b56da01aeea4789.jpg",
     screenshots: [
@@ -211,22 +244,7 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Survive the nightmarish corridors of a colony starship overrun by a rogue AI.",
-  },
-  {
-    id: 8,
-    title: "Esoteric Ebb",
-    genre: "Adventure",
-    rating: 9.2,
-    year: 2026,
-    gradient: "from-cyan-700 to-sky-500",
-    image:
-      "https://media.rawg.io/media/games/412/41289ad8950a417a0aa9a6860152ac22.jpg",
-    screenshots: [
-      "https://media.rawg.io/media/games/412/41289ad8950a417a0aa9a6860152ac22.jpg",
-    ],
-    badge: "New",
-    description: "A dreamlike adventure through surreal, hand-crafted worlds.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 9,
@@ -234,7 +252,7 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 9.2,
     year: 2022,
-    gradient: "from-green-800 to-teal-600",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/bc3/bc38deccf8bfab8b588d29817c68c1ff.jpg",
     screenshots: [
@@ -248,15 +266,36 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Blink-fast first-person combat in a hallucinogenic nightmare dimension.",
+      "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 10,
+    title: "Desert Stalker (2022)",
+    genre: "Casual",
+    rating: 9.2,
+    year: 2022,
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
+    image:
+      "https://media.rawg.io/media/screenshots/eec/eec7618dc71bc714dbeae5bf16e7667d.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/eec/eec7618dc71bc714dbeae5bf16e7667d.jpg",
+      "https://media.rawg.io/media/screenshots/66c/66cc28112f51f36ab2825ae04301c2cc.jpg",
+      "https://media.rawg.io/media/screenshots/0d1/0d1c254b2f49881e01d275244d13bbde.jpg",
+      "https://media.rawg.io/media/screenshots/bb9/bb9159076d60a49192e23563c30baf3f.jpg",
+      "https://media.rawg.io/media/screenshots/5d5/5d54bf888855bae6789b8c0156d4291b.jpg",
+      "https://media.rawg.io/media/screenshots/eec/eec7618dc71bc714dbeae5bf16e7667d.jpg",
+    ],
+    badge: "Trending",
+    description:
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+  },
+  {
+    id: 11,
     title: "Resident Evil 4",
-    genre: "Adventure",
+    genre: "Action",
     rating: 9.2,
     year: 2023,
-    gradient: "from-teal-700 to-green-500",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/51a/51a404b9918a0b19fc704a3ca248c69f.jpg",
     screenshots: [
@@ -270,15 +309,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "The seminal survival horror masterpiece rebuilt from the ground up.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 11,
+    id: 12,
     title: "Athanasy",
-    genre: "Puzzle",
+    genre: "Casual",
     rating: 9.1,
     year: 2022,
-    gradient: "from-yellow-500 via-amber-400 to-orange-400",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/1ec/1ec196fc63bc5ea94a8b7da52daa9f5f.jpg",
     screenshots: [
@@ -290,15 +329,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/f27/f27d8051758c4318b2591cfa8d533c1c.jpg",
     ],
     badge: "Trending",
-    description: "A compelling puzzle game released in 2022.",
+    description:
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
-    id: 12,
+    id: 13,
     title: "Resident Evil 9: Requiem",
     genre: "Action",
     rating: 9.1,
     year: 2026,
-    gradient: "from-rose-700 to-red-400",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/ed6/ed613937e113a4d43fa0db771e527a2f.jpg",
     screenshots: [
@@ -311,15 +351,15 @@ export const games: Game[] = [
     ],
     badge: "New",
     description:
-      "Face terrifying new horrors in the latest chapter of the iconic horror franchise.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 13,
+    id: 14,
     title: "Dungeons of Dreadrock",
-    genre: "Adventure",
+    genre: "Puzzle",
     rating: 9.1,
     year: 2022,
-    gradient: "from-sky-600 to-teal-500",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/efa/efa54dd8d3e1a8efebfd7dcb4c77e0eb.jpg",
     screenshots: [
@@ -332,15 +372,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Outsmart enemies in 100 handcrafted dungeon floors of deadly puzzles.",
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
-    id: 14,
+    id: 15,
     title: "Lil' Guardsman",
-    genre: "Puzzle",
+    genre: "Casual",
     rating: 9.1,
     year: 2024,
-    gradient: "from-amber-600 to-yellow-400",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/bd2/bd2269675a8e09060677c6583ae5012a.jpg",
     screenshots: [
@@ -354,23 +394,7 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Interrogate suspicious visitors at the kingdom gate in this charming strategy adventure.",
-  },
-  {
-    id: 15,
-    title: "Mewgenics",
-    genre: "Strategy",
-    rating: 9.1,
-    year: 2026,
-    gradient: "from-blue-700 via-indigo-600 to-violet-500",
-    image:
-      "https://media.rawg.io/media/games/43a/43a9694f5ffe22302bbf1cc93bca4ea1.jpg",
-    screenshots: [
-      "https://media.rawg.io/media/games/43a/43a9694f5ffe22302bbf1cc93bca4ea1.jpg",
-    ],
-    badge: "New",
-    description:
-      "Breed, battle, and manage an ever-evolving colony of quirky cats.",
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 16,
@@ -378,7 +402,7 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9.1,
     year: 2024,
-    gradient: "from-orange-700 to-amber-400",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/screenshots/193/1930910695d1adc6716d88163cb4c088.jpg",
     screenshots: [
@@ -392,15 +416,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Lightning-fast melee brawling stripped down to its most brutal essentials.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 17,
     title: "Dispatch",
-    genre: "Adventure",
+    genre: "Strategy",
     rating: 9.1,
     year: 2025,
-    gradient: "from-emerald-600 to-cyan-500",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/2f6/2f6c45362818859574ac0e37edf3d3c4.jpg",
     screenshots: [
@@ -411,15 +435,38 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/335/335a75b273e4744a7a445148c1247a13.jpg",
     ],
     badge: "Trending",
-    description: "A compelling adventure game released in 2025.",
+    description:
+      "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 18,
+    title: "Mom got stuck in the washing machine",
+    genre: "Simulation",
+    rating: 9.1,
+    year: 2023,
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
+    image:
+      "https://media.rawg.io/media/screenshots/c1c/c1cb32f5148e50ebe068897567505c9c.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/c1c/c1cb32f5148e50ebe068897567505c9c.jpg",
+      "https://media.rawg.io/media/screenshots/c2e/c2ed39d56c6bf30170bec012e5fc5f57.jpg",
+      "https://media.rawg.io/media/screenshots/e08/e08e9a72b105021d153e42ddabcb3dd5.jpg",
+      "https://media.rawg.io/media/screenshots/54a/54a40a8a03b58e95ceb01aca0eace09b.jpg",
+      "https://media.rawg.io/media/screenshots/d08/d085b89b089cc02f13fa10a3698a00fb.jpg",
+      "https://media.rawg.io/media/screenshots/969/969d711efad5d1ae603f001bf4e898ef.jpg",
+      "https://media.rawg.io/media/screenshots/c1c/c1cb32f5148e50ebe068897567505c9c.jpg",
+    ],
+    badge: "Trending",
+    description:
+      "A detailed simulation offering a realistic and immersive experience.",
+  },
+  {
+    id: 19,
     title: "The Last of Us Part II Remastered",
-    genre: "Adventure",
+    genre: "Action",
     rating: 9.1,
     year: 2024,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/d09/d099b508a1cfb5bd2f2928b50e0784a5.jpg",
     screenshots: [
@@ -433,15 +480,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Ellie's brutal revenge odyssey remastered with cutting-edge visuals.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 19,
+    id: 20,
     title: "Pragmata",
     genre: "Action",
     rating: 9,
     year: 2026,
-    gradient: "from-red-800 to-orange-600",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/9b2/9b20adbf00491d56ad6793654067f2fd.jpg",
     screenshots: [
@@ -455,15 +502,15 @@ export const games: Game[] = [
     ],
     badge: "New",
     description:
-      "A father and an astronaut child traverse a crumbling Earth on a desperate mission.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 20,
+    id: 21,
     title: "MyVoiceZoo",
-    genre: "Puzzle",
+    genre: "Simulation",
     rating: 9,
     year: 2025,
-    gradient: "from-yellow-700 to-amber-400",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/df3/df373c179cd08f0a549ef1f1635b8864.jpg",
     screenshots: [
@@ -476,15 +523,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/453/453c569af5a8540b635ee826e0b3a896.jpg",
     ],
     badge: "Trending",
-    description: "A compelling puzzle game released in 2025.",
+    description:
+      "A detailed simulation offering a realistic and immersive experience.",
   },
   {
-    id: 21,
+    id: 22,
     title: "Trails in the Sky 1st Chapter",
-    genre: "Adventure",
+    genre: "Action",
     rating: 9,
     year: 2025,
-    gradient: "from-green-600 to-teal-400",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/aae/aaee2d143052bfafe7cae5806587485d.jpg",
     screenshots: [
@@ -493,15 +541,35 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "The beloved JRPG that started the Trails saga, lovingly remade in full 3D.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 22,
+    id: 23,
+    title: "Escape Dungeon 2",
+    genre: "Strategy",
+    rating: 9,
+    year: 2022,
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
+    image:
+      "https://media.rawg.io/media/screenshots/b2d/b2d52ba144e772f12b4c842c7cd1dbcf.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/b2d/b2d52ba144e772f12b4c842c7cd1dbcf.jpg",
+      "https://media.rawg.io/media/screenshots/425/425ea473a12cda930963202052c2d085.jpg",
+      "https://media.rawg.io/media/screenshots/270/270f913fc599a7e537e51c43d0939c2a.jpg",
+      "https://media.rawg.io/media/screenshots/9b0/9b02a332be15fad1309437884714f2ab.jpg",
+      "https://media.rawg.io/media/screenshots/b2d/b2d52ba144e772f12b4c842c7cd1dbcf.jpg",
+    ],
+    badge: "Trending",
+    description:
+      "A cerebral strategy game demanding careful planning and execution.",
+  },
+  {
+    id: 24,
     title: "Beyond Good & Evil - 20th Anniversary Edition",
-    genre: "Adventure",
+    genre: "Action",
     rating: 9,
     year: 2024,
-    gradient: "from-sky-700 to-cyan-500",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/9f5/9f537017b13d32459fa129185648a858.jpg",
     screenshots: [
@@ -515,15 +583,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Investigate a government conspiracy across a vibrant alien world in this cult classic.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 23,
+    id: 25,
     title: "Heroes of Might & Magic: Olden Era",
     genre: "Strategy",
     rating: 9,
     year: 2026,
-    gradient: "from-slate-700 to-blue-600",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/69e/69ece38d22dcc1c44de7ddb7901a1a41.jpg",
     screenshots: [
@@ -532,15 +600,15 @@ export const games: Game[] = [
     ],
     badge: "New",
     description:
-      "A brand-new chapter of the legendary hex-based fantasy strategy series.",
+      "A cerebral strategy game demanding careful planning and execution.",
   },
   {
-    id: 24,
+    id: 26,
     title: "Snakebird Complete",
-    genre: "Adventure",
+    genre: "Puzzle",
     rating: 9,
     year: 2023,
-    gradient: "from-cyan-700 to-sky-500",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/8db/8db51a9a93c825439443c3252947e7d3.jpg",
     screenshots: [
@@ -554,15 +622,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Bend snake-birds through fiendishly clever puzzles in this adorable puzzler.",
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
-    id: 25,
+    id: 27,
     title: "Corrupting The Universe",
     genre: "Adventure",
     rating: 9,
     year: 2023,
-    gradient: "from-teal-700 to-green-500",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/460/460c3df0b652c4fa8ca3f015c1e8a2d7.jpg",
     screenshots: [
@@ -575,15 +643,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/cfa/cfa4608c55a80f70ec080d412bd70dc9.jpg",
     ],
     badge: "Trending",
-    description: "A compelling adventure game released in 2023.",
+    description:
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 26,
+    id: 28,
     title: "Cuphead: The Delicious Last Course",
-    genre: "Action",
+    genre: "Platformer",
     rating: 9,
     year: 2022,
-    gradient: "from-rose-600 via-red-500 to-orange-400",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/01b/01b85423bbfb5f8bc6bcf29dc0cfd6d9.jpg",
     screenshots: [
@@ -597,15 +666,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Chef Saltbaker serves up brutal new bosses, a new playable character, and an island of delights.",
+      "Precision platforming with tight controls and creative level design.",
   },
   {
-    id: 27,
+    id: 29,
     title: "GeoGuessr",
-    genre: "Puzzle",
+    genre: "Casual",
     rating: 9,
     year: 2025,
-    gradient: "from-orange-600 to-yellow-500",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/252/252fea2a340c8f398ca56ddb7649a20e.jpg",
     screenshots: [
@@ -618,15 +687,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Pinpoint your location from a street-view panorama anywhere on Earth.",
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
-    id: 28,
+    id: 30,
     title: "Elden Ring: Shadow of the Erdtree",
     genre: "Action",
     rating: 9,
     year: 2024,
-    gradient: "from-orange-600 to-red-500",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/0ba/0bae7160eedc1f7d85a8d2db70cf1ec9.jpg",
     screenshots: [
@@ -640,15 +709,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "Journey through the Land of Shadow in this sweeping expansion to the award-winning RPG.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 29,
+    id: 31,
     title: "Silent Hill 2",
-    genre: "Adventure",
+    genre: "Action",
     rating: 9,
     year: 2024,
-    gradient: "from-sky-600 to-teal-500",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/09b/09b41c1a2c5761c5b1772a4ae238bb0e.jpg",
     screenshots: [
@@ -662,15 +731,15 @@ export const games: Game[] = [
     ],
     badge: "Trending",
     description:
-      "James Sunderland returns to the fog-shrouded town in this faithful psychological horror remake.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 30,
+    id: 32,
     title: "Clair Obscur: Expedition 33",
-    genre: "RPG",
+    genre: "Adventure",
     rating: 9,
     year: 2025,
-    gradient: "from-purple-700 via-fuchsia-600 to-pink-500",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/466/4667f17fdee9ebbcea2049e54f8e2b96.jpg",
     screenshots: [
@@ -682,17 +751,17 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/16b/16bca296df99c20d6d54d67b2e6ad71b.jpg",
       "https://media.rawg.io/media/screenshots/7bb/7bb0c8b67c9add59d1a13ebb7da790b1.jpg",
     ],
-    badge: "Editor's Pick",
+    badge: "Trending",
     description:
-      "A French-made JRPG where you paint the world to survive a painter's deadly curse.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 31,
+    id: 33,
     title: "Uncharted: Legacy of Thieves Collection",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.9,
     year: 2022,
-    gradient: "from-emerald-600 to-cyan-500",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg",
     screenshots: [
@@ -705,15 +774,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/399/399c968a06e9d1fe42aa9a23d69f0d7f.jpg",
     ],
     description:
-      "Nate's globe-trotting finale and Chloe's golden goddess adventure, remastered for PC and PS5.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 32,
+    id: 34,
     title: "Hatsune Miku: Project DIVA Mega Mix+",
-    genre: "Action",
+    genre: "Arcade",
     rating: 8.9,
     year: 2022,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/801/801b23ccc4ffac44e91a05990199e686.jpg",
     screenshots: [
@@ -726,15 +795,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/502/502f104ff658f340c9fd2711a7221c2c.jpg",
     ],
     description:
-      "Tap along to over 170 iconic vocaloid tracks in razor-sharp HD.",
+      "Classic arcade-style fun with addictive pick-up-and-play loops.",
   },
   {
-    id: 33,
+    id: 35,
     title: "Minishoot' Adventures",
-    genre: "Puzzle",
+    genre: "Casual",
     rating: 8.9,
     year: 2024,
-    gradient: "from-amber-500 via-yellow-400 to-lime-400",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/f9e/f9e56960654865428323477c3b03712e.jpg",
     screenshots: [
@@ -747,31 +816,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/f57/f57c75e2180f6cb3007ccc0ade243a75.jpg",
     ],
     description:
-      "Twin-stick shooting meets Zelda-like exploration in a tiny ship's grand adventure.",
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
-    id: 34,
-    title: "Mixtape",
-    genre: "Adventure",
-    rating: 8.9,
-    year: 2026,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
-    image:
-      "https://media.rawg.io/media/games/a57/a571fcbc2b2ef30fb3e13a4272ef3a93.jpeg",
-    screenshots: [
-      "https://media.rawg.io/media/games/a57/a571fcbc2b2ef30fb3e13a4272ef3a93.jpeg",
-    ],
-    badge: "New",
-    description:
-      "A coming-of-age adventure set in the 90s, told through music and memory.",
-  },
-  {
-    id: 35,
+    id: 36,
     title: "Split Fiction",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.9,
     year: 2025,
-    gradient: "from-green-600 to-teal-400",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/02a/02ac22b3b90717dabaa535640c38534c.jpg",
     screenshots: [
@@ -784,15 +837,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/f5a/f5a69af83f67e75cb404b2dd334e2197.jpg",
     ],
     description:
-      "Two writers trapped inside their own stories must cooperate to escape a publisher's dystopia.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 36,
+    id: 37,
     title: "Baldur's Gate III",
     genre: "Strategy",
     rating: 8.9,
     year: 2023,
-    gradient: "from-indigo-800 to-blue-500",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg",
     screenshots: [
@@ -806,15 +859,15 @@ export const games: Game[] = [
     ],
     badge: "Editor's Pick",
     description:
-      "Roll the dice on an epic co-op RPG packed with consequence-heavy choices and D&D depth.",
+      "A cerebral strategy game demanding careful planning and execution.",
   },
   {
-    id: 37,
+    id: 38,
     title: "Another Code: Recollection",
     genre: "Adventure",
     rating: 8.9,
     year: 2024,
-    gradient: "from-sky-700 to-cyan-500",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/896/896854355c6516444323c9e085d562d7.jpg",
     screenshots: [
@@ -827,15 +880,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/fd6/fd6eac6d52850bc8c797e9721493f221.jpg",
     ],
     description:
-      "A young girl unravels family mysteries across two haunting island adventures.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 38,
+    id: 39,
     title: "Emi - New Beginning",
-    genre: "Adventure",
+    genre: "Simulation",
     rating: 8.9,
     year: 2022,
-    gradient: "from-cyan-700 to-sky-500",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/eec/eec1d91768080988c5f768d9b0d2291c.jpg",
     screenshots: [
@@ -847,15 +900,34 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/ec0/ec0ed218dc82924d83c1032a01c543cd.jpg",
       "https://media.rawg.io/media/screenshots/9b5/9b5be62504b992306c3b81f5351ee78c.jpg",
     ],
-    description: "A compelling adventure game released in 2022.",
+    description:
+      "A detailed simulation offering a realistic and immersive experience.",
   },
   {
-    id: 39,
+    id: 40,
+    title: "The Witch's Sexual Prison",
+    genre: "Casual",
+    rating: 8.9,
+    year: 2022,
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
+    image:
+      "https://media.rawg.io/media/games/91e/91e0e9cfd762c41753ba231d5cce7f76.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/games/91e/91e0e9cfd762c41753ba231d5cce7f76.jpg",
+      "https://media.rawg.io/media/screenshots/0ae/0ae4bf4d57f56b0ce9432be0c0da6387.jpg",
+      "https://media.rawg.io/media/screenshots/8d0/8d043794cc1dda7363224d3019575f6e.jpg",
+      "https://media.rawg.io/media/screenshots/c12/c1209b5bc3a3d36236c1cb0f0abda120.jpg",
+    ],
+    description:
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+  },
+  {
+    id: 41,
     title: "Bionic Bay",
     genre: "Racing",
     rating: 8.9,
     year: 2025,
-    gradient: "from-orange-600 via-red-500 to-rose-400",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/66d/66d6665c96dde6a76bc869f3828013b8.jpg",
     screenshots: [
@@ -867,15 +939,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/6f5/6f507992e58631e83dab530ac8b8ed84.jpg",
     ],
     description:
-      "A sleek sci-fi platformer where you swap bodies with enemies to solve physics puzzles.",
+      "High-speed racing with tight controls and competitive thrills.",
   },
   {
-    id: 40,
+    id: 42,
     title: "Hauntii",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.9,
     year: 2024,
-    gradient: "from-teal-700 to-green-500",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/21c/21cb898a6eb030e8b930a6c55b803ebb.jpg",
     screenshots: [
@@ -888,15 +960,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/8fa/8fa5675a565a012ea3fbcd17f4d8f494.jpg",
     ],
     description:
-      "A ghost inhabits the world around it to unravel the mysteries of eternity.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 41,
+    id: 43,
     title: "Resident Evil 4 - Separate Ways",
     genre: "Shooter",
     rating: 8.9,
     year: 2023,
-    gradient: "from-cyan-700 to-emerald-600",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/235/23507cdd4268752b10f4dfc9cba52e9c.jpg",
     screenshots: [
@@ -909,15 +981,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/41a/41af212e8bee768adc1c022fcec14a34.jpg",
     ],
     description:
-      "Play Ada Wong's parallel spy mission through the events of Resident Evil 4.",
+      "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
-    id: 42,
+    id: 44,
     title: "God of War: Ragnarök",
     genre: "Action",
     rating: 8.9,
     year: 2022,
-    gradient: "from-rose-700 to-red-400",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/1c3/1c305096502c475c00276c827f0fd697.jpg",
     screenshots: [
@@ -930,15 +1002,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/001/00156acba9a5a3316893c22f4bd15edf.jpg",
     ],
     description:
-      "Kratos and Atreus race to prevent Ragnarök across the nine Norse realms.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 43,
+    id: 45,
     title: "Until Then",
-    genre: "Puzzle",
+    genre: "Casual",
     rating: 8.8,
     year: 2024,
-    gradient: "from-yellow-500 via-amber-400 to-orange-400",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
     screenshots: [
@@ -950,15 +1022,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
     ],
     description:
-      "A heartfelt Filipino slice-of-life visual novel set amid everyday teenage drama.",
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
-    id: 44,
+    id: 46,
     title: "A Space for the Unbound",
     genre: "Adventure",
     rating: 8.8,
     year: 2023,
-    gradient: "from-sky-600 to-teal-500",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/c18/c180a02a53ce8c8cf23f11f182184103.jpg",
     screenshots: [
@@ -971,15 +1043,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/14b/14b7daff2f189e2c1019010d2b2645a3.jpg",
     ],
     description:
-      "An Indonesian high-school adventure exploring mental health through magical realism.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 45,
+    id: 47,
     title: "Donkey Kong Bananza",
     genre: "Adventure",
     rating: 8.8,
     year: 2025,
-    gradient: "from-emerald-600 to-cyan-500",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/db4/db4348b029d2cdaf826d7536bd75b71c.jpg",
     screenshots: [
@@ -987,15 +1059,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/b82/b82e3b723c20c92dbdcde19a8816cce2.jpg",
     ],
     description:
-      "Kong smashes through destructible terrain in a vibrant underground open-world adventure.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 46,
+    id: 48,
     title: "World of Goo 2",
     genre: "Puzzle",
     rating: 8.8,
     year: 2024,
-    gradient: "from-amber-600 to-yellow-400",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/screenshots/f7a/f7af9c3c70d7acf49430e525e5d3825f.jpg",
     screenshots: [
@@ -1006,15 +1078,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/f7a/f7af9c3c70d7acf49430e525e5d3825f.jpg",
     ],
     description:
-      "Stack wobbly goo balls across mind-bending physics puzzles in a beautifully crafted sequel.",
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
-    id: 47,
+    id: 49,
     title: "Horizon Zero Dawn Remastered",
     genre: "Shooter",
     rating: 8.8,
     year: 2024,
-    gradient: "from-emerald-700 via-teal-600 to-cyan-500",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
     screenshots: [
@@ -1024,15 +1096,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
     ],
     description:
-      "Hunt colossal machine creatures across a lush post-apocalyptic landscape, rebuilt for PS5.",
+      "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
-    id: 48,
+    id: 50,
     title: "1000xResist",
-    genre: "Adventure",
+    genre: "Puzzle",
     rating: 8.8,
     year: 2024,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/7c7/7c7fc7ac07c17fad71095cca1c78bc65.jpg",
     screenshots: [
@@ -1045,15 +1117,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/7c3/7c3d9752c03944ef92523b23c163ea1f.jpg",
     ],
     description:
-      "Uncover the truth about a cultish society that survived an alien plague.",
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
-    id: 49,
+    id: 51,
     title: "I Am Your Beast",
     genre: "Action",
     rating: 8.8,
     year: 2024,
-    gradient: "from-orange-700 to-amber-400",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/077/07790746d9caa0542203febd069ac764.jpg",
     screenshots: [
@@ -1066,30 +1138,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/b03/b03555bfa558788b6d6d2c3c171bbbd4.jpg",
     ],
     description:
-      "Chain together ruthless executions in this hyper-stylised stealth action game.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 50,
-    title: "Super Mario Party Jamboree",
-    genre: "Adventure",
-    rating: 8.8,
-    year: 2024,
-    gradient: "from-green-600 to-teal-400",
-    image:
-      "https://media.rawg.io/media/games/66f/66fcdc18586ac8c0aa17b2c83fee558d.jpg",
-    screenshots: [
-      "https://media.rawg.io/media/games/66f/66fcdc18586ac8c0aa17b2c83fee558d.jpg",
-    ],
-    description:
-      "The biggest Mario Party boards yet, packed with mini-games for the whole family.",
-  },
-  {
-    id: 51,
+    id: 52,
     title: "Hollow Knight: Silksong",
-    genre: "Action",
+    genre: "Platformer",
     rating: 8.8,
     year: 2025,
-    gradient: "from-red-800 to-orange-600",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg",
     screenshots: [
@@ -1102,15 +1159,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/79a/79a5026c9032d626d59b57e5d6edb45a_EiUzDAs.jpg",
     ],
     description:
-      "Hornet battles her way through a new kingdom teeming with enemies, hunters, and ancient secrets.",
+      "Precision platforming with tight controls and creative level design.",
   },
   {
-    id: 52,
+    id: 53,
     title: "Kingdom Come: Deliverance II",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.8,
     year: 2025,
-    gradient: "from-sky-700 to-cyan-500",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg",
     screenshots: [
@@ -1123,15 +1180,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/ab2/ab2e1086144e9722aba95d012aadcc66.jpg",
     ],
     description:
-      "Continue Henry's medieval Bohemian odyssey in this sprawling open-world RPG sequel.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 53,
+    id: 54,
     title: "Elden Ring",
     genre: "Action",
     rating: 8.8,
     year: 2022,
-    gradient: "from-rose-600 via-red-500 to-orange-400",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg",
     screenshots: [
@@ -1145,30 +1202,31 @@ export const games: Game[] = [
     ],
     badge: "Editor's Pick",
     description:
-      "Traverse the Lands Between and unravel the mystery of the shattered Elden Ring.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 54,
+    id: 55,
     title: "UCN for mac and windows",
     genre: "Adventure",
     rating: 8.8,
     year: 2022,
-    gradient: "from-cyan-700 to-sky-500",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
       "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
     ],
-    description: "A compelling adventure game released in 2022.",
+    description:
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 55,
+    id: 56,
     title: "Winter Memories",
-    genre: "Puzzle",
+    genre: "Simulation",
     rating: 8.8,
     year: 2024,
-    gradient: "from-yellow-700 to-amber-400",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/screenshots/326/326267a294202a9d93e55879a6f61d48.jpg",
     screenshots: [
@@ -1179,15 +1237,37 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/22b/22bad148e80732be27db151f30703e56.jpg",
       "https://media.rawg.io/media/screenshots/326/326267a294202a9d93e55879a6f61d48.jpg",
     ],
-    description: "A compelling puzzle game released in 2024.",
+    description:
+      "A detailed simulation offering a realistic and immersive experience.",
   },
   {
-    id: 56,
-    title: "Leaf it Alone",
-    genre: "Puzzle",
+    id: 57,
+    title: "One Iced Latte With Your Breast Milk, Please! ☕",
+    genre: "Simulation",
     rating: 8.8,
     year: 2025,
-    gradient: "from-orange-600 to-yellow-500",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
+    image:
+      "https://media.rawg.io/media/screenshots/1a5/1a582842654560cde2979cc25cea0e9b.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/1a5/1a582842654560cde2979cc25cea0e9b.jpg",
+      "https://media.rawg.io/media/screenshots/53f/53fcac444ecaaf69ef0b9737776218f2.jpg",
+      "https://media.rawg.io/media/screenshots/845/845239e769e36fe07faafecb291e114c.jpg",
+      "https://media.rawg.io/media/screenshots/0a5/0a5d05c99d4d4e8830c24722a025bc5a.jpg",
+      "https://media.rawg.io/media/screenshots/c61/c61fbaebd56c3bdf3a0d4b775b6c2f10.jpg",
+      "https://media.rawg.io/media/screenshots/639/639dd3e2e6a2b299b0edbf4f23fc608f.jpg",
+      "https://media.rawg.io/media/screenshots/0a0/0a0ae121556609f586e7b06946592658.jpg",
+    ],
+    description:
+      "A detailed simulation offering a realistic and immersive experience.",
+  },
+  {
+    id: 58,
+    title: "Leaf it Alone",
+    genre: "Simulation",
+    rating: 8.8,
+    year: 2025,
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/e8a/e8a79474fcbcd0d1bc595ec25dd7536f.jpg",
     screenshots: [
@@ -1199,15 +1279,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e84/e84ef63acd3d591545e5ab4a603b3703.jpg",
       "https://media.rawg.io/media/screenshots/853/853d6fa6820b4f63d7b1632058e48bb7.jpg",
     ],
-    description: "A compelling puzzle game released in 2025.",
+    description:
+      "A detailed simulation offering a realistic and immersive experience.",
   },
   {
-    id: 57,
+    id: 59,
     title: "The Rise of the Golden Idol",
-    genre: "Adventure",
+    genre: "Puzzle",
     rating: 8.8,
     year: 2024,
-    gradient: "from-teal-700 to-green-500",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/bc8/bc8e49daf53d39b599f5fdb012177569.jpg",
     screenshots: [
@@ -1219,15 +1300,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/bc8/bc8e49daf53d39b599f5fdb012177569.jpg",
     ],
     description:
-      "Piece together a centuries-spanning cult conspiracy through crime scene analysis.",
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
-    id: 58,
+    id: 60,
     title: "The WereCleaner",
-    genre: "Puzzle",
+    genre: "Strategy",
     rating: 8.8,
     year: 2024,
-    gradient: "from-amber-500 via-yellow-400 to-lime-400",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/screenshots/d09/d091eb9147f87728c0e6f0bacbbcd2b6.jpg",
     screenshots: [
@@ -1239,15 +1320,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/441/4412fe20f3b3006e05672953628ee926.jpg",
       "https://media.rawg.io/media/screenshots/9a5/9a5f9dcad96688e6bd9971565748734b.jpg",
     ],
-    description: "A compelling puzzle game released in 2024.",
+    description:
+      "A cerebral strategy game demanding careful planning and execution.",
   },
   {
-    id: 59,
+    id: 61,
     title: "Slay the Princess",
-    genre: "Adventure",
+    genre: "Simulation",
     rating: 8.8,
     year: 2023,
-    gradient: "from-sky-600 to-teal-500",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/1fa/1fa542171e580af49fabd094bd232659.jpg",
     screenshots: [
@@ -1260,15 +1342,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/ea2/ea23f760e2825f6a1dab466d64e33f09.jpg",
     ],
     description:
-      "Choose your response to a captive princess — and discover nothing is what it seems.",
+      "A detailed simulation offering a realistic and immersive experience.",
   },
   {
-    id: 60,
+    id: 62,
     title: "Frog Detective 3: Corruption at Cowboy County",
-    genre: "Puzzle",
+    genre: "Casual",
     rating: 8.8,
     year: 2022,
-    gradient: "from-yellow-500 via-amber-400 to-orange-400",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/a92/a92d76ba93b22b7add9b9502fa52d0ce.jpg",
     screenshots: [
@@ -1281,15 +1363,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/6d8/6d8547614cf2fb6856a3b673ca9815fa.jpg",
     ],
     description:
-      "The world's greatest detective investigates a mysterious fog and a sabotaged party.",
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
-    id: 61,
-    title: '"Voices Of The Void" Demo',
-    genre: "Strategy",
+    id: 63,
+    title: "\"Voices Of The Void\" Demo",
+    genre: "Simulation",
     rating: 8.8,
     year: 2022,
-    gradient: "from-blue-900 to-indigo-500",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/5ad/5ade5501c6e154c24af4b257128e1c13.jpg",
     screenshots: [
@@ -1301,15 +1383,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/eda/eda9d3c1549135373146bc12d9562348.jpg",
       "https://media.rawg.io/media/screenshots/f2f/f2fbff15fc20e8ccdc66834eb4fc88c1.jpg",
     ],
-    description: "A compelling strategy game released in 2022.",
+    description:
+      "A detailed simulation offering a realistic and immersive experience.",
   },
   {
-    id: 62,
+    id: 64,
     title: "Monster Prom 3: Monster Roadtrip",
-    genre: "Puzzle",
+    genre: "Strategy",
     rating: 8.8,
     year: 2022,
-    gradient: "from-amber-600 to-yellow-400",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/screenshots/461/461540af873745450cdd3d39dfcc695d.jpg",
     screenshots: [
@@ -1321,15 +1404,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d72/d72077ae14546a5488a11a939ed3b3f3.jpg",
       "https://media.rawg.io/media/screenshots/c62/c624cb3a41a58bcaaff19b7368ff2eed.jpg",
     ],
-    description: "A compelling puzzle game released in 2022.",
+    description:
+      "A cerebral strategy game demanding careful planning and execution.",
   },
   {
-    id: 63,
+    id: 65,
     title: "Lost in Play",
-    genre: "Puzzle",
+    genre: "Casual",
     rating: 8.8,
     year: 2022,
-    gradient: "from-yellow-700 to-amber-400",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/465/465d819b711ed1251bdaed0759ef185e.jpg",
     screenshots: [
@@ -1342,15 +1426,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e9a/e9ab1b847b8c5ba7f764aa36d6a697a7.jpg",
     ],
     description:
-      "Two siblings' imagination runs wild in a wordless animated adventure.",
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
-    id: 64,
+    id: 66,
     title: "Cabernet",
-    genre: "Adventure",
+    genre: "Simulation",
     rating: 8.8,
     year: 2025,
-    gradient: "from-emerald-600 to-cyan-500",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/624/624f7fc033c4afbdff09df3aa10866ac.jpg",
     screenshots: [
@@ -1363,15 +1447,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e48/e48c7bbcf89973a6242ce2d739b84022.jpg",
     ],
     description:
-      "Navigate vampire society and moral dilemmas in a gothic narrative RPG.",
+      "A detailed simulation offering a realistic and immersive experience.",
   },
   {
-    id: 65,
+    id: 67,
     title: "Fire Emblem Warriors: Three Hopes",
     genre: "Action",
     rating: 8.8,
     year: 2022,
-    gradient: "from-orange-600 to-red-500",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/073/073b560fa5ab283c03e4a9a698d001af.jpg",
     screenshots: [
@@ -1383,15 +1467,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/93b/93b0108e7a6b096980830cf01b4b2b0b.jpg",
     ],
     description:
-      "Command Three Houses characters in fast-paced musou battles across a branching war.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 66,
+    id: 68,
     title: "The Legend of Zelda: Tears of the Kingdom",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/556/55684bfd048706f4266d331d70050b37.jpg",
     screenshots: [
@@ -1403,15 +1487,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/c63/c63fda6df2574a7d071f96082438e820.jpg",
       "https://media.rawg.io/media/screenshots/c92/c92c2acf519b3dc613c0f0085cc34b34.jpg",
     ],
-    description: "A compelling adventure game released in 2023.",
+    description:
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 67,
+    id: 69,
     title: "Cocoon",
-    genre: "Adventure",
+    genre: "Puzzle",
     rating: 8.7,
     year: 2023,
-    gradient: "from-green-600 to-teal-400",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/153/153e8d78ac19e959214dadefb8c27310.jpg",
     screenshots: [
@@ -1422,15 +1507,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/52f/52fdb83092551e87ffb17303e6dbb52c.jpg",
       "https://media.rawg.io/media/screenshots/344/34450dcf901ada55cde6aa59a422de23.jpg",
     ],
-    description: "A compelling adventure game released in 2023.",
+    description:
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
-    id: 68,
+    id: 70,
     title: "Persona 3 Reload",
     genre: "Strategy",
     rating: 8.7,
     year: 2024,
-    gradient: "from-violet-700 to-blue-600",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/29a/29a78d7b6be61673c910d588bf188e2c.jpg",
     screenshots: [
@@ -1442,15 +1528,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/819/8190e350e79551705a1bd881b6c36ecb.jpg",
     ],
     description:
-      "Command the Specialized Extracurricular Execution Squad in a fully remade Persona classic.",
+      "A cerebral strategy game demanding careful planning and execution.",
   },
   {
-    id: 69,
+    id: 71,
     title: "The Stanley Parable: Ultra Deluxe",
-    genre: "Puzzle",
+    genre: "Casual",
     rating: 8.7,
     year: 2022,
-    gradient: "from-orange-600 to-yellow-500",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/c4e/c4e3ad247e93d3a5dc40aa215a778a9c.jpg",
     screenshots: [
@@ -1458,15 +1544,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/c45/c45a2a5e4290c13ddefe015f3d46b19a.jpg",
       "https://media.rawg.io/media/screenshots/e6f/e6fccc52fe023c0c216dd56413faa19d.jpg",
     ],
-    description: "A compelling puzzle game released in 2022.",
+    description:
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
-    id: 70,
+    id: 72,
     title: "Warhammer 40,000: Rogue Trader",
     genre: "Strategy",
     rating: 8.7,
     year: 2023,
-    gradient: "from-blue-700 via-indigo-600 to-violet-500",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/edf/edf3bd3ffa486f5d6a84bda020765839.jpg",
     screenshots: [
@@ -1479,30 +1566,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/64f/64fd7baa23071741602bee8f928e43ba.jpg",
     ],
     description:
-      "Command a mighty rogue trader dynasty across the grim darkness of the far future.",
+      "A cerebral strategy game demanding careful planning and execution.",
   },
   {
-    id: 71,
-    title: "Astro Bot",
-    genre: "Action",
-    rating: 8.7,
-    year: 2024,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
-    image:
-      "https://media.rawg.io/media/games/b19/b19cdd6be95ffffd63fdd2d1fbac057a.jpg",
-    screenshots: [
-      "https://media.rawg.io/media/games/b19/b19cdd6be95ffffd63fdd2d1fbac057a.jpg",
-    ],
-    description:
-      "A joyful 3D platformer celebrating PlayStation history through inspired worlds and characters.",
-  },
-  {
-    id: 72,
+    id: 73,
     title: "Metroid Prime Remastered",
-    genre: "Action",
+    genre: "Shooter",
     rating: 8.7,
     year: 2023,
-    gradient: "from-rose-700 to-red-400",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/f2f/f2f9f11997ee841550ba2b8ccf3c51e9.jpg",
     screenshots: [
@@ -1515,15 +1587,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/dc7/dc7c3ae2081cca749ad7b086c0ea9225.jpg",
     ],
     description:
-      "Samus Aran's iconic first-person adventure through an alien planet, gorgeously rebuilt.",
+      "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
-    id: 73,
+    id: 74,
     title: "Chants of Sennaar",
-    genre: "Adventure",
+    genre: "Puzzle",
     rating: 8.7,
     year: 2023,
-    gradient: "from-sky-700 to-cyan-500",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/5e9/5e9ce1121cbc4f30cb54cec20820df04.jpg",
     screenshots: [
@@ -1536,15 +1608,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/bf6/bf6562808f75118ed144c899c9e06064.jpg",
     ],
     description:
-      "Decipher ancient languages to bridge civilisations in a Tower of Babel mystery.",
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
-    id: 74,
+    id: 75,
     title: "Shogun Showdown",
     genre: "Strategy",
     rating: 8.7,
     year: 2023,
-    gradient: "from-slate-700 to-blue-600",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/7a2/7a23a81875145336576e24b682d3ede7.jpg",
     screenshots: [
@@ -1556,15 +1628,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/461/46189ff0373fa935f2bcdb2b77fa8dad.jpg",
       "https://media.rawg.io/media/screenshots/7d1/7d14be9ee36ab9d1e67fbea0795ae602.jpg",
     ],
-    description: "A compelling strategy game released in 2023.",
+    description:
+      "A cerebral strategy game demanding careful planning and execution.",
   },
   {
-    id: 75,
+    id: 76,
     title: "Marvel's Spider-Man 2",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-cyan-700 to-sky-500",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/7ae/7ae5a14cdb4ab222a134c15f4629e430.jpg",
     screenshots: [
@@ -1577,15 +1650,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/6ff/6ff530af3788338486569ce723d503bd.jpg",
     ],
     description:
-      "Peter and Miles face Venom in a breathtaking dual-protagonist New York adventure.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 76,
+    id: 77,
     title: "Signalis",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2022,
-    gradient: "from-teal-700 to-green-500",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/480/480295ba922318bb052d169174ec88aa.jpg",
     screenshots: [
@@ -1598,15 +1671,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/81d/81d38f9d4f011debb22d25d4b8497960.jpg",
     ],
     description:
-      "A haunting sci-fi survival horror told through fragmented dreams and encrypted signals.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 77,
+    id: 78,
     title: "Ghost Trick : Detective Phantom (remastered)",
     genre: "Adventure",
     rating: 8.7,
     year: 2023,
-    gradient: "from-sky-600 to-teal-500",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/d00/d0088d5ffce4e167241b65eb18a28cb4.jpg",
     screenshots: [
@@ -1619,15 +1692,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/21a/21a336614c2a77a5cb063387f58e1af7.jpg",
     ],
     description:
-      "A dead detective manipulates objects to prevent murders in this witty puzzle adventure.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 78,
+    id: 79,
     title: "Hades II",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2025,
-    gradient: "from-emerald-600 to-cyan-500",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/8fd/8fd2e8317849fd265ad8781c324d4ec2.jpg",
     screenshots: [
@@ -1639,17 +1712,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/971/971f056ee50927f331f880271b0ab414.jpg",
       "https://media.rawg.io/media/screenshots/565/565801fac627e1d6828fe56ea172d5ff.jpg",
     ],
-    badge: "Editor's Pick",
     description:
-      "The witch Melinoë wages war on Chronos in a bigger, deeper roguelike sequel.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 79,
+    id: 80,
     title: "Nine Sols",
-    genre: "Action",
+    genre: "Platformer",
     rating: 8.7,
     year: 2024,
-    gradient: "from-orange-700 to-amber-400",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/cee/cee02d983e2e1e457caa562420f532fb.jpg",
     screenshots: [
@@ -1662,15 +1734,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/9d1/9d165bb2dc0caa71a995172a69f109aa.jpg",
     ],
     description:
-      "A Taoistic sci-fi Metroidvania where precision parries define every encounter.",
+      "Precision platforming with tight controls and creative level design.",
   },
   {
-    id: 80,
+    id: 81,
     title: "Super Mario Bros. Wonder",
     genre: "Adventure",
     rating: 8.7,
     year: 2023,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg",
     screenshots: [
@@ -1683,15 +1755,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/4ba/4ba1eff24d2ca57b08f6e510c8286918.jpeg",
     ],
     description:
-      "Side-scrolling madness unleashed through Wonder Flowers that warp reality mid-level.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 81,
+    id: 82,
     title: "Splatoon 3",
     genre: "Shooter",
     rating: 8.7,
     year: 2022,
-    gradient: "from-gray-700 to-green-600",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/360/360ac0a839ab0f0d9a70b35d38264cb0.jpg",
     screenshots: [
@@ -1704,15 +1776,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/441/44158afb4810a7141760dc3b03d143ba.jpg",
     ],
     description:
-      "Ink the turf, splat opponents, and customise your squid kid in the latest Splatoon.",
+      "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
-    id: 82,
+    id: 83,
     title: "The Legend of Heroes: Trails from Zero",
-    genre: "RPG",
+    genre: "Adventure",
     rating: 8.7,
     year: 2022,
-    gradient: "from-violet-800 to-purple-500",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/f0a/f0ac99c638c25a5975cd74919564bda5.jpg",
     screenshots: [
@@ -1722,15 +1794,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/bd4/bd4ae45c86104d44bf4753bcb848be1f.jpg",
     ],
     description:
-      "The crossbell detective arc begins in this beloved JRPG now playable in English.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 83,
+    id: 84,
     title: "We Were Here Forever",
     genre: "Puzzle",
     rating: 8.7,
     year: 2022,
-    gradient: "from-amber-500 via-yellow-400 to-lime-400",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/b2d/b2d4e1f3fc468c104efb7c5a576b4206.jpg",
     screenshots: [
@@ -1742,15 +1814,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/f79/f799ad9397f18cfd2f9df08c9db76db3.jpg",
     ],
     description:
-      "Solve elaborate puzzles across a gothic castle through pure co-op communication.",
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
-    id: 84,
+    id: 85,
     title: "The Alters",
     genre: "Adventure",
     rating: 8.7,
     year: 2025,
-    gradient: "from-green-600 to-teal-400",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/18f/18fba094d4ba0dda019131ea9b585446.jpg",
     screenshots: [
@@ -1763,15 +1835,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/9a8/9a83e62ec33dd43a6bd9d41552d208bf.jpg",
     ],
     description:
-      "Manage alternate versions of yourself to survive a dying alien world.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 85,
+    id: 86,
     title: "Neon White",
     genre: "Shooter",
     rating: 8.7,
     year: 2022,
-    gradient: "from-teal-800 to-emerald-500",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/a12/a120fc7faed7666f8c320a755137e316.jpg",
     screenshots: [
@@ -1783,15 +1855,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/9af/9af75d8e658125b90f9cf3d96d434ae5.jpg",
     ],
     description:
-      "Sprint, slay demons, and shave milliseconds off your best time in this card-shooter hybrid.",
+      "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
-    id: 86,
+    id: 87,
     title: "Unicorn Overlord",
     genre: "Strategy",
     rating: 8.7,
     year: 2024,
-    gradient: "from-indigo-800 to-blue-500",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/e4d/e4d2d9720f0962ca4f6a6dd02cef331e.jpeg",
     screenshots: [
@@ -1804,15 +1876,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/c27/c2764e10b3757383fc1503bd88f41c83.jpeg",
     ],
     description:
-      "Lead a liberation army across a beautifully illustrated fantasy world.",
+      "A cerebral strategy game demanding careful planning and execution.",
   },
   {
-    id: 87,
+    id: 88,
     title: "Doom: The Dark Ages",
     genre: "Action",
     rating: 8.7,
     year: 2025,
-    gradient: "from-red-800 to-orange-600",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/018/01897340a06b9ed8e92ed1cc1b1eecb9.jpg",
     screenshots: [
@@ -1825,15 +1897,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/6bb/6bb96822b69428fd474ad54da6dfbefa.jpg",
     ],
     description:
-      "Rip and tear through medieval citadels as a primal armoured Doom Slayer.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 88,
+    id: 89,
     title: "Death Stranding 2: On The Beach",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2025,
-    gradient: "from-sky-700 to-cyan-500",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/b85/b85bc300d42588af66fb516b7563f74f.jpg",
     screenshots: [
@@ -1845,15 +1917,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/8a8/8a87fa3c9a671416715d9ba29789cd7f.jpg",
       "https://media.rawg.io/media/screenshots/901/901efd17e514cede763eeb9837a80614.jpg",
     ],
-    description: "A compelling adventure game released in 2025.",
+    description:
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 89,
+    id: 90,
     title: "The Talos Principle 2",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-cyan-700 to-sky-500",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/4e4/4e42fc297c028630262a4abcc7769576.jpg",
     screenshots: [
@@ -1865,15 +1938,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e6f/e6f520e663649b31257b11f68212e092.jpg",
       "https://media.rawg.io/media/screenshots/39d/39d3a158501f55f44182a39c610697ae.jpg",
     ],
-    description: "A compelling adventure game released in 2023.",
+    description:
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 90,
+    id: 91,
     title: "Dead Space",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-teal-700 to-green-500",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/ea6/ea6a1382b15d749e15fdfbf0aece7689.jpg",
     screenshots: [
@@ -1882,15 +1956,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/ac9/ac93d0f12fe3681dc37becad9885ef5e.jpg",
       "https://media.rawg.io/media/screenshots/217/217828b40ae05d789a1bcd9fdb7bd9fa.jpg",
     ],
-    description: "A compelling adventure game released in 2023.",
+    description:
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 91,
+    id: 92,
     title: "Neva",
-    genre: "Adventure",
+    genre: "Puzzle",
     rating: 8.7,
     year: 2024,
-    gradient: "from-sky-600 to-teal-500",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/5eb/5eb783656623aa13d6fc65e470dd5dba.jpg",
     screenshots: [
@@ -1901,15 +1976,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/8d9/8d944744ce9fc7d307a008de166ae051.jpg",
       "https://media.rawg.io/media/screenshots/4f5/4f53dea6cdd1b50ff5dd035ffcb04a57.jpg",
     ],
-    description: "A compelling adventure game released in 2024.",
+    description:
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
-    id: 92,
+    id: 93,
     title: "Alan Wake 2",
     genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-rose-600 via-red-500 to-orange-400",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/5b9/5b963d7633cd640fa2dbc4069d1c6377.jpg",
     screenshots: [
@@ -1922,15 +1998,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/1eb/1eb720bb7d9eea3f352fbf881666aaeb.jpg",
     ],
     description:
-      "A writer trapped in a dark story must rewrite reality to escape a nightmare.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 93,
+    id: 94,
     title: "Sister! Seikatsu -Fantasy-",
-    genre: "Puzzle",
+    genre: "Casual",
     rating: 8.7,
     year: 2022,
-    gradient: "from-yellow-500 via-amber-400 to-orange-400",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/5cc/5cc0fe59150a7d40b476c16115fc30e1.jpg",
     screenshots: [
@@ -1941,15 +2017,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/6fb/6fb94b6852ddd037a4e7bb3c9b7c7579.jpg",
       "https://media.rawg.io/media/screenshots/5cc/5cc0fe59150a7d40b476c16115fc30e1.jpg",
     ],
-    description: "A compelling puzzle game released in 2022.",
+    description:
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
-    id: 94,
+    id: 95,
     title: "Monster Hunter Stories 3: Twisted Reflection",
     genre: "Action",
     rating: 8.7,
     year: 2026,
-    gradient: "from-orange-600 to-red-500",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/880/880bec24bf308de14746c9966e09d719.jpg",
     screenshots: [
@@ -1963,15 +2040,15 @@ export const games: Game[] = [
     ],
     badge: "New",
     description:
-      "Bond with monstie companions and unravel a mystery reshaping the monster world.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 95,
+    id: 96,
     title: "Ball x Pit",
     genre: "Action",
     rating: 8.7,
     year: 2025,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/798/798705b4f25e958e4ab8edf570e215f8.jpg",
     screenshots: [
@@ -1983,15 +2060,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/7bb/7bb0f128f5608cf772d19a336490d6d7.jpg",
       "https://media.rawg.io/media/screenshots/ea7/ea77ee754498a243179669b3579ea021.jpg",
     ],
-    description: "A compelling action game released in 2025.",
+    description:
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 96,
+    id: 97,
     title: "The Last Clockwinder",
-    genre: "Adventure",
+    genre: "Simulation",
     rating: 8.7,
     year: 2022,
-    gradient: "from-emerald-600 to-cyan-500",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/840/84070ec840c2209ebbed054efd82eb13.jpg",
     screenshots: [
@@ -2004,15 +2082,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/59b/59b46229187e62b6fbde0cb357d517fd.jpg",
     ],
     description:
-      "Solve puzzles by recording your own hands as looping robot helpers.",
+      "A detailed simulation offering a realistic and immersive experience.",
   },
   {
-    id: 97,
+    id: 98,
     title: "TELEFORUM",
     genre: "Adventure",
     rating: 8.7,
     year: 2023,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/55b/55bda84104dd31bcd7477f234b573594.jpg",
     screenshots: [
@@ -2023,30 +2101,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/f0e/f0e5ca1ac9941aad31411468c6227c6d.jpg",
       "https://media.rawg.io/media/screenshots/55b/55bda84104dd31bcd7477f234b573594.jpg",
     ],
-    description: "A compelling adventure game released in 2023.",
-  },
-  {
-    id: 98,
-    title: "The Legend of Zelda: Echoes of Wisdom",
-    genre: "Adventure",
-    rating: 8.7,
-    year: 2024,
-    gradient: "from-green-600 to-teal-400",
-    image:
-      "https://media.rawg.io/media/games/ef0/ef095574ebf35dbe30cbb85f3798b4e5.jpg",
-    screenshots: [
-      "https://media.rawg.io/media/games/ef0/ef095574ebf35dbe30cbb85f3798b4e5.jpg",
-    ],
     description:
-      "Zelda copies objects and enemies as Echoes to puzzle her way through a rift-torn Hyrule.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 99,
     title: "Prince of Persia The Lost Crown",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2024,
-    gradient: "from-sky-700 to-cyan-500",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/159/159ef6e50522aaf27650cc418a1bf411.jpg",
     screenshots: [
@@ -2057,15 +2121,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e5a/e5a3c757cbc201d0616666bacbc4183a.jpg",
       "https://media.rawg.io/media/screenshots/159/159ef6e50522aaf27650cc418a1bf411.jpg",
     ],
-    description: "A compelling adventure game released in 2024.",
+    description:
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 100,
     title: "Poppy Playtime 2D (CHAPTER 1)",
-    genre: "Adventure",
+    genre: "Puzzle",
     rating: 8.7,
     year: 2022,
-    gradient: "from-cyan-700 to-sky-500",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/screenshots/7ab/7ab4d3a9c687a4245b37343e381777b5.jpg",
     screenshots: [
@@ -2075,7 +2140,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/7ab/7ab4d3a9c687a4245b37343e381777b5.jpg",
     ],
     description:
-      "Escape the toy factory and survive Huggy Wuggy in this creepy 2D horror.",
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 101,
@@ -2083,7 +2148,7 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 8.7,
     year: 2024,
-    gradient: "from-blue-900 to-indigo-500",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/2dc/2dca6588235a31df977f69b273848641.jpg",
     screenshots: [
@@ -2095,15 +2160,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/857/857eec2bf4b51953521706308bcb5c3f.jpg",
       "https://media.rawg.io/media/screenshots/815/8157b5ae3544a702dfb440fec9379ae3.jpg",
     ],
-    description: "A compelling strategy game released in 2024.",
+    description:
+      "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 102,
     title: "Sonic X Shadow Generations",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2024,
-    gradient: "from-teal-700 to-green-500",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/797/797fc5d525fd1ec461268f43aad06dfd.jpg",
     screenshots: [
@@ -2116,15 +2182,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/2f1/2f1f0043c3b5aad20c94d47672a90016.jpg",
     ],
     description:
-      "Sonic's greatest hits remixed, plus Shadow's gripping standalone origin campaign.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 103,
     title: "PARANORMASIGHT: The Seven Mysteries of Honjo",
-    genre: "Puzzle",
+    genre: "Simulation",
     rating: 8.7,
     year: 2023,
-    gradient: "from-amber-600 to-yellow-400",
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/72d/72d5532d7533c105b9900cca2e23f773.jpg",
     screenshots: [
@@ -2136,15 +2202,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/91f/91f9440855fbdd51a1bf52271224db77.jpg",
       "https://media.rawg.io/media/screenshots/f00/f00854f141aa969abef379d740ef3ff3.jpg",
     ],
-    description: "A compelling puzzle game released in 2023.",
+    description:
+      "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 104,
     title: "Donkey Kong Country Returns HD",
-    genre: "Action",
+    genre: "Platformer",
     rating: 8.7,
     year: 2025,
-    gradient: "from-rose-700 to-red-400",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/3f4/3f47e8c4e97f884f032b686021530478.jpg",
     screenshots: [
@@ -2156,15 +2223,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/36d/36d195e2b13f280b8efb3f6ee53448d3.jpg",
     ],
     description:
-      "Kong's legendary platformer adventure returns in crisp high-definition.",
+      "Precision platforming with tight controls and creative level design.",
   },
   {
     id: 105,
     title: "Sanabi",
-    genre: "Action",
+    genre: "Platformer",
     rating: 8.7,
     year: 2023,
-    gradient: "from-orange-700 to-amber-400",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/8fd/8fddf3eec9b26d7d40965d57da53cce0.jpg",
     screenshots: [
@@ -2177,15 +2244,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/ce8/ce8083228a726b436b36b794e801015b.jpg",
     ],
     description:
-      "A retired soldier grapples across a neon megacity to unravel a corporate conspiracy.",
+      "Precision platforming with tight controls and creative level design.",
   },
   {
     id: 106,
     title: "Bomb Rush Cyberfunk",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-sky-600 to-teal-500",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/ca7/ca7ca88681ad87eccd12e2acc65a2f6d.jpg",
     screenshots: [
@@ -2198,7 +2265,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/ba8/ba862e937b57824461d1f2671e317566.jpg",
     ],
     description:
-      "Ride, skate, and paint your crew's tag across a vibrant futuristic city.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 107,
@@ -2206,7 +2273,7 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 8.7,
     year: 2022,
-    gradient: "from-green-800 to-teal-600",
+    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/b7f/b7ffcaad681e81cc93a885054588af94.jpg",
     screenshots: [
@@ -2215,15 +2282,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/f2e/f2e4f1246835e9454539fabc70f20e5c.jpg",
       "https://media.rawg.io/media/screenshots/b7f/b7ffcaad681e81cc93a885054588af94.jpg",
     ],
-    description: "A compelling shooter game released in 2022.",
+    description:
+      "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 108,
     title: "One Night At Shrek's Hotel",
-    genre: "Adventure",
+    genre: "Puzzle",
     rating: 8.7,
     year: 2022,
-    gradient: "from-emerald-600 to-cyan-500",
+    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/screenshots/b4a/b4a2f7a51a91f2298586afab99b3b164.jpg",
     screenshots: [
@@ -2236,15 +2304,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/339/339ac5e2748113a8326495a6cc1f0195.jpg",
     ],
     description:
-      "Survive the night shift at the Swamp's most peculiar establishment.",
+      "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 109,
     title: "Burnhouse Lane",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.7,
     year: 2022,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
+    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/c28/c28f9a27ef017d2086fef7ed2ab984b3.jpg",
     screenshots: [
@@ -2257,15 +2325,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/5f0/5f0a889136952d2bb91fa06db37ad1a5.jpg",
     ],
     description:
-      "A disturbing horror adventure about sacrifice, grief, and uneasy bargains.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 110,
     title: "Escape From Mystwood Mansion",
-    genre: "Puzzle",
+    genre: "Casual",
     rating: 8.7,
     year: 2023,
-    gradient: "from-yellow-700 to-amber-400",
+    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/2ce/2ce6d3cd3017ff5fb0d0ad1ff880d6a8.jpg",
     screenshots: [
@@ -2277,15 +2345,37 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/8a4/8a46b35732ee23fec35c362a6e0b8d30.jpg",
       "https://media.rawg.io/media/screenshots/c50/c50e86a2bc7cfe4e74518560fabde43b.jpg",
     ],
-    description: "A compelling puzzle game released in 2023.",
+    description:
+      "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 111,
+    title: "Udonge in Interspecies Cave",
+    genre: "Action",
+    rating: 8.7,
+    year: 2023,
+    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
+    image:
+      "https://media.rawg.io/media/screenshots/f8d/f8d5f569e09e357edc1f12aa670b5066.jpg",
+    screenshots: [
+      "https://media.rawg.io/media/screenshots/f8d/f8d5f569e09e357edc1f12aa670b5066.jpg",
+      "https://media.rawg.io/media/screenshots/f73/f731fcf601106012ee2b2b14546a3965.jpg",
+      "https://media.rawg.io/media/screenshots/831/83168d34dfb930800ff3b9b21faa01a4.jpg",
+      "https://media.rawg.io/media/screenshots/ff2/ff24be68e62c68a6979893854603c3a5.jpg",
+      "https://media.rawg.io/media/screenshots/0ae/0aec723fb91d7a086392d97cbfccd3b9.jpg",
+      "https://media.rawg.io/media/screenshots/d9c/d9c0b94d602ede83b4b8bf3c662d5b8d.jpg",
+      "https://media.rawg.io/media/screenshots/f8d/f8d5f569e09e357edc1f12aa670b5066.jpg",
+    ],
+    description:
+      "Fast-paced action with intense combat and thrilling gameplay.",
+  },
+  {
+    id: 112,
     title: "Xenoblade Chronicles 3",
-    genre: "RPG",
+    genre: "Adventure",
     rating: 8.6,
     year: 2022,
-    gradient: "from-purple-900 to-fuchsia-600",
+    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/ae7/ae7cfc9a66232839112663899d2c8d8d.jpg",
     screenshots: [
@@ -2298,15 +2388,15 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/36e/36ec533ef6ac8b9e895b18451b1686c7.jpg",
     ],
     description:
-      "Two nations locked in endless war discover a truth that will change everything.",
+      "An immersive adventure filled with exploration and discovery.",
   },
   {
-    id: 112,
+    id: 113,
     title: "Black Myth: Wukong",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.6,
     year: 2024,
-    gradient: "from-green-600 to-teal-400",
+    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg",
     screenshots: [
@@ -2317,15 +2407,16 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/4e0/4e0b5ba1ef94973b14cede218159b82c.jpg",
       "https://media.rawg.io/media/screenshots/f29/f29eace60587e49e7b6f91875c7fadae.jpg",
     ],
-    description: "A compelling adventure game released in 2024.",
+    description:
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
-    id: 113,
+    id: 114,
     title: "Like a Dragon Gaiden: The Man Who Erased His Name",
-    genre: "Adventure",
+    genre: "Action",
     rating: 8.6,
     year: 2023,
-    gradient: "from-sky-700 to-cyan-500",
+    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/0c1/0c10aa5a41d64c0bb6ca9fe30173488d.jpg",
     screenshots: [
@@ -2337,6 +2428,6 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/041/041a54bc965e6e2bffcc3bbbfd8c47a1.jpg",
     ],
     description:
-      "Kazuma Kiryu takes on deadly criminal organisations in a globe-spanning spy action thriller.",
+      "Fast-paced action with intense combat and thrilling gameplay.",
   },
 ];
