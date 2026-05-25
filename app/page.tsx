@@ -26,6 +26,29 @@ const shuffledGames = [...games].sort(
   (a, b) => ((a.id * 37) % 101) - ((b.id * 37) % 101),
 );
 
+const popularityWeightByBadge: Record<string, number> = {
+  Trending: 4,
+  "Top Rated": 3,
+  "Editor's Pick": 2,
+  New: 1,
+};
+
+const titleBySection: Record<string, string> = {
+  new: "New Releases",
+  top: "Top Games",
+  genres: "Genres",
+  support: "Support",
+  feedback: "Feedback",
+  projects: "Projects",
+};
+
+const legacyToCurrentSortMap: Record<string, SortKey> = {
+  featured: "relevance",
+  "year-desc": "release-date",
+  title: "name",
+  rating: "average-rating",
+};
+
 function getPrice(game: Game) {
   return `${computeBasePrice(game)}.99`;
 }
@@ -56,13 +79,6 @@ function getVisibleGames(
       a.genre.localeCompare(b.genre),
     );
   }
-
-  const popularityWeightByBadge: Record<string, number> = {
-    Trending: 4,
-    "Top Rated": 3,
-    "Editor's Pick": 2,
-    New: 1,
-  };
 
   switch (sort) {
     case "date-added":
@@ -144,12 +160,6 @@ function GameCard({ game }: { game: Game }) {
 
 export default async function DashboardPage({ searchParams }: PageProps) {
   const resolvedSearchParams = (await searchParams) ?? {};
-  const legacyToCurrentSortMap: Record<string, SortKey> = {
-    featured: "relevance",
-    "year-desc": "release-date",
-    title: "name",
-    rating: "average-rating",
-  };
   const section = resolvedSearchParams.section ?? "all";
   const genre = resolvedSearchParams.genre;
   const rawSort = resolvedSearchParams.sort;
@@ -158,15 +168,6 @@ export default async function DashboardPage({ searchParams }: PageProps) {
     : undefined;
   const sort = (normalizedSort as SortKey | undefined) ?? "relevance";
   const visibleGames = getVisibleGames(section, genre, sort);
-
-  const titleBySection: Record<string, string> = {
-    new: "New Releases",
-    top: "Top Games",
-    genres: "Genres",
-    support: "Support",
-    feedback: "Feedback",
-    projects: "Projects",
-  };
   const title = genre
     ? `${genre} Games`
     : (titleBySection[section] ?? "Game Leases");

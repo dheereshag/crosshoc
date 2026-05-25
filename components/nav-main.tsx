@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link";
+import type { ReactNode } from "react";
 import {
   Collapsible,
   CollapsibleContent,
@@ -25,12 +26,12 @@ export function NavMain({
   items: {
     title: string
     url: string
-    icon: React.ReactNode
+    icon: ReactNode
     isActive?: boolean
     items?: {
       title: string
       url: string
-      icon: React.ReactNode
+      icon: ReactNode
     }[]
   }[]
 }) {
@@ -63,7 +64,7 @@ export function NavMain({
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <SidebarMenuSub>
-                    {item.items?.map((subItem) => (
+                    {item.items.map((subItem) => (
                       <SidebarMenuSubItem key={subItem.title}>
                         <SidebarMenuSubButton
                           render={<Link href={subItem.url} />}

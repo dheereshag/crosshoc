@@ -1,6 +1,6 @@
 "use client"
 
-import * as React from "react"
+import { useState } from "react"
 import {
   CalendarDaysIcon,
   CalculatorIcon,
@@ -30,12 +30,8 @@ const leasePeriodDiscounts: Record<(typeof leasePeriods)[number], number> = {
   12: 0.85,
 }
 
-function getLeasePrice(game: Game) {
-  return computeBasePrice(game);
-}
-
 function getLeasePeriodPrice(game: Game, months: (typeof leasePeriods)[number]) {
-  const monthlyPrice = getLeasePrice(game)
+  const monthlyPrice = computeBasePrice(game)
   const discountedTotal = monthlyPrice * months * leasePeriodDiscounts[months]
 
   return Math.max(12, Math.round(discountedTotal))
@@ -43,10 +39,10 @@ function getLeasePeriodPrice(game: Game, months: (typeof leasePeriods)[number]) 
 
 export function GameDeckControls({ game, className }: GameDeckControlsProps) {
   const [leasePeriod, setLeasePeriod] =
-    React.useState<(typeof leasePeriods)[number]>(3);
-  const [copies, setCopies] = React.useState(1);
+    useState<(typeof leasePeriods)[number]>(3);
+  const [copies, setCopies] = useState(1);
 
-  const monthlyPrice = getLeasePrice(game);
+  const monthlyPrice = computeBasePrice(game);
   const selectedPeriodPrice = getLeasePeriodPrice(game, leasePeriod);
 
   return (
@@ -108,9 +104,6 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
             Copies
           </label>
           <div className="space-y-2">
-            <label className="sr-only" htmlFor="copies">
-              Copies
-            </label>
             <Input
               id="copies"
               type="number"

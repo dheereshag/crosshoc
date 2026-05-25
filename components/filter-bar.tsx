@@ -33,7 +33,7 @@ const sortOptionIcons: Record<SortKey, LucideIcon> = {
 
 const filterChips: Array<{ label: string; value: string | undefined }> = [
   { label: "All", value: undefined },
-  ...genres.map((g) => ({ label: g, value: g as string | undefined })),
+  ...genres.map((g) => ({ label: g, value: g })),
 ];
 
 export function FilterBar({ searchParams, genre, sort }: FilterBarProps) {
@@ -45,7 +45,7 @@ export function FilterBar({ searchParams, genre, sort }: FilterBarProps) {
           Filter
         </span>
         {filterChips.map((item) => {
-          const active = (genre ?? undefined) === item.value;
+          const active = genre === item.value;
           const Icon = item.value
             ? genreIconComponents[item.value as Game["genre"]]
             : LayoutGridIcon;
