@@ -1,37 +1,3 @@
-export type Game = {
-  id: number;
-  title: string;
-  genre:
-    | "Action"
-    | "Strategy"
-    | "RPG"
-    | "Shooter"
-    | "Adventure"
-    | "Puzzle"
-    | "Racing"
-    | "Sports"
-    | "Simulation"
-    | "Casual"
-    | "Indie"
-    | "Platformer"
-    | "Arcade";
-  rating: number;
-  year: number;
-  gradient: string;
-  image: string;
-  screenshots: string[];
-  badge?: "New" | "Top Rated" | "Trending" | "Editor's Pick";
-  description: string;
-};
-
-export type SortKey =
-  | "relevance"
-  | "date-added"
-  | "name"
-  | "release-date"
-  | "popularity"
-  | "average-rating";
-
 export const genres = [
   "Action",
   "Strategy",
@@ -48,6 +14,28 @@ export const genres = [
   "Arcade",
 ] as const;
 
+export type Genre = (typeof genres)[number];
+
+export type Game = {
+  id: number;
+  title: string;
+  genre: Genre;
+  rating: number;
+  year: number;
+  image: string;
+  screenshots: string[];
+  badge?: "New" | "Top Rated" | "Trending" | "Editor's Pick";
+  description: string;
+};
+
+export type SortKey =
+  | "relevance"
+  | "date-added"
+  | "name"
+  | "release-date"
+  | "popularity"
+  | "average-rating";
+
 export const sortOptions: Array<{ label: string; value: SortKey }> = [
   { label: "Relevance", value: "relevance" },
   { label: "Date added", value: "date-added" },
@@ -57,7 +45,7 @@ export const sortOptions: Array<{ label: string; value: SortKey }> = [
   { label: "Average rating", value: "average-rating" },
 ];
 
-export const basePriceByGenre: Record<Game["genre"], number> = {
+export const basePriceByGenre: Record<Genre, number> = {
   Action: 59,
   Strategy: 49,
   RPG: 69,
@@ -72,6 +60,11 @@ export const basePriceByGenre: Record<Game["genre"], number> = {
   Platformer: 39,
   Arcade: 29,
 };
+
+/** Returns the images to display for a game (screenshots when available, falling back to the main image). */
+export function getGameImages(game: Game): string[] {
+  return game.screenshots.length > 0 ? game.screenshots : [game.image];
+}
 
 /** Shared base price calculation used by catalog listing and deck controls. */
 export function computeBasePrice(game: Game): number {
@@ -91,7 +84,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 9.7,
     year: 2024,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/766/76669775675948b1eb3f3eb1c1dfc7dc.jpg",
     screenshots: [
@@ -113,7 +105,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 9.5,
     year: 2023,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/835/83550ad86fa4dcda9beafd9ba68f0f68.jpg",
     screenshots: [
@@ -131,7 +122,6 @@ export const games: Game[] = [
     genre: "Platformer",
     rating: 9.4,
     year: 2022,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/a9c/a9c0a6fb4def5538d39544934bded4b3.jpg",
     screenshots: [
@@ -153,7 +143,6 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 9.4,
     year: 2023,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/062/06285b425e61623530c5430f20e5d222.jpg",
     screenshots: [
@@ -175,7 +164,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9.3,
     year: 2022,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/9ec/9ec21d4df840d70c1621372f2450e3ca.jpg",
     screenshots: [
@@ -197,7 +185,6 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 9.3,
     year: 2022,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/71d/71df9e759b2246f9769126c98ac997fc.jpg",
     screenshots: [
@@ -219,7 +206,6 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 9.3,
     year: 2023,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/df8/df8f7f1b8ddf5f4021cda1254d82ab29.jpg",
     screenshots: [
@@ -241,7 +227,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9.2,
     year: 2025,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/screenshots/95d/95df624f84b7bca99b56da01aeea4789.jpg",
     screenshots: [
@@ -263,7 +248,6 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 9.2,
     year: 2022,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/bc3/bc38deccf8bfab8b588d29817c68c1ff.jpg",
     screenshots: [
@@ -285,7 +269,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 9.2,
     year: 2022,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/eec/eec7618dc71bc714dbeae5bf16e7667d.jpg",
     screenshots: [
@@ -306,7 +289,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9.2,
     year: 2023,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/51a/51a404b9918a0b19fc704a3ca248c69f.jpg",
     screenshots: [
@@ -328,7 +310,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 9.1,
     year: 2022,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/1ec/1ec196fc63bc5ea94a8b7da52daa9f5f.jpg",
     screenshots: [
@@ -349,7 +330,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9.1,
     year: 2026,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/ed6/ed613937e113a4d43fa0db771e527a2f.jpg",
     screenshots: [
@@ -370,7 +350,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 9.1,
     year: 2022,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/efa/efa54dd8d3e1a8efebfd7dcb4c77e0eb.jpg",
     screenshots: [
@@ -391,7 +370,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 9.1,
     year: 2024,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/bd2/bd2269675a8e09060677c6583ae5012a.jpg",
     screenshots: [
@@ -413,7 +391,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9.1,
     year: 2024,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/screenshots/193/1930910695d1adc6716d88163cb4c088.jpg",
     screenshots: [
@@ -435,7 +412,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 9.1,
     year: 2025,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/2f6/2f6c45362818859574ac0e37edf3d3c4.jpg",
     screenshots: [
@@ -455,7 +431,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 9.1,
     year: 2023,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/c1c/c1cb32f5148e50ebe068897567505c9c.jpg",
     screenshots: [
@@ -477,7 +452,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9.1,
     year: 2024,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/d09/d099b508a1cfb5bd2f2928b50e0784a5.jpg",
     screenshots: [
@@ -499,7 +473,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9,
     year: 2026,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/9b2/9b20adbf00491d56ad6793654067f2fd.jpg",
     screenshots: [
@@ -521,7 +494,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 9,
     year: 2025,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/df3/df373c179cd08f0a549ef1f1635b8864.jpg",
     screenshots: [
@@ -543,7 +515,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9,
     year: 2025,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/aae/aaee2d143052bfafe7cae5806587485d.jpg",
     screenshots: [
@@ -560,7 +531,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 9,
     year: 2022,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/b2d/b2d52ba144e772f12b4c842c7cd1dbcf.jpg",
     screenshots: [
@@ -580,7 +550,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9,
     year: 2024,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/9f5/9f537017b13d32459fa129185648a858.jpg",
     screenshots: [
@@ -602,7 +571,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 9,
     year: 2026,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/69e/69ece38d22dcc1c44de7ddb7901a1a41.jpg",
     screenshots: [
@@ -619,7 +587,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 9,
     year: 2023,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/8db/8db51a9a93c825439443c3252947e7d3.jpg",
     screenshots: [
@@ -641,7 +608,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 9,
     year: 2023,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/460/460c3df0b652c4fa8ca3f015c1e8a2d7.jpg",
     screenshots: [
@@ -663,7 +629,6 @@ export const games: Game[] = [
     genre: "Platformer",
     rating: 9,
     year: 2022,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/01b/01b85423bbfb5f8bc6bcf29dc0cfd6d9.jpg",
     screenshots: [
@@ -685,7 +650,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 9,
     year: 2025,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/252/252fea2a340c8f398ca56ddb7649a20e.jpg",
     screenshots: [
@@ -706,7 +670,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9,
     year: 2024,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/0ba/0bae7160eedc1f7d85a8d2db70cf1ec9.jpg",
     screenshots: [
@@ -728,7 +691,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 9,
     year: 2024,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/09b/09b41c1a2c5761c5b1772a4ae238bb0e.jpg",
     screenshots: [
@@ -750,7 +712,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 9,
     year: 2025,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/466/4667f17fdee9ebbcea2049e54f8e2b96.jpg",
     screenshots: [
@@ -772,7 +733,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.9,
     year: 2022,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg",
     screenshots: [
@@ -793,7 +753,6 @@ export const games: Game[] = [
     genre: "Arcade",
     rating: 8.9,
     year: 2022,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/801/801b23ccc4ffac44e91a05990199e686.jpg",
     screenshots: [
@@ -814,7 +773,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 8.9,
     year: 2024,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/f9e/f9e56960654865428323477c3b03712e.jpg",
     screenshots: [
@@ -835,7 +793,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.9,
     year: 2025,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/02a/02ac22b3b90717dabaa535640c38534c.jpg",
     screenshots: [
@@ -856,7 +813,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 8.9,
     year: 2023,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg",
     screenshots: [
@@ -878,7 +834,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 8.9,
     year: 2024,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/896/896854355c6516444323c9e085d562d7.jpg",
     screenshots: [
@@ -899,7 +854,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 8.9,
     year: 2022,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/eec/eec1d91768080988c5f768d9b0d2291c.jpg",
     screenshots: [
@@ -920,7 +874,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 8.9,
     year: 2022,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/91e/91e0e9cfd762c41753ba231d5cce7f76.jpg",
     screenshots: [
@@ -938,7 +891,6 @@ export const games: Game[] = [
     genre: "Racing",
     rating: 8.9,
     year: 2025,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/66d/66d6665c96dde6a76bc869f3828013b8.jpg",
     screenshots: [
@@ -958,7 +910,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.9,
     year: 2024,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/21c/21cb898a6eb030e8b930a6c55b803ebb.jpg",
     screenshots: [
@@ -979,7 +930,6 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 8.9,
     year: 2023,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/235/23507cdd4268752b10f4dfc9cba52e9c.jpg",
     screenshots: [
@@ -1000,7 +950,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.9,
     year: 2022,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/1c3/1c305096502c475c00276c827f0fd697.jpg",
     screenshots: [
@@ -1021,7 +970,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 8.8,
     year: 2024,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
     screenshots: [
@@ -1041,7 +989,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 8.8,
     year: 2023,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/c18/c180a02a53ce8c8cf23f11f182184103.jpg",
     screenshots: [
@@ -1062,7 +1009,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 8.8,
     year: 2025,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/db4/db4348b029d2cdaf826d7536bd75b71c.jpg",
     screenshots: [
@@ -1078,7 +1024,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 8.8,
     year: 2024,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/screenshots/f7a/f7af9c3c70d7acf49430e525e5d3825f.jpg",
     screenshots: [
@@ -1097,7 +1042,6 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 8.8,
     year: 2024,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
     screenshots: [
@@ -1115,7 +1059,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 8.8,
     year: 2024,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/7c7/7c7fc7ac07c17fad71095cca1c78bc65.jpg",
     screenshots: [
@@ -1136,7 +1079,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.8,
     year: 2024,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/077/07790746d9caa0542203febd069ac764.jpg",
     screenshots: [
@@ -1157,7 +1099,6 @@ export const games: Game[] = [
     genre: "Platformer",
     rating: 8.8,
     year: 2025,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg",
     screenshots: [
@@ -1178,7 +1119,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.8,
     year: 2025,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg",
     screenshots: [
@@ -1199,7 +1139,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.8,
     year: 2022,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg",
     screenshots: [
@@ -1221,7 +1160,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 8.8,
     year: 2022,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
     screenshots: [
@@ -1237,7 +1175,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 8.8,
     year: 2024,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/screenshots/326/326267a294202a9d93e55879a6f61d48.jpg",
     screenshots: [
@@ -1257,7 +1194,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 8.8,
     year: 2025,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/1a5/1a582842654560cde2979cc25cea0e9b.jpg",
     screenshots: [
@@ -1278,7 +1214,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 8.8,
     year: 2025,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/e8a/e8a79474fcbcd0d1bc595ec25dd7536f.jpg",
     screenshots: [
@@ -1299,7 +1234,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 8.8,
     year: 2024,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/bc8/bc8e49daf53d39b599f5fdb012177569.jpg",
     screenshots: [
@@ -1319,7 +1253,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 8.8,
     year: 2024,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/screenshots/d09/d091eb9147f87728c0e6f0bacbbcd2b6.jpg",
     screenshots: [
@@ -1340,7 +1273,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 8.8,
     year: 2023,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/1fa/1fa542171e580af49fabd094bd232659.jpg",
     screenshots: [
@@ -1361,7 +1293,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 8.8,
     year: 2022,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/a92/a92d76ba93b22b7add9b9502fa52d0ce.jpg",
     screenshots: [
@@ -1382,7 +1313,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 8.8,
     year: 2022,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/5ad/5ade5501c6e154c24af4b257128e1c13.jpg",
     screenshots: [
@@ -1403,7 +1333,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 8.8,
     year: 2022,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/screenshots/461/461540af873745450cdd3d39dfcc695d.jpg",
     screenshots: [
@@ -1424,7 +1353,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 8.8,
     year: 2022,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/465/465d819b711ed1251bdaed0759ef185e.jpg",
     screenshots: [
@@ -1445,7 +1373,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 8.8,
     year: 2025,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/624/624f7fc033c4afbdff09df3aa10866ac.jpg",
     screenshots: [
@@ -1466,7 +1393,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.8,
     year: 2022,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/073/073b560fa5ab283c03e4a9a698d001af.jpg",
     screenshots: [
@@ -1486,7 +1412,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/556/55684bfd048706f4266d331d70050b37.jpg",
     screenshots: [
@@ -1507,7 +1432,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 8.7,
     year: 2023,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/153/153e8d78ac19e959214dadefb8c27310.jpg",
     screenshots: [
@@ -1527,7 +1451,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 8.7,
     year: 2024,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/29a/29a78d7b6be61673c910d588bf188e2c.jpg",
     screenshots: [
@@ -1547,7 +1470,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 8.7,
     year: 2022,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/c4e/c4e3ad247e93d3a5dc40aa215a778a9c.jpg",
     screenshots: [
@@ -1564,7 +1486,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 8.7,
     year: 2023,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/edf/edf3bd3ffa486f5d6a84bda020765839.jpg",
     screenshots: [
@@ -1585,7 +1506,6 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 8.7,
     year: 2023,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/f2f/f2f9f11997ee841550ba2b8ccf3c51e9.jpg",
     screenshots: [
@@ -1606,7 +1526,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 8.7,
     year: 2023,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/5e9/5e9ce1121cbc4f30cb54cec20820df04.jpg",
     screenshots: [
@@ -1627,7 +1546,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 8.7,
     year: 2023,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/7a2/7a23a81875145336576e24b682d3ede7.jpg",
     screenshots: [
@@ -1648,7 +1566,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/7ae/7ae5a14cdb4ab222a134c15f4629e430.jpg",
     screenshots: [
@@ -1669,7 +1586,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2022,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/480/480295ba922318bb052d169174ec88aa.jpg",
     screenshots: [
@@ -1690,7 +1606,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 8.7,
     year: 2023,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/d00/d0088d5ffce4e167241b65eb18a28cb4.jpg",
     screenshots: [
@@ -1711,7 +1626,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2025,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/8fd/8fd2e8317849fd265ad8781c324d4ec2.jpg",
     screenshots: [
@@ -1732,7 +1646,6 @@ export const games: Game[] = [
     genre: "Platformer",
     rating: 8.7,
     year: 2024,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/cee/cee02d983e2e1e457caa562420f532fb.jpg",
     screenshots: [
@@ -1753,7 +1666,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 8.7,
     year: 2023,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg",
     screenshots: [
@@ -1774,7 +1686,6 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 8.7,
     year: 2022,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/360/360ac0a839ab0f0d9a70b35d38264cb0.jpg",
     screenshots: [
@@ -1795,7 +1706,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 8.7,
     year: 2022,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/f0a/f0ac99c638c25a5975cd74919564bda5.jpg",
     screenshots: [
@@ -1813,7 +1723,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 8.7,
     year: 2022,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/b2d/b2d4e1f3fc468c104efb7c5a576b4206.jpg",
     screenshots: [
@@ -1833,7 +1742,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 8.7,
     year: 2025,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/18f/18fba094d4ba0dda019131ea9b585446.jpg",
     screenshots: [
@@ -1854,7 +1762,6 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 8.7,
     year: 2022,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/games/a12/a120fc7faed7666f8c320a755137e316.jpg",
     screenshots: [
@@ -1874,7 +1781,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 8.7,
     year: 2024,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/e4d/e4d2d9720f0962ca4f6a6dd02cef331e.jpeg",
     screenshots: [
@@ -1895,7 +1801,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2025,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/018/01897340a06b9ed8e92ed1cc1b1eecb9.jpg",
     screenshots: [
@@ -1916,7 +1821,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2025,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/b85/b85bc300d42588af66fb516b7563f74f.jpg",
     screenshots: [
@@ -1937,7 +1841,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/4e4/4e42fc297c028630262a4abcc7769576.jpg",
     screenshots: [
@@ -1958,7 +1861,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/ea6/ea6a1382b15d749e15fdfbf0aece7689.jpg",
     screenshots: [
@@ -1976,7 +1878,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 8.7,
     year: 2024,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/games/5eb/5eb783656623aa13d6fc65e470dd5dba.jpg",
     screenshots: [
@@ -1996,7 +1897,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/5b9/5b963d7633cd640fa2dbc4069d1c6377.jpg",
     screenshots: [
@@ -2017,7 +1917,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 8.7,
     year: 2022,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/5cc/5cc0fe59150a7d40b476c16115fc30e1.jpg",
     screenshots: [
@@ -2037,7 +1936,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2026,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/880/880bec24bf308de14746c9966e09d719.jpg",
     screenshots: [
@@ -2059,7 +1957,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2025,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/798/798705b4f25e958e4ab8edf570e215f8.jpg",
     screenshots: [
@@ -2080,7 +1977,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 8.7,
     year: 2022,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/screenshots/840/84070ec840c2209ebbed054efd82eb13.jpg",
     screenshots: [
@@ -2101,7 +1997,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 8.7,
     year: 2023,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/screenshots/55b/55bda84104dd31bcd7477f234b573594.jpg",
     screenshots: [
@@ -2121,7 +2016,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2024,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/159/159ef6e50522aaf27650cc418a1bf411.jpg",
     screenshots: [
@@ -2141,7 +2035,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 8.7,
     year: 2022,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/screenshots/7ab/7ab4d3a9c687a4245b37343e381777b5.jpg",
     screenshots: [
@@ -2159,7 +2052,6 @@ export const games: Game[] = [
     genre: "Strategy",
     rating: 8.7,
     year: 2024,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/screenshots/2dc/2dca6588235a31df977f69b273848641.jpg",
     screenshots: [
@@ -2180,7 +2072,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2024,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/797/797fc5d525fd1ec461268f43aad06dfd.jpg",
     screenshots: [
@@ -2201,7 +2092,6 @@ export const games: Game[] = [
     genre: "Simulation",
     rating: 8.7,
     year: 2023,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/games/72d/72d5532d7533c105b9900cca2e23f773.jpg",
     screenshots: [
@@ -2222,7 +2112,6 @@ export const games: Game[] = [
     genre: "Platformer",
     rating: 8.7,
     year: 2025,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/3f4/3f47e8c4e97f884f032b686021530478.jpg",
     screenshots: [
@@ -2242,7 +2131,6 @@ export const games: Game[] = [
     genre: "Platformer",
     rating: 8.7,
     year: 2023,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/8fd/8fddf3eec9b26d7d40965d57da53cce0.jpg",
     screenshots: [
@@ -2263,7 +2151,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/ca7/ca7ca88681ad87eccd12e2acc65a2f6d.jpg",
     screenshots: [
@@ -2284,7 +2171,6 @@ export const games: Game[] = [
     genre: "Shooter",
     rating: 8.7,
     year: 2022,
-    gradient: "from-green-600 via-teal-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/b7f/b7ffcaad681e81cc93a885054588af94.jpg",
     screenshots: [
@@ -2302,7 +2188,6 @@ export const games: Game[] = [
     genre: "Puzzle",
     rating: 8.7,
     year: 2022,
-    gradient: "from-purple-600 via-pink-500 to-rose-400",
     image:
       "https://media.rawg.io/media/screenshots/b4a/b4a2f7a51a91f2298586afab99b3b164.jpg",
     screenshots: [
@@ -2323,7 +2208,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2022,
-    gradient: "from-yellow-600 via-amber-500 to-orange-400",
     image:
       "https://media.rawg.io/media/games/c28/c28f9a27ef017d2086fef7ed2ab984b3.jpg",
     screenshots: [
@@ -2344,7 +2228,6 @@ export const games: Game[] = [
     genre: "Casual",
     rating: 8.7,
     year: 2023,
-    gradient: "from-teal-600 via-cyan-500 to-sky-400",
     image:
       "https://media.rawg.io/media/screenshots/2ce/2ce6d3cd3017ff5fb0d0ad1ff880d6a8.jpg",
     screenshots: [
@@ -2365,7 +2248,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.7,
     year: 2023,
-    gradient: "from-indigo-600 via-blue-500 to-cyan-400",
     image:
       "https://media.rawg.io/media/screenshots/f8d/f8d5f569e09e357edc1f12aa670b5066.jpg",
     screenshots: [
@@ -2386,7 +2268,6 @@ export const games: Game[] = [
     genre: "Adventure",
     rating: 8.6,
     year: 2022,
-    gradient: "from-rose-600 via-pink-500 to-fuchsia-400",
     image:
       "https://media.rawg.io/media/games/ae7/ae7cfc9a66232839112663899d2c8d8d.jpg",
     screenshots: [
@@ -2407,7 +2288,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.6,
     year: 2024,
-    gradient: "from-red-600 via-orange-500 to-yellow-400",
     image:
       "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg",
     screenshots: [
@@ -2427,7 +2307,6 @@ export const games: Game[] = [
     genre: "Action",
     rating: 8.6,
     year: 2023,
-    gradient: "from-blue-600 via-indigo-500 to-purple-400",
     image:
       "https://media.rawg.io/media/games/0c1/0c10aa5a41d64c0bb6ca9fe30173488d.jpg",
     screenshots: [

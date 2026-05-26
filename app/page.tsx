@@ -1,27 +1,14 @@
-import Link from "next/link";
-import { CalendarIcon, ListIcon, ReceiptTextIcon } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
-import {
-  computeBasePrice,
-  games,
-  type Game,
-  type SortKey,
-} from "@/constants/catalog";
-import { GameCardImage } from "@/components/game-card-image";
-import { StarRating } from "@/components/star-rating";
-import { GenreBadge } from "@/components/genre-badge";
+import { ListIcon } from "lucide-react";
+import { games, type SortKey } from "@/constants/catalog";
+import { GameCard } from "@/components/game-card";
 import { FilterBar } from "@/components/filter-bar";
 
 type PageProps = {
   searchParams?: Promise<Record<string, string | undefined>>;
 };
 
+// Deterministic pseudo-shuffle: multiply by prime 37 and mod by prime 101
+// so the catalog doesn't default to insertion order.
 const shuffledGames = [...games].sort(
   (a, b) => ((a.id * 37) % 101) - ((b.id * 37) % 101),
 );
@@ -37,9 +24,6 @@ const titleBySection: Record<string, string> = {
   new: "New Releases",
   top: "Top Games",
   genres: "Genres",
-  support: "Support",
-  feedback: "Feedback",
-  projects: "Projects",
 };
 
 const legacyToCurrentSortMap: Record<string, SortKey> = {
@@ -49,11 +33,8 @@ const legacyToCurrentSortMap: Record<string, SortKey> = {
   rating: "average-rating",
 };
 
-function getPrice(game: Game) {
-  return `${computeBasePrice(game)}.99`;
-}
 
-function getVisibleGames(
+export default async function HomePage({ searchParams }: PageProps) {
   section: string,
   genre?: string,
   sort: SortKey = "relevance",
@@ -69,46 +50,36 @@ function getVisibleGames(
   }
 
   if (section === "top") {
-    visibleGames = [...visibleGames]
-      .sort((a, b) => b.rating - a.rating)
-      .slice(0, 8);
-  }
-
-  if (section === "genres") {
-    visibleGames = [...visibleGames].sort((a, b) =>
-      a.genre.localeCompare(b.genre),
-    );
+    visibleGames.sort((a, b) => b.rating - a.rating);
+    visibleGames = visibleGames.slice(0, 8);
   }
 
   switch (sort) {
     case "date-added":
-      visibleGames = [...visibleGames].sort((a, b) => b.id - a.id);
+      visibleGames.sort((a, b) => b.id - a.id);
       break;
     case "name":
-      visibleGames = [...visibleGames].sort((a, b) =>
-        a.title.localeCompare(b.title),
-      );
+      visibleGames.sort((a, b) => a.title.localeCompare(b.title));
       break;
     case "release-date":
-      visibleGames = [...visibleGames].sort((a, b) => b.year - a.year);
+      visibleGames.sort((a, b) => b.year - a.year);
       break;
     case "popularity":
-      visibleGames = [...visibleGames].sort((a, b) => {
+      visibleGames.sort((a, b) => {
         const badgeDelta =
           (popularityWeightByBadge[b.badge ?? ""] ?? 0) -
           (popularityWeightByBadge[a.badge ?? ""] ?? 0);
-
-        if (badgeDelta !== 0) {
-          return badgeDelta;
-        }
-
-        return b.rating - a.rating;
+        return badgeDelta !== 0 ? badgeDelta : b.rating - a.rating;
       });
       break;
     case "average-rating":
-      visibleGames = [...visibleGames].sort((a, b) => b.rating - a.rating);
+      visibleGames.sort((a, b) => b.rating - a.rating);
       break;
+    case "relevance":
     default:
+      if (section === "genres") {
+        visibleGames.sort((a, b) => a.genre.localeCompare(b.genre));
+      }
       break;
   }
 
@@ -159,7 +130,7 @@ function GameCard({ game, priority = false }: { game: Game; priority?: boolean }
   );
 }
 
-export default async function DashboardPage({ searchParams }: PageProps) {
+export default async function HomePage({ searchParams }: PageProps) {
   const resolvedSearchParams = (await searchParams) ?? {};
   const section = resolvedSearchParams.section ?? "all";
   const genre = resolvedSearchParams.genre;
