@@ -34,9 +34,9 @@ const legacyToCurrentSortMap: Record<string, SortKey> = {
 };
 
 
-export default async function HomePage({ searchParams }: PageProps) {
+function getVisibleGames(
   section: string,
-  genre?: string,
+  genre: string | undefined,
   sort: SortKey = "relevance",
 ) {
   let visibleGames = [...shuffledGames];
@@ -84,50 +84,6 @@ export default async function HomePage({ searchParams }: PageProps) {
   }
 
   return visibleGames;
-}
-
-function GameCard({ game, priority = false }: { game: Game; priority?: boolean }) {
-  return (
-    <Link
-      href={`/games/${game.id}`}
-      className="group block h-full rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
-    >
-      <Card className="flex h-full min-w-0 flex-col gap-0 border-border/80 bg-card/70 p-0 shadow-none transition-colors group-hover:bg-accent/30">
-        <div className="border-b border-border/70 bg-muted">
-          <GameCardImage
-            images={
-              game.screenshots.length > 0 ? game.screenshots : [game.image]
-            }
-            title={game.title}
-            priority={priority}
-          />
-        </div>
-        <CardHeader className="flex-1 pb-2 pt-4">
-          <div className="flex items-start justify-between gap-2">
-            <CardTitle className="line-clamp-1 text-sm">{game.title}</CardTitle>
-            <StarRating rating={game.rating} />
-          </div>
-          <CardDescription className="line-clamp-2 text-xs">
-            {game.description}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3 pb-5 pt-0">
-          <div className="flex flex-wrap items-center justify-end gap-2 text-xs">
-            <GenreBadge genre={game.genre} />
-          </div>
-          <div className="flex items-center justify-between text-xs text-muted-foreground">
-            <span className="inline-flex items-center gap-1">
-              <CalendarIcon className="size-3.5" />
-              {game.year}
-            </span>
-            <span className="inline-flex items-center gap-1 text-sm font-semibold text-foreground">
-              <ReceiptTextIcon className="size-3.5" />${getPrice(game)}/mo
-            </span>
-          </div>
-        </CardContent>
-      </Card>
-    </Link>
-  );
 }
 
 export default async function HomePage({ searchParams }: PageProps) {
