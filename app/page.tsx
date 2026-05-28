@@ -121,7 +121,7 @@ export default async function HomePage({ searchParams }: PageProps) {
             sort={sort}
           />
         </div>
-        <div className="grid auto-rows-fr grid-cols-[repeat(auto-fill,minmax(210px,1fr))] gap-4">
+        <div className="grid auto-rows-fr grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
           {visibleGames.map((game, index) => (
             <GameCard key={game.id} game={game} priority={index === 0} />
           ))}
