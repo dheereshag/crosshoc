@@ -44,7 +44,9 @@ export function GameCard({ game, priority = false }: GameCardProps) {
         </CardHeader>
         <CardContent className="space-y-3 pb-5 pt-0">
           <div className="flex flex-wrap items-center justify-end gap-2 text-xs">
-            <GenreBadge genre={game.genre} />
+            {game.genres.map((g) => (
+              <GenreBadge key={g} genre={g} />
+            ))}
           </div>
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1">

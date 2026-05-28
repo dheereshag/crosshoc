@@ -1,8 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { genreIconComponents } from "@/constants/sidebar";
-import type { Game } from "@/constants/catalog";
+import type { Genre } from "@/constants/catalog";
 
-export function GenreBadge({ genre }: { genre: Game["genre"] }) {
+export function GenreBadge({ genre }: { genre: Genre }) {
   const GenreIcon = genreIconComponents[genre];
   return (
     <Badge

@@ -19,7 +19,7 @@ export type Genre = (typeof genres)[number];
 export type Game = {
   id: number;
   title: string;
-  genre: Genre;
+  genres: Genre[];
   rating: number;
   year: number;
   image: string;
@@ -68,7 +68,7 @@ export function getGameImages(game: Game): string[] {
 
 /** Shared base price calculation used by catalog listing and deck controls. */
 export function computeBasePrice(game: Game): number {
-  const base = basePriceByGenre[game.genre];
+  const base = basePriceByGenre[game.genres[0]];
   const recencyAdjustment = game.year === 2025 ? 0 : -8;
   const parityAdjustment = game.id % 2 === 0 ? 2 : 0;
   return Math.max(
@@ -81,7 +81,7 @@ export const games: Game[] = [
   {
     id: 1,
     title: "No Case Should Remain Unsolved",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 9.7,
     year: 2024,
     image:
@@ -102,7 +102,7 @@ export const games: Game[] = [
   {
     id: 2,
     title: "Charlie (Hazbin Hotel) mega porn pack 1",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 9.5,
     year: 2023,
     image:
@@ -119,7 +119,7 @@ export const games: Game[] = [
   {
     id: 3,
     title: "Sonic Triple Trouble 16-Bit (NoahNCopeland)",
-    genre: "Platformer",
+    genres: ["Platformer"],
     rating: 9.4,
     year: 2022,
     image:
@@ -140,7 +140,7 @@ export const games: Game[] = [
   {
     id: 4,
     title: "Cyberpunk 2077: Phantom Liberty",
-    genre: "Shooter",
+    genres: ["Shooter"],
     rating: 9.4,
     year: 2023,
     image:
@@ -161,7 +161,7 @@ export const games: Game[] = [
   {
     id: 5,
     title: "Red Matter 2",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9.3,
     year: 2022,
     image:
@@ -182,7 +182,7 @@ export const games: Game[] = [
   {
     id: 6,
     title: "The Last of Us Part I",
-    genre: "Shooter",
+    genres: ["Shooter"],
     rating: 9.3,
     year: 2022,
     image:
@@ -203,7 +203,7 @@ export const games: Game[] = [
   {
     id: 7,
     title: "Quake II: Enhanced Edition",
-    genre: "Shooter",
+    genres: ["Shooter"],
     rating: 9.3,
     year: 2023,
     image:
@@ -224,7 +224,7 @@ export const games: Game[] = [
   {
     id: 8,
     title: "System Shock 2: 25th Anniversary Remaster",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9.2,
     year: 2025,
     image:
@@ -245,7 +245,7 @@ export const games: Game[] = [
   {
     id: 9,
     title: "HYPER DEMON",
-    genre: "Shooter",
+    genres: ["Shooter"],
     rating: 9.2,
     year: 2022,
     image:
@@ -266,7 +266,7 @@ export const games: Game[] = [
   {
     id: 10,
     title: "Desert Stalker (2022)",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 9.2,
     year: 2022,
     image:
@@ -286,7 +286,7 @@ export const games: Game[] = [
   {
     id: 11,
     title: "Resident Evil 4",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9.2,
     year: 2023,
     image:
@@ -307,7 +307,7 @@ export const games: Game[] = [
   {
     id: 12,
     title: "Athanasy",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 9.1,
     year: 2022,
     image:
@@ -327,7 +327,7 @@ export const games: Game[] = [
   {
     id: 13,
     title: "Resident Evil 9: Requiem",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9.1,
     year: 2026,
     image:
@@ -347,7 +347,7 @@ export const games: Game[] = [
   {
     id: 14,
     title: "Dungeons of Dreadrock",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 9.1,
     year: 2022,
     image:
@@ -367,7 +367,7 @@ export const games: Game[] = [
   {
     id: 15,
     title: "Lil' Guardsman",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 9.1,
     year: 2024,
     image:
@@ -388,7 +388,7 @@ export const games: Game[] = [
   {
     id: 16,
     title: "STRAFTAT",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9.1,
     year: 2024,
     image:
@@ -409,7 +409,7 @@ export const games: Game[] = [
   {
     id: 17,
     title: "Dispatch",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 9.1,
     year: 2025,
     image:
@@ -428,7 +428,7 @@ export const games: Game[] = [
   {
     id: 18,
     title: "Mom got stuck in the washing machine",
-    genre: "Simulation",
+    genres: ["Simulation"],
     rating: 9.1,
     year: 2023,
     image:
@@ -449,7 +449,7 @@ export const games: Game[] = [
   {
     id: 19,
     title: "The Last of Us Part II Remastered",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9.1,
     year: 2024,
     image:
@@ -470,7 +470,7 @@ export const games: Game[] = [
   {
     id: 20,
     title: "Pragmata",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9,
     year: 2026,
     image:
@@ -491,7 +491,7 @@ export const games: Game[] = [
   {
     id: 21,
     title: "MyVoiceZoo",
-    genre: "Simulation",
+    genres: ["Simulation"],
     rating: 9,
     year: 2025,
     image:
@@ -512,7 +512,7 @@ export const games: Game[] = [
   {
     id: 22,
     title: "Trails in the Sky 1st Chapter",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9,
     year: 2025,
     image:
@@ -528,7 +528,7 @@ export const games: Game[] = [
   {
     id: 23,
     title: "Escape Dungeon 2",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 9,
     year: 2022,
     image:
@@ -547,7 +547,7 @@ export const games: Game[] = [
   {
     id: 24,
     title: "Beyond Good & Evil - 20th Anniversary Edition",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9,
     year: 2024,
     image:
@@ -568,7 +568,7 @@ export const games: Game[] = [
   {
     id: 25,
     title: "Heroes of Might & Magic: Olden Era",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 9,
     year: 2026,
     image:
@@ -584,7 +584,7 @@ export const games: Game[] = [
   {
     id: 26,
     title: "Snakebird Complete",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 9,
     year: 2023,
     image:
@@ -605,7 +605,7 @@ export const games: Game[] = [
   {
     id: 27,
     title: "Corrupting The Universe",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 9,
     year: 2023,
     image:
@@ -626,7 +626,7 @@ export const games: Game[] = [
   {
     id: 28,
     title: "Cuphead: The Delicious Last Course",
-    genre: "Platformer",
+    genres: ["Platformer"],
     rating: 9,
     year: 2022,
     image:
@@ -647,7 +647,7 @@ export const games: Game[] = [
   {
     id: 29,
     title: "GeoGuessr",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 9,
     year: 2025,
     image:
@@ -667,7 +667,7 @@ export const games: Game[] = [
   {
     id: 30,
     title: "Elden Ring: Shadow of the Erdtree",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9,
     year: 2024,
     image:
@@ -688,7 +688,7 @@ export const games: Game[] = [
   {
     id: 31,
     title: "Silent Hill 2",
-    genre: "Action",
+    genres: ["Action"],
     rating: 9,
     year: 2024,
     image:
@@ -709,7 +709,7 @@ export const games: Game[] = [
   {
     id: 32,
     title: "Clair Obscur: Expedition 33",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 9,
     year: 2025,
     image:
@@ -730,7 +730,7 @@ export const games: Game[] = [
   {
     id: 33,
     title: "Uncharted: Legacy of Thieves Collection",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.9,
     year: 2022,
     image:
@@ -750,7 +750,7 @@ export const games: Game[] = [
   {
     id: 34,
     title: "Hatsune Miku: Project DIVA Mega Mix+",
-    genre: "Arcade",
+    genres: ["Arcade"],
     rating: 8.9,
     year: 2022,
     image:
@@ -770,7 +770,7 @@ export const games: Game[] = [
   {
     id: 35,
     title: "Minishoot' Adventures",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 8.9,
     year: 2024,
     image:
@@ -790,7 +790,7 @@ export const games: Game[] = [
   {
     id: 36,
     title: "Split Fiction",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.9,
     year: 2025,
     image:
@@ -810,7 +810,7 @@ export const games: Game[] = [
   {
     id: 37,
     title: "Baldur's Gate III",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 8.9,
     year: 2023,
     image:
@@ -831,7 +831,7 @@ export const games: Game[] = [
   {
     id: 38,
     title: "Another Code: Recollection",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 8.9,
     year: 2024,
     image:
@@ -851,7 +851,7 @@ export const games: Game[] = [
   {
     id: 39,
     title: "Emi - New Beginning",
-    genre: "Simulation",
+    genres: ["Simulation"],
     rating: 8.9,
     year: 2022,
     image:
@@ -871,7 +871,7 @@ export const games: Game[] = [
   {
     id: 40,
     title: "The Witch's Sexual Prison",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 8.9,
     year: 2022,
     image:
@@ -888,7 +888,7 @@ export const games: Game[] = [
   {
     id: 41,
     title: "Bionic Bay",
-    genre: "Racing",
+    genres: ["Racing"],
     rating: 8.9,
     year: 2025,
     image:
@@ -907,7 +907,7 @@ export const games: Game[] = [
   {
     id: 42,
     title: "Hauntii",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.9,
     year: 2024,
     image:
@@ -927,7 +927,7 @@ export const games: Game[] = [
   {
     id: 43,
     title: "Resident Evil 4 - Separate Ways",
-    genre: "Shooter",
+    genres: ["Shooter"],
     rating: 8.9,
     year: 2023,
     image:
@@ -947,7 +947,7 @@ export const games: Game[] = [
   {
     id: 44,
     title: "God of War: Ragnarök",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.9,
     year: 2022,
     image:
@@ -967,7 +967,7 @@ export const games: Game[] = [
   {
     id: 45,
     title: "Until Then",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 8.8,
     year: 2024,
     image:
@@ -986,7 +986,7 @@ export const games: Game[] = [
   {
     id: 46,
     title: "A Space for the Unbound",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 8.8,
     year: 2023,
     image:
@@ -1006,7 +1006,7 @@ export const games: Game[] = [
   {
     id: 47,
     title: "Donkey Kong Bananza",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 8.8,
     year: 2025,
     image:
@@ -1021,7 +1021,7 @@ export const games: Game[] = [
   {
     id: 48,
     title: "World of Goo 2",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 8.8,
     year: 2024,
     image:
@@ -1039,7 +1039,7 @@ export const games: Game[] = [
   {
     id: 49,
     title: "Horizon Zero Dawn Remastered",
-    genre: "Shooter",
+    genres: ["Shooter"],
     rating: 8.8,
     year: 2024,
     image:
@@ -1056,7 +1056,7 @@ export const games: Game[] = [
   {
     id: 50,
     title: "1000xResist",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 8.8,
     year: 2024,
     image:
@@ -1076,7 +1076,7 @@ export const games: Game[] = [
   {
     id: 51,
     title: "I Am Your Beast",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.8,
     year: 2024,
     image:
@@ -1096,7 +1096,7 @@ export const games: Game[] = [
   {
     id: 52,
     title: "Hollow Knight: Silksong",
-    genre: "Platformer",
+    genres: ["Platformer"],
     rating: 8.8,
     year: 2025,
     image:
@@ -1116,7 +1116,7 @@ export const games: Game[] = [
   {
     id: 53,
     title: "Kingdom Come: Deliverance II",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.8,
     year: 2025,
     image:
@@ -1136,7 +1136,7 @@ export const games: Game[] = [
   {
     id: 54,
     title: "Elden Ring",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.8,
     year: 2022,
     image:
@@ -1157,7 +1157,7 @@ export const games: Game[] = [
   {
     id: 55,
     title: "UCN for mac and windows",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 8.8,
     year: 2022,
     image:
@@ -1172,7 +1172,7 @@ export const games: Game[] = [
   {
     id: 56,
     title: "Winter Memories",
-    genre: "Simulation",
+    genres: ["Simulation"],
     rating: 8.8,
     year: 2024,
     image:
@@ -1191,7 +1191,7 @@ export const games: Game[] = [
   {
     id: 57,
     title: "One Iced Latte With Your Breast Milk, Please! ☕",
-    genre: "Simulation",
+    genres: ["Simulation"],
     rating: 8.8,
     year: 2025,
     image:
@@ -1211,7 +1211,7 @@ export const games: Game[] = [
   {
     id: 58,
     title: "Leaf it Alone",
-    genre: "Simulation",
+    genres: ["Simulation"],
     rating: 8.8,
     year: 2025,
     image:
@@ -1231,7 +1231,7 @@ export const games: Game[] = [
   {
     id: 59,
     title: "The Rise of the Golden Idol",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 8.8,
     year: 2024,
     image:
@@ -1250,7 +1250,7 @@ export const games: Game[] = [
   {
     id: 60,
     title: "The WereCleaner",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 8.8,
     year: 2024,
     image:
@@ -1270,7 +1270,7 @@ export const games: Game[] = [
   {
     id: 61,
     title: "Slay the Princess",
-    genre: "Simulation",
+    genres: ["Simulation"],
     rating: 8.8,
     year: 2023,
     image:
@@ -1290,7 +1290,7 @@ export const games: Game[] = [
   {
     id: 62,
     title: "Frog Detective 3: Corruption at Cowboy County",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 8.8,
     year: 2022,
     image:
@@ -1309,8 +1309,8 @@ export const games: Game[] = [
   },
   {
     id: 63,
-    title: "\"Voices Of The Void\" Demo",
-    genre: "Simulation",
+    title: '"Voices Of The Void" Demo',
+    genres: ["Simulation"],
     rating: 8.8,
     year: 2022,
     image:
@@ -1330,7 +1330,7 @@ export const games: Game[] = [
   {
     id: 64,
     title: "Monster Prom 3: Monster Roadtrip",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 8.8,
     year: 2022,
     image:
@@ -1350,7 +1350,7 @@ export const games: Game[] = [
   {
     id: 65,
     title: "Lost in Play",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 8.8,
     year: 2022,
     image:
@@ -1370,7 +1370,7 @@ export const games: Game[] = [
   {
     id: 66,
     title: "Cabernet",
-    genre: "Simulation",
+    genres: ["Simulation"],
     rating: 8.8,
     year: 2025,
     image:
@@ -1390,7 +1390,7 @@ export const games: Game[] = [
   {
     id: 67,
     title: "Fire Emblem Warriors: Three Hopes",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.8,
     year: 2022,
     image:
@@ -1409,7 +1409,7 @@ export const games: Game[] = [
   {
     id: 68,
     title: "The Legend of Zelda: Tears of the Kingdom",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1429,7 +1429,7 @@ export const games: Game[] = [
   {
     id: 69,
     title: "Cocoon",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1448,7 +1448,7 @@ export const games: Game[] = [
   {
     id: 70,
     title: "Persona 3 Reload",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 8.7,
     year: 2024,
     image:
@@ -1467,7 +1467,7 @@ export const games: Game[] = [
   {
     id: 71,
     title: "The Stanley Parable: Ultra Deluxe",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 8.7,
     year: 2022,
     image:
@@ -1483,7 +1483,7 @@ export const games: Game[] = [
   {
     id: 72,
     title: "Warhammer 40,000: Rogue Trader",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1503,7 +1503,7 @@ export const games: Game[] = [
   {
     id: 73,
     title: "Metroid Prime Remastered",
-    genre: "Shooter",
+    genres: ["Shooter"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1523,7 +1523,7 @@ export const games: Game[] = [
   {
     id: 74,
     title: "Chants of Sennaar",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1543,7 +1543,7 @@ export const games: Game[] = [
   {
     id: 75,
     title: "Shogun Showdown",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1563,7 +1563,7 @@ export const games: Game[] = [
   {
     id: 76,
     title: "Marvel's Spider-Man 2",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1583,7 +1583,7 @@ export const games: Game[] = [
   {
     id: 77,
     title: "Signalis",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2022,
     image:
@@ -1603,7 +1603,7 @@ export const games: Game[] = [
   {
     id: 78,
     title: "Ghost Trick : Detective Phantom (remastered)",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1623,7 +1623,7 @@ export const games: Game[] = [
   {
     id: 79,
     title: "Hades II",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2025,
     image:
@@ -1643,7 +1643,7 @@ export const games: Game[] = [
   {
     id: 80,
     title: "Nine Sols",
-    genre: "Platformer",
+    genres: ["Platformer"],
     rating: 8.7,
     year: 2024,
     image:
@@ -1663,7 +1663,7 @@ export const games: Game[] = [
   {
     id: 81,
     title: "Super Mario Bros. Wonder",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1683,7 +1683,7 @@ export const games: Game[] = [
   {
     id: 82,
     title: "Splatoon 3",
-    genre: "Shooter",
+    genres: ["Shooter"],
     rating: 8.7,
     year: 2022,
     image:
@@ -1703,7 +1703,7 @@ export const games: Game[] = [
   {
     id: 83,
     title: "The Legend of Heroes: Trails from Zero",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 8.7,
     year: 2022,
     image:
@@ -1720,7 +1720,7 @@ export const games: Game[] = [
   {
     id: 84,
     title: "We Were Here Forever",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 8.7,
     year: 2022,
     image:
@@ -1739,7 +1739,7 @@ export const games: Game[] = [
   {
     id: 85,
     title: "The Alters",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 8.7,
     year: 2025,
     image:
@@ -1759,7 +1759,7 @@ export const games: Game[] = [
   {
     id: 86,
     title: "Neon White",
-    genre: "Shooter",
+    genres: ["Shooter"],
     rating: 8.7,
     year: 2022,
     image:
@@ -1778,7 +1778,7 @@ export const games: Game[] = [
   {
     id: 87,
     title: "Unicorn Overlord",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 8.7,
     year: 2024,
     image:
@@ -1798,7 +1798,7 @@ export const games: Game[] = [
   {
     id: 88,
     title: "Doom: The Dark Ages",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2025,
     image:
@@ -1818,7 +1818,7 @@ export const games: Game[] = [
   {
     id: 89,
     title: "Death Stranding 2: On The Beach",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2025,
     image:
@@ -1838,7 +1838,7 @@ export const games: Game[] = [
   {
     id: 90,
     title: "The Talos Principle 2",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1858,7 +1858,7 @@ export const games: Game[] = [
   {
     id: 91,
     title: "Dead Space",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1875,7 +1875,7 @@ export const games: Game[] = [
   {
     id: 92,
     title: "Neva",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 8.7,
     year: 2024,
     image:
@@ -1894,7 +1894,7 @@ export const games: Game[] = [
   {
     id: 93,
     title: "Alan Wake 2",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2023,
     image:
@@ -1914,7 +1914,7 @@ export const games: Game[] = [
   {
     id: 94,
     title: "Sister! Seikatsu -Fantasy-",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 8.7,
     year: 2022,
     image:
@@ -1933,7 +1933,7 @@ export const games: Game[] = [
   {
     id: 95,
     title: "Monster Hunter Stories 3: Twisted Reflection",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2026,
     image:
@@ -1954,7 +1954,7 @@ export const games: Game[] = [
   {
     id: 96,
     title: "Ball x Pit",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2025,
     image:
@@ -1974,7 +1974,7 @@ export const games: Game[] = [
   {
     id: 97,
     title: "The Last Clockwinder",
-    genre: "Simulation",
+    genres: ["Simulation"],
     rating: 8.7,
     year: 2022,
     image:
@@ -1994,7 +1994,7 @@ export const games: Game[] = [
   {
     id: 98,
     title: "TELEFORUM",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 8.7,
     year: 2023,
     image:
@@ -2013,7 +2013,7 @@ export const games: Game[] = [
   {
     id: 99,
     title: "Prince of Persia The Lost Crown",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2024,
     image:
@@ -2032,7 +2032,7 @@ export const games: Game[] = [
   {
     id: 100,
     title: "Poppy Playtime 2D (CHAPTER 1)",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 8.7,
     year: 2022,
     image:
@@ -2049,7 +2049,7 @@ export const games: Game[] = [
   {
     id: 101,
     title: "Arco",
-    genre: "Strategy",
+    genres: ["Strategy"],
     rating: 8.7,
     year: 2024,
     image:
@@ -2069,7 +2069,7 @@ export const games: Game[] = [
   {
     id: 102,
     title: "Sonic X Shadow Generations",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2024,
     image:
@@ -2089,7 +2089,7 @@ export const games: Game[] = [
   {
     id: 103,
     title: "PARANORMASIGHT: The Seven Mysteries of Honjo",
-    genre: "Simulation",
+    genres: ["Simulation"],
     rating: 8.7,
     year: 2023,
     image:
@@ -2109,7 +2109,7 @@ export const games: Game[] = [
   {
     id: 104,
     title: "Donkey Kong Country Returns HD",
-    genre: "Platformer",
+    genres: ["Platformer"],
     rating: 8.7,
     year: 2025,
     image:
@@ -2128,7 +2128,7 @@ export const games: Game[] = [
   {
     id: 105,
     title: "Sanabi",
-    genre: "Platformer",
+    genres: ["Platformer"],
     rating: 8.7,
     year: 2023,
     image:
@@ -2148,7 +2148,7 @@ export const games: Game[] = [
   {
     id: 106,
     title: "Bomb Rush Cyberfunk",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2023,
     image:
@@ -2168,7 +2168,7 @@ export const games: Game[] = [
   {
     id: 107,
     title: "One in space",
-    genre: "Shooter",
+    genres: ["Shooter"],
     rating: 8.7,
     year: 2022,
     image:
@@ -2185,7 +2185,7 @@ export const games: Game[] = [
   {
     id: 108,
     title: "One Night At Shrek's Hotel",
-    genre: "Puzzle",
+    genres: ["Puzzle"],
     rating: 8.7,
     year: 2022,
     image:
@@ -2205,7 +2205,7 @@ export const games: Game[] = [
   {
     id: 109,
     title: "Burnhouse Lane",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2022,
     image:
@@ -2225,7 +2225,7 @@ export const games: Game[] = [
   {
     id: 110,
     title: "Escape From Mystwood Mansion",
-    genre: "Casual",
+    genres: ["Casual"],
     rating: 8.7,
     year: 2023,
     image:
@@ -2245,7 +2245,7 @@ export const games: Game[] = [
   {
     id: 111,
     title: "Udonge in Interspecies Cave",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.7,
     year: 2023,
     image:
@@ -2265,7 +2265,7 @@ export const games: Game[] = [
   {
     id: 112,
     title: "Xenoblade Chronicles 3",
-    genre: "Adventure",
+    genres: ["Adventure"],
     rating: 8.6,
     year: 2022,
     image:
@@ -2285,7 +2285,7 @@ export const games: Game[] = [
   {
     id: 113,
     title: "Black Myth: Wukong",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.6,
     year: 2024,
     image:
@@ -2304,7 +2304,7 @@ export const games: Game[] = [
   {
     id: 114,
     title: "Like a Dragon Gaiden: The Man Who Erased His Name",
-    genre: "Action",
+    genres: ["Action"],
     rating: 8.6,
     year: 2023,
     image:

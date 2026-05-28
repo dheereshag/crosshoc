@@ -1,5 +1,5 @@
 import { ListIcon } from "lucide-react";
-import { games, type SortKey } from "@/constants/catalog";
+import { games, type SortKey, type Genre } from "@/constants/catalog";
 import { GameCard } from "@/components/game-card";
 import { FilterBar } from "@/components/filter-bar";
 
@@ -42,7 +42,9 @@ function getVisibleGames(
   let visibleGames = [...shuffledGames];
 
   if (genre) {
-    visibleGames = visibleGames.filter((game) => game.genre === genre);
+    visibleGames = visibleGames.filter((game) =>
+      game.genres.includes(genre as Genre),
+    );
   }
 
   if (section === "new") {
@@ -78,7 +80,7 @@ function getVisibleGames(
     case "relevance":
     default:
       if (section === "genres") {
-        visibleGames.sort((a, b) => a.genre.localeCompare(b.genre));
+        visibleGames.sort((a, b) => a.genres[0].localeCompare(b.genres[0]));
       }
       break;
   }

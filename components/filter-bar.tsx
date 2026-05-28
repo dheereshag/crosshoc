@@ -12,7 +12,12 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { genres, sortOptions, type Game, type SortKey } from "@/constants/catalog";
+import {
+  genres,
+  sortOptions,
+  type Genre,
+  type SortKey,
+} from "@/constants/catalog";
 import { genreIconComponents } from "@/constants/sidebar";
 import { buildHref } from "@/lib/utils";
 
@@ -47,7 +52,7 @@ export function FilterBar({ searchParams, genre, sort }: FilterBarProps) {
         {filterChips.map((item) => {
           const active = genre === item.value;
           const Icon = item.value
-            ? genreIconComponents[item.value as Game["genre"]]
+            ? genreIconComponents[item.value as Genre]
             : LayoutGridIcon;
           return (
             <Button

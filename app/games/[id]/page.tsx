@@ -82,7 +82,11 @@ export default async function GameDetailsPage({ params }: PageProps) {
   const reviews = getReviewsForGame(game);
   const recommendedGame =
     [...games]
-      .filter((item) => item.id !== game.id && item.genre === game.genre)
+      .filter(
+        (item) =>
+          item.id !== game.id &&
+          item.genres.some((g) => game.genres.includes(g)),
+      )
       .sort((a, b) => b.rating - a.rating)[0] ??
     [...games]
       .filter((item) => item.id !== game.id)
@@ -118,7 +122,9 @@ export default async function GameDetailsPage({ params }: PageProps) {
               <h1 className="text-2xl font-semibold tracking-tight">
                 {game.title}
               </h1>
-              <GenreBadge genre={game.genre} />
+              {game.genres.map((g) => (
+                <GenreBadge key={g} genre={g} />
+              ))}
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground">
               {game.description}
@@ -174,7 +180,9 @@ export default async function GameDetailsPage({ params }: PageProps) {
                   {recommendedGame.description}
                 </p>
                 <div className="flex items-center justify-between gap-2 pt-1">
-                  <GenreBadge genre={recommendedGame.genre} />
+                  {recommendedGame.genres.map((g) => (
+                    <GenreBadge key={g} genre={g} />
+                  ))}
                   <span className="inline-flex items-center gap-1 text-sm font-medium text-foreground">
                     View
                     <ArrowRightIcon className="size-4" />
