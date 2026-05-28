@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { GameCardImage } from "@/components/game-card-image";
+import { GameImageGallery } from "@/components/game-image-gallery";
 import { notFound } from "next/navigation";
 import {
   ArrowRightIcon,
@@ -100,9 +101,9 @@ export default async function GameDetailsPage({ params }: PageProps) {
       </div>
 
       <div className="grid gap-4 xl:grid-cols-[minmax(0,1.6fr)_minmax(360px,1fr)] xl:items-stretch">
-        <Card className="h-full overflow-hidden border-border/80 bg-card/70 gap-0 py-0">
-          <div className="border-b border-border/70 bg-muted">
-            <GameCardImage
+        <div className="flex flex-col gap-4 xl:h-full">
+          <div className="xl:flex-1 xl:min-h-0">
+            <GameImageGallery
               images={
                 game.screenshots.length > 0 ? game.screenshots : [game.image]
               }
@@ -112,19 +113,16 @@ export default async function GameDetailsPage({ params }: PageProps) {
             />
           </div>
 
-          <CardHeader className="space-y-4 pt-4 pb-2">
+          <div className="space-y-3">
             <div className="flex flex-wrap items-start justify-between gap-3">
-              <CardTitle className="text-2xl tracking-tight">
+              <h1 className="text-2xl font-semibold tracking-tight">
                 {game.title}
-              </CardTitle>
+              </h1>
               <GenreBadge genre={game.genre} />
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground">
               {game.description}
             </p>
-          </CardHeader>
-
-          <CardContent className="pb-4 pt-2">
             <div className="grid gap-4 sm:grid-cols-2">
               <StatBlock
                 icon={StarIcon}
@@ -137,8 +135,8 @@ export default async function GameDetailsPage({ params }: PageProps) {
                 value={game.year}
               />
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         <div className="flex h-full flex-col gap-4">
           <GameDeckControls game={game} />
