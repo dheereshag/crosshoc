@@ -113,7 +113,7 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
               onChange={(event) => {
                 const nextCopies = Number(event.target.value);
                 setCopies(
-                  Number.isFinite(nextCopies) && nextCopies > 0
+                  Number.isFinite(nextCopies) && nextCopies >= 1 && nextCopies <= 9
                     ? nextCopies
                     : 1,
                 );

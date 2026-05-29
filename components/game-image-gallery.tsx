@@ -75,7 +75,6 @@ export function GameImageGallery({
                       ? "border-primary"
                       : "border-transparent hover:border-border",
                   )}
-                  onClick={() => setActiveIndex(i)}
                 >
                   <Image
                     src={src}

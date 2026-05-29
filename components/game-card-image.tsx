@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 type Props = {
   images: string[];
@@ -33,22 +34,13 @@ export function GameCardImage({
     setActiveIndex(idx);
   }
 
-  function handleMouseEnter() {
-    setIsHovered(true);
-  }
-
-  function handleMouseLeave() {
-    setActiveIndex(0);
-    setIsHovered(false);
-  }
-
   return (
     <div
       ref={containerRef}
       className="relative aspect-video w-full overflow-hidden"
       onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => { setActiveIndex(0); setIsHovered(false); }}
     >
       {/* Before first hover: only render the primary image */}
       {!isHovered && (
@@ -71,23 +63,23 @@ export function GameCardImage({
             alt={i === 0 ? `${title} cover art` : `${title} screenshot ${i + 1}`}
             fill
             sizes={sizes}
-            className={[
+            className={cn(
               "object-cover transition-opacity duration-150",
               i === activeIndex ? "opacity-100" : "opacity-0",
-            ].join(" ")}
+            )}
           />
         ))}
 
       {/* Pip indicators — only shown when there are multiple images */}
       {hasMultiple && (
-        <div className={["absolute inset-x-0 bottom-0 flex items-end gap-0.5 px-2 pb-1.5 transition-opacity duration-150", isHovered ? "opacity-100" : "opacity-0"].join(" ")}>
+        <div className={cn("absolute inset-x-0 bottom-0 flex items-end gap-0.5 px-2 pb-1.5 transition-opacity duration-150", isHovered ? "opacity-100" : "opacity-0")}>
           {images.map((_, i) => (
             <div
               key={i}
-              className={[
+              className={cn(
                 "h-0.5 flex-1 rounded-full transition-colors duration-150",
                 i === activeIndex ? "bg-white" : "bg-white/35",
-              ].join(" ")}
+              )}
             />
           ))}
         </div>

@@ -100,7 +100,7 @@ export default async function HomePage({ searchParams }: PageProps) {
   const visibleGames = getVisibleGames(section, genre, sort);
   const title = genre
     ? `${genre} Games`
-    : (titleBySection[section] ?? "Game Leases");
+    : (titleBySection[section] ?? "All Games");
 
   return (
     <div className="px-6 pb-10 pt-2 md:px-8">

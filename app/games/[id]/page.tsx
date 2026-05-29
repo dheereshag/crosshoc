@@ -11,8 +11,16 @@ import {
   StarIcon,
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { games } from "@/constants/catalog";
+import { games, getGameImages } from "@/constants/catalog";
 import { getReviewsForGame, type Review } from "@/constants/reviews";
 import { GenreBadge } from "@/components/genre-badge";
 import { StarRating } from "@/components/star-rating";
@@ -32,15 +40,17 @@ function StatBlock({
   value: string | number;
 }) {
   return (
-    <div className="rounded-lg border border-border/70 bg-background/70 p-4">
-      <p className="inline-flex items-center gap-1 text-xs uppercase tracking-wide text-muted-foreground">
-        <Icon className="size-3" />
-        {label}
-      </p>
-      <p className="mt-2 text-3xl font-semibold leading-none text-foreground md:text-4xl">
-        {value}
-      </p>
-    </div>
+    <Card className="border-border/70 bg-background/70">
+      <CardContent className="p-4">
+        <p className="inline-flex items-center gap-1 text-xs uppercase tracking-wide text-muted-foreground">
+          <Icon className="size-3" />
+          {label}
+        </p>
+        <p className="mt-2 text-3xl font-semibold leading-none text-foreground md:text-4xl">
+          {value}
+        </p>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -80,37 +90,37 @@ export default async function GameDetailsPage({ params }: PageProps) {
   }
 
   const reviews = getReviewsForGame(game);
+  const otherGames = games.filter((item) => item.id !== game.id);
   const recommendedGame =
-    [...games]
-      .filter(
-        (item) =>
-          item.id !== game.id &&
-          item.genres.some((g) => game.genres.includes(g)),
-      )
+    otherGames
+      .filter((item) => item.genres.some((g) => game.genres.includes(g)))
       .sort((a, b) => b.rating - a.rating)[0] ??
-    [...games]
-      .filter((item) => item.id !== game.id)
-      .sort((a, b) => b.rating - a.rating)[0];
+    otherGames.sort((a, b) => b.rating - a.rating)[0];
 
   return (
     <div className="px-6 pb-10 pt-2 md:px-10">
       <div className="mb-5">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-        >
-          <ArrowLeftIcon className="size-4" />
-          Back to listings
-        </Link>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink render={<Link href="/" />}>
+                <ArrowLeftIcon className="size-3.5" />
+                Listings
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{game.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
       </div>
 
       <div className="grid gap-4 xl:grid-cols-[minmax(0,1.6fr)_minmax(360px,1fr)] xl:items-stretch">
         <div className="flex flex-col gap-4 xl:h-full">
           <div className="xl:flex-1 xl:min-h-0">
             <GameImageGallery
-              images={
-                game.screenshots.length > 0 ? game.screenshots : [game.image]
-              }
+              images={getGameImages(game)}
               title={game.title}
               sizes="(max-width: 1024px) 100vw, 70vw"
               priority
@@ -154,11 +164,7 @@ export default async function GameDetailsPage({ params }: PageProps) {
             <Card className="h-full overflow-hidden border-border/80 bg-card/70 transition-colors group-hover:bg-accent/30 gap-0 py-0">
               <div className="border-b border-border/70 bg-muted">
                 <GameCardImage
-                  images={
-                    recommendedGame.screenshots.length > 0
-                      ? recommendedGame.screenshots
-                      : [recommendedGame.image]
-                  }
+                  images={getGameImages(recommendedGame)}
                   title={recommendedGame.title}
                   sizes="(max-width: 1024px) 100vw, 30vw"
                 />
