@@ -13,6 +13,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Crosshoc",
   description: "Discover and lease games on Crosshoc.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
