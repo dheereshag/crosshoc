@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { games, type Game } from "@/constants/catalog";
+import { games } from "@/constants/catalog";
 import { getReviewsForGame, type Review } from "@/constants/reviews";
 import { GenreBadge } from "@/components/genre-badge";
 import { StarRating } from "@/components/star-rating";

@@ -3,7 +3,6 @@ import {
   BotIcon,
   LifeBuoyIcon,
   SendIcon,
-  TerminalIcon,
   PieChartIcon,
   CalendarDaysIcon,
   CalendarIcon,
