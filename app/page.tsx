@@ -1,92 +1,16 @@
 import { ListIcon } from "lucide-react";
-import { games, type SortKey, type Genre } from "@/constants/catalog";
+import { type SortKey } from "@/constants/catalog";
 import { GameCard } from "@/components/game-card";
 import { FilterBar } from "@/components/filter-bar";
+import {
+  getVisibleGames,
+  titleBySection,
+  legacyToCurrentSortMap,
+} from "@/lib/catalog-utils";
 
 type PageProps = {
   searchParams?: Promise<Record<string, string | undefined>>;
 };
-
-// Deterministic pseudo-shuffle: multiply by prime 37 and mod by prime 101
-// so the catalog doesn't default to insertion order.
-const shuffledGames = [...games].sort(
-  (a, b) => ((a.id * 37) % 101) - ((b.id * 37) % 101),
-);
-
-const popularityWeightByBadge: Record<string, number> = {
-  Trending: 4,
-  "Top Rated": 3,
-  "Editor's Pick": 2,
-  New: 1,
-};
-
-const titleBySection: Record<string, string> = {
-  new: "New Releases",
-  top: "Top Games",
-  genres: "Genres",
-};
-
-const legacyToCurrentSortMap: Record<string, SortKey> = {
-  featured: "relevance",
-  "year-desc": "release-date",
-  title: "name",
-  rating: "average-rating",
-};
-
-
-function getVisibleGames(
-  section: string,
-  genre: string | undefined,
-  sort: SortKey = "relevance",
-) {
-  let visibleGames = [...shuffledGames];
-
-  if (genre) {
-    visibleGames = visibleGames.filter((game) =>
-      game.genres.includes(genre as Genre),
-    );
-  }
-
-  if (section === "new") {
-    visibleGames = visibleGames.filter((game) => game.badge === "New");
-  }
-
-  if (section === "top") {
-    visibleGames.sort((a, b) => b.rating - a.rating);
-    visibleGames = visibleGames.slice(0, 8);
-  }
-
-  switch (sort) {
-    case "date-added":
-      visibleGames.sort((a, b) => b.id - a.id);
-      break;
-    case "name":
-      visibleGames.sort((a, b) => a.title.localeCompare(b.title));
-      break;
-    case "release-date":
-      visibleGames.sort((a, b) => b.year - a.year);
-      break;
-    case "popularity":
-      visibleGames.sort((a, b) => {
-        const badgeDelta =
-          (popularityWeightByBadge[b.badge ?? ""] ?? 0) -
-          (popularityWeightByBadge[a.badge ?? ""] ?? 0);
-        return badgeDelta !== 0 ? badgeDelta : b.rating - a.rating;
-      });
-      break;
-    case "average-rating":
-      visibleGames.sort((a, b) => b.rating - a.rating);
-      break;
-    case "relevance":
-    default:
-      if (section === "genres") {
-        visibleGames.sort((a, b) => a.genres[0].localeCompare(b.genres[0]));
-      }
-      break;
-  }
-
-  return visibleGames;
-}
 
 export default async function HomePage({ searchParams }: PageProps) {
   const resolvedSearchParams = (await searchParams) ?? {};

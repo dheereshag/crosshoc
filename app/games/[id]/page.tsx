@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { GameCardImage } from "@/components/game-card-image";
 import { GameImageGallery } from "@/components/game-image-gallery";
 import { notFound } from "next/navigation";
@@ -28,6 +29,21 @@ import { GameDeckControls } from "@/components/game-deck-controls";
 type PageProps = {
   params: Promise<{ id: string }>;
 };
+
+export function generateStaticParams() {
+  return games.map((game) => ({ id: String(game.id) }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const game = games.find((item) => item.id === Number(id));
+  if (!game) return { title: "Game not found | Crosshoc" };
+  return {
+    title: `${game.title} | Crosshoc`,
+    description: game.description,
+  };
+}
+
 
 function StatBlock({
   icon: Icon,
