@@ -164,7 +164,7 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
               <SelectTrigger id="copies" className="w-full">
                 <SelectValue placeholder="Select copies" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent alignItemWithTrigger={false} className="min-w-0">
                 <SelectGroup>
                   <SelectLabel>Starter Deck</SelectLabel>
                   {[1, 2, 3].map((value) => (
