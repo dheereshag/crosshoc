@@ -17,7 +17,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
+  SelectSeparator,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -141,43 +144,46 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-[auto_1fr_auto] sm:items-end">
+          <div className="grid gap-4 sm:grid-cols-[auto_1fr_auto] sm:items-center">
             <label
-              className="inline-flex items-center gap-1 text-xs font-medium uppercase tracking-wide text-muted-foreground sm:pb-2"
+              className="inline-flex items-center gap-1 text-xs font-medium uppercase tracking-wide text-muted-foreground"
               htmlFor="copies"
             >
               <CopyIcon className="size-3.5" />
               Copies
             </label>
-            <div className="space-y-2">
-              <Select
-                value={String(copies)}
-                onValueChange={(value) => {
-                  setValue("copies", Number(value), {
-                    shouldDirty: true,
-                    shouldValidate: true,
-                  });
-                }}
-              >
-                <SelectTrigger id="copies" className="h-10 w-full max-w-56">
-                  <SelectValue placeholder="Select copies" />
-                </SelectTrigger>
-                <SelectContent>
-                  {Array.from({ length: 9 }, (_, idx) => idx + 1).map(
-                    (value) => (
-                      <SelectItem key={value} value={String(value)}>
-                        {value}
-                      </SelectItem>
-                    ),
-                  )}
-                </SelectContent>
-              </Select>
-              {errors.copies ? (
-                <p className="text-xs text-destructive">
-                  {errors.copies.message}
-                </p>
-              ) : null}
-            </div>
+            <Select
+              value={String(copies)}
+              onValueChange={(value) => {
+                setValue("copies", Number(value), {
+                  shouldDirty: true,
+                  shouldValidate: true,
+                });
+              }}
+            >
+              <SelectTrigger id="copies" className="w-full">
+                <SelectValue placeholder="Select copies" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Starter Deck</SelectLabel>
+                  {[1, 2, 3].map((value) => (
+                    <SelectItem key={value} value={String(value)}>
+                      {pluralize(value, "copy", "copies")}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+                <SelectSeparator />
+                <SelectGroup>
+                  <SelectLabel>Expanded Deck</SelectLabel>
+                  {[4, 5, 6, 7, 8, 9].map((value) => (
+                    <SelectItem key={value} value={String(value)}>
+                      {pluralize(value, "copy", "copies")}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
 
             <Button type="submit" className="sm:min-w-44">
               <PlusIcon className="size-4" />
