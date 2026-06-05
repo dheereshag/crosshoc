@@ -1,6 +1,6 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod";
+import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import {
   CalendarDaysIcon,
   CalculatorIcon,
@@ -62,7 +62,7 @@ function getLeasePeriodPrice(game: Game, months: (typeof leasePeriods)[number]) 
 
 export function GameDeckControls({ game, className }: GameDeckControlsProps) {
   const { handleSubmit, setValue, control } = useForm<DeckFormValues>({
-    resolver: zodResolver(deckFormSchema),
+    resolver: standardSchemaResolver(deckFormSchema),
     defaultValues: {
       leasePeriod: 3,
       copies: 1,
