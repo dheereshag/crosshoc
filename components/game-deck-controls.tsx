@@ -9,7 +9,7 @@ import {
   PackageIcon,
   PlusIcon,
 } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 import { Button } from "@/components/ui/button"
@@ -61,12 +61,7 @@ function getLeasePeriodPrice(game: Game, months: (typeof leasePeriods)[number]) 
 }
 
 export function GameDeckControls({ game, className }: GameDeckControlsProps) {
-  const {
-    handleSubmit,
-    setValue,
-    watch,
-    formState: { errors },
-  } = useForm<DeckFormValues>({
+  const { handleSubmit, setValue, control } = useForm<DeckFormValues>({
     resolver: zodResolver(deckFormSchema),
     defaultValues: {
       leasePeriod: 3,
@@ -74,8 +69,8 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
     },
   });
 
-  const leasePeriod = watch("leasePeriod") ?? 3;
-  const rawCopies = watch("copies");
+  const leasePeriod = useWatch({ control, name: "leasePeriod" }) ?? 3;
+  const rawCopies = useWatch({ control, name: "copies" });
   const copies = Number.isFinite(rawCopies) ? rawCopies : 1;
 
   const monthlyPrice = computeBasePrice(game);
