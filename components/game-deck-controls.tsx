@@ -139,7 +139,7 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-[auto_1fr_auto] sm:items-center">
+          <div className="flex items-center gap-2 sm:grid sm:grid-cols-[auto_1fr_auto] sm:gap-4">
             <label
               className="inline-flex items-center gap-1 text-xs font-medium uppercase tracking-wide text-muted-foreground"
               htmlFor="copies"
@@ -147,43 +147,45 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
               <CopyIcon className="size-3.5" />
               Copies
             </label>
-            <Select
-              value={String(copies)}
-              onValueChange={(value) => {
-                setValue("copies", Number(value), {
-                  shouldDirty: true,
-                  shouldValidate: true,
-                });
-              }}
-            >
-              <SelectTrigger id="copies" className="w-full">
-                <SelectValue placeholder="Select copies" />
-              </SelectTrigger>
-              <SelectContent alignItemWithTrigger={false} className="min-w-0">
-                <SelectGroup>
-                  <SelectLabel>Starter Deck</SelectLabel>
-                  {[1, 2, 3].map((value) => (
-                    <SelectItem key={value} value={String(value)}>
-                      {pluralize(value, "copy", "copies")}
-                    </SelectItem>
-                  ))}
-                </SelectGroup>
-                <SelectSeparator />
-                <SelectGroup>
-                  <SelectLabel>Expanded Deck</SelectLabel>
-                  {[4, 5, 6, 7, 8, 9].map((value) => (
-                    <SelectItem key={value} value={String(value)}>
-                      {pluralize(value, "copy", "copies")}
-                    </SelectItem>
-                  ))}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <div className="contents">
+              <Select
+                value={String(copies)}
+                onValueChange={(value) => {
+                  setValue("copies", Number(value), {
+                    shouldDirty: true,
+                    shouldValidate: true,
+                  });
+                }}
+              >
+                <SelectTrigger id="copies" className="w-full">
+                  <SelectValue placeholder="Select copies" />
+                </SelectTrigger>
+                <SelectContent alignItemWithTrigger={false} className="min-w-0">
+                  <SelectGroup>
+                    <SelectLabel>Starter</SelectLabel>
+                    {[1, 2, 3].map((value) => (
+                      <SelectItem key={value} value={String(value)}>
+                        {pluralize(value, "copy", "copies")}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
+                  <SelectSeparator />
+                  <SelectGroup>
+                    <SelectLabel>Expanded</SelectLabel>
+                    {[4, 5, 6, 7, 8, 9].map((value) => (
+                      <SelectItem key={value} value={String(value)}>
+                        {pluralize(value, "copy", "copies")}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
 
-            <Button type="submit" className="sm:min-w-44">
-              <PlusIcon className="size-4" />
-              Add to Deck
-            </Button>
+              <Button type="submit" className="shrink-0 sm:min-w-44">
+                <PlusIcon className="size-4" />
+                Add to Deck
+              </Button>
+            </div>
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-border/70 bg-background/70 px-3 py-2 text-sm">
