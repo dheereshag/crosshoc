@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Geist } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -7,6 +7,11 @@ import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
 });
 
@@ -35,7 +40,9 @@ export default function RootLayout({
             {children}
           </main>
         </SidebarProvider>
-        <Toaster position="top-right" richColors />
+        <Toaster richColors theme="light" closeButton toastOptions={{
+          className: geist.className,
+        }} />
       </body>
     </html>
   );
