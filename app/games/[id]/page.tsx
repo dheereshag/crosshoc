@@ -44,7 +44,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-
 function StatBlock({
   icon: Icon,
   label,
@@ -76,9 +75,7 @@ function ReviewCard({ review }: { review: Review }) {
         <div className="inline-flex items-center gap-2">
           <Avatar size="sm">
             <AvatarImage src={review.avatar} alt={`${review.author} avatar`} />
-            <AvatarFallback>
-              {review.author.slice(0, 2).toUpperCase()}
-            </AvatarFallback>
+            <AvatarFallback>{review.author.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
           <p className="text-sm font-medium text-foreground">{review.author}</p>
         </div>
@@ -109,8 +106,7 @@ export default async function GameDetailsPage({ params }: PageProps) {
   const recommendedGame =
     otherGames
       .filter((item) => item.genres.some((g) => game.genres.includes(g)))
-      .sort((a, b) => b.rating - a.rating)[0] ??
-    otherGames.sort((a, b) => b.rating - a.rating)[0];
+      .sort((a, b) => b.rating - a.rating)[0] ?? otherGames.sort((a, b) => b.rating - a.rating)[0];
 
   return (
     <div className="px-6 pb-10 pt-2 md:px-10">
@@ -147,27 +143,15 @@ export default async function GameDetailsPage({ params }: PageProps) {
 
           <div className="space-y-3">
             <div className="flex flex-wrap items-start justify-between gap-3">
-              <h1 className="text-2xl font-semibold tracking-tight">
-                {game.title}
-              </h1>
+              <h1 className="text-2xl font-semibold tracking-tight">{game.title}</h1>
               {game.genres.map((g) => (
                 <GenreBadge key={g} genre={g} />
               ))}
             </div>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {game.description}
-            </p>
+            <p className="text-sm leading-relaxed text-muted-foreground">{game.description}</p>
             <div className="grid gap-4 sm:grid-cols-2">
-              <StatBlock
-                icon={StarIcon}
-                label="Average rating"
-                value={game.rating.toFixed(1)}
-              />
-              <StatBlock
-                icon={CalendarIcon}
-                label="Release year"
-                value={game.year}
-              />
+              <StatBlock icon={StarIcon} label="Average rating" value={game.rating.toFixed(1)} />
+              <StatBlock icon={CalendarIcon} label="Release year" value={game.year} />
             </div>
           </div>
         </div>
@@ -195,9 +179,7 @@ export default async function GameDetailsPage({ params }: PageProps) {
               </CardHeader>
               <CardContent className="flex flex-col gap-2 pb-4 pt-0">
                 <div className="flex items-center justify-between gap-2">
-                  <CardTitle className="line-clamp-1 text-base">
-                    {recommendedGame.title}
-                  </CardTitle>
+                  <CardTitle className="line-clamp-1 text-base">{recommendedGame.title}</CardTitle>
                   <StarRating rating={recommendedGame.rating} />
                 </div>
                 <p className="line-clamp-2 text-sm text-muted-foreground">

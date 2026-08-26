@@ -1,68 +1,107 @@
-# AGENTS
+# AGENTS.md
 
-Guidance for AI coding agents working in this repository.
+Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
 
-## Project Snapshot
-- Stack: Next.js (App Router), React, TypeScript, Tailwind CSS v4, ESLint (flat config), Base UI + shadcn-style components.
-- Package manager: pnpm (preferred).
-- Source roots: `app/`, `components/`, `hooks/`, `lib/`.
+**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
 
-## Fast Start
-- Install deps: `pnpm install`
-- Start dev server: `pnpm dev`
-- Lint: `pnpm lint`
-- Build: `pnpm build`
-- Start production server: `pnpm start`
+## 1. Think Before Coding
 
-## Working Rules
-- Prefer minimal, targeted edits; avoid broad refactors unless requested.
-- Keep TypeScript strict-safe and preserve existing public component APIs.
-- Use existing path alias imports (`@/...`) for project files.
-- Match the current style in touched files (quote style, semicolons, spacing).
+**Don't assume. Don't hide confusion. Surface tradeoffs.**
 
-## App Architecture
-- App Router pages are in `app/`.
-- Global shell is defined in `app/layout.tsx`.
-- **`app/page.tsx` is the main catalog/home page** — not a dashboard. `app/dashboard/page.tsx` is a null stub.
-- Game detail route: `app/games/[id]/page.tsx` — looks up `game.id` from `constants/catalog.ts`.
-- Sidebar/navigation composition is centered in `components/app-sidebar.tsx` plus `components/nav-*.tsx`.
-- `AppSidebar` is a `"use client"` component. Most pages are async server components that `await params` / `await searchParams`.
+Before implementing:
 
-## Data Layer
-All app data lives in `constants/` — there is no external API or database.
-- [`constants/catalog.ts`](constants/catalog.ts): `Game` type, `games[]` array, `genres`, `sortOptions`, `basePriceByGenre`. Add/change game data here.
-- [`constants/reviews.ts`](constants/reviews.ts): `Review` type and `getReviewsForGame(game)` — generates reviews deterministically from a template pool.
-- [`constants/sidebar.tsx`](constants/sidebar.tsx): `sidebarData` (nav items/user), `genreIconComponents` (component refs), `genreIconMap` (JSX elements). Note: `.tsx` extension because icons are rendered as JSX.
-- Game pricing is computed, not stored — see `getPrice()` in `app/page.tsx`.
-- Game images use `https://picsum.photos/seed/crosshoc-{id}/…` (allowlisted in `next.config.ts`).
+- State your assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them - don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
 
-## URL-Based State
-Filtering and sorting are driven entirely by URL search params — no React client state for filters.
-- `?section=all|new|top|genres` — content section
-- `?genre=Action|Strategy|RPG|…` — genre filter
-- `?sort=relevance|date-added|name|release-date|popularity|average-rating` — sort key
-- Helper `buildHref(currentParams, updates)` in `app/page.tsx` constructs filter URLs.
+## 2. Simplicity First
 
-## UI Conventions
-- Reusable primitives are in `components/ui/`.
-- Prefer composing from existing UI primitives before adding new bespoke components.
-- Variant styling pattern uses `class-variance-authority`; see `components/ui/button.tsx`.
-- Class merging utility is in `lib/utils.ts` (`cn`). Use it for conditional class names.
-- `@base-ui/react` powers some primitives (e.g., `Avatar` accepts a `size` prop from Base UI). Check existing usage before adding new props.
+**Minimum code that solves the problem. Nothing speculative.**
 
-## Known Pitfalls
-- `app/dashboard/page.tsx` returns `null` — it is a stub, not the main page.
-- `constants/sidebar.tsx` must stay `.tsx` (not `.ts`) because it uses JSX for icon elements.
-- `game.gradient` is defined on the `Game` type but is not currently rendered anywhere — don't assume it's in active use.
-- This repo contains both `app/layout.tsx` and `app/page.tsx` usage of sidebar providers/insets. Preserve the current route-level behavior unless asked to unify layout ownership.
-- No test runner is configured in scripts. Do not claim tests were run unless a test setup is added.
-- ESLint uses flat config (`eslint.config.mjs`), not legacy `.eslintrc`.
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn't requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
 
-## Helpful References
-- Baseline project docs: [README.md](README.md)
-- Scripts/dependencies: [package.json](package.json)
-- TypeScript config and path alias: [tsconfig.json](tsconfig.json)
-- ESLint config: [eslint.config.mjs](eslint.config.mjs)
-- Root app shell: [app/layout.tsx](app/layout.tsx)
-- Sidebar composition example: [components/app-sidebar.tsx](components/app-sidebar.tsx)
-- UI variant example: [components/ui/button.tsx](components/ui/button.tsx)
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+## 3. Surgical Changes
+
+**Touch only what you must. Clean up only your own mess.**
+
+When editing existing code:
+
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- If you notice unrelated dead code, mention it - don't delete it.
+
+When your changes create orphans:
+
+- Remove imports/variables/functions that YOUR changes made unused.
+- Don't remove pre-existing dead code unless asked.
+
+The test: Every changed line should trace directly to the user's request.
+
+## 4. Goal-Driven Execution
+
+**Define success criteria. Loop until verified.**
+
+Transform tasks into verifiable goals:
+
+- "Add validation" → "Write tests for invalid inputs, then make them pass"
+- "Fix the bug" → "Write a test that reproduces it, then make it pass"
+- "Refactor X" → "Ensure tests pass before and after"
+
+For multi-step tasks, state a brief plan:
+
+```
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
+```
+
+Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+
+## 5. Python Quality & Verification Gates
+
+**Always enforce the 3-step verification loop. All three must pass.**
+
+For any Python modifications:
+
+1. **Lint & Code Style**: Run `uv run ruff check --fix`. If manual errors remain, create an implementation plan and fix them cleanly without using `# noqa` suppressions.
+2. **Type Checking**: Run `uv run ty check`. If type diagnostics are found, create an implementation plan and fix the underlying typing without using `# type: ignore`.
+3. **Test Suite**: Run `uv run pytest` to confirm all unit and integration tests pass without regression.
+4. **Iterative Verification**: Keep looping through `uv run ruff check --fix`, `uv run ty check`, and `uv run pytest` until all three yield **0 errors, 0 warnings, and all tests pass**.
+
+**The 3 mandatory commands that must always work:**
+
+- `uv run ruff check --fix` (0 errors, 0 warnings)
+- `uv run ty check` (0 errors, 0 warnings)
+- `uv run pytest` (all tests pass)
+
+## 6. JavaScript / TypeScript / Node Quality & Verification Gates
+
+**Always enforce the verification loop. Use `pnpm` exclusively (never `npm`, `yarn`, or `bun`).**
+
+For any JavaScript / TypeScript / Node modifications:
+
+1. **Package Manager**: Use `pnpm` explicitly for all package installations and script executions. Do not use `npm`, `yarn`, or `bun`.
+2. **Lint & Code Style**: Run `pnpm run lint:fix` (and `pnpm run fmt`). Fix any remaining issues cleanly without disabling rules.
+3. **Type Checking**: Run `pnpm run type-check` (or `tsc --noEmit`). Fix type diagnostics cleanly without using `@ts-ignore` or arbitrary `any`.
+4. **Test Suite**: Run `pnpm test` (if configured) to confirm all tests pass without regression.
+5. **Build Verification**: Run `pnpm run build` to confirm production builds compile cleanly.
+6. **Iterative Verification**: Keep looping through `pnpm run lint:fix`, `pnpm run type-check`, `pnpm test`, and `pnpm run build` until all yield **0 errors, 0 warnings, and clean builds**.
+
+**The mandatory commands that must always pass:**
+
+- `pnpm run lint:fix` (0 errors, 0 warnings)
+- `pnpm run type-check` (0 errors, 0 warnings)
+- `pnpm test` (if configured, all tests pass)
+- `pnpm run build` (clean exit 0)
+
+---
+
+**These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.

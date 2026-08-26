@@ -27,10 +27,7 @@ export function GameCardImage({
     if (!hasMultiple || !containerRef.current) return;
     const { left, width } = containerRef.current.getBoundingClientRect();
     const x = e.clientX - left;
-    const idx = Math.min(
-      Math.floor((x / width) * images.length),
-      images.length - 1,
-    );
+    const idx = Math.min(Math.floor((x / width) * images.length), images.length - 1);
     setActiveIndex(idx);
   }
 
@@ -40,7 +37,10 @@ export function GameCardImage({
       className="relative aspect-video w-full overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => { setActiveIndex(0); setIsHovered(false); }}
+      onMouseLeave={() => {
+        setActiveIndex(0);
+        setIsHovered(false);
+      }}
     >
       {/* Before first hover: only render the primary image */}
       {!isHovered && (
@@ -72,7 +72,12 @@ export function GameCardImage({
 
       {/* Pip indicators — only shown when there are multiple images */}
       {hasMultiple && (
-        <div className={cn("absolute inset-x-0 bottom-0 flex items-end gap-0.5 px-2 pb-1.5 transition-opacity duration-150", isHovered ? "opacity-100" : "opacity-0")}>
+        <div
+          className={cn(
+            "absolute inset-x-0 bottom-0 flex items-end gap-0.5 px-2 pb-1.5 transition-opacity duration-150",
+            isHovered ? "opacity-100" : "opacity-0",
+          )}
+        >
           {images.map((_, i) => (
             <div
               key={i}

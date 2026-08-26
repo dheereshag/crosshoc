@@ -71,10 +71,7 @@ export function computeBasePrice(game: Game): number {
   const base = basePriceByGenre[game.genres[0]];
   const recencyAdjustment = game.year === 2025 ? 0 : -8;
   const parityAdjustment = game.id % 2 === 0 ? 2 : 0;
-  return Math.max(
-    12,
-    Math.floor((base + recencyAdjustment + parityAdjustment) * 0.35),
-  );
+  return Math.max(12, Math.floor((base + recencyAdjustment + parityAdjustment) * 0.35));
 }
 
 export const games: Game[] = [
@@ -84,8 +81,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Puzzle"],
     rating: 9.7,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/766/76669775675948b1eb3f3eb1c1dfc7dc.jpg",
+    image: "https://media.rawg.io/media/screenshots/766/76669775675948b1eb3f3eb1c1dfc7dc.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/766/76669775675948b1eb3f3eb1c1dfc7dc.jpg",
       "https://media.rawg.io/media/screenshots/7ce/7ce309d2d08fd171275b934bd391c1e3.jpg",
@@ -96,8 +92,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/de9/de98d054ec8d66d06087d3f130e5dad3.jpg",
     ],
     badge: "Top Rated",
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 2,
@@ -105,16 +100,14 @@ export const games: Game[] = [
     genres: ["Adventure"],
     rating: 9.5,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/screenshots/835/83550ad86fa4dcda9beafd9ba68f0f68.jpg",
+    image: "https://media.rawg.io/media/screenshots/835/83550ad86fa4dcda9beafd9ba68f0f68.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/835/83550ad86fa4dcda9beafd9ba68f0f68.jpg",
       "https://media.rawg.io/media/screenshots/984/98423ac919f4cb64fe0c7cce9ef343dc.jpg",
       "https://media.rawg.io/media/screenshots/835/83550ad86fa4dcda9beafd9ba68f0f68.jpg",
     ],
     badge: "Top Rated",
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 3,
@@ -122,8 +115,7 @@ export const games: Game[] = [
     genres: ["Platformer", "Action"],
     rating: 9.4,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/a9c/a9c0a6fb4def5538d39544934bded4b3.jpg",
+    image: "https://media.rawg.io/media/screenshots/a9c/a9c0a6fb4def5538d39544934bded4b3.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/a9c/a9c0a6fb4def5538d39544934bded4b3.jpg",
       "https://media.rawg.io/media/screenshots/1e7/1e7c7bc77f42965e1a1912507d97db1e.jpg",
@@ -134,8 +126,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/bfb/bfb8300d761445140959d6d40e516f08.jpg",
     ],
     badge: "Top Rated",
-    description:
-      "Precision platforming with tight controls and creative level design.",
+    description: "Precision platforming with tight controls and creative level design.",
   },
   {
     id: 4,
@@ -143,8 +134,7 @@ export const games: Game[] = [
     genres: ["Shooter", "RPG"],
     rating: 9.4,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/062/06285b425e61623530c5430f20e5d222.jpg",
+    image: "https://media.rawg.io/media/games/062/06285b425e61623530c5430f20e5d222.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/062/06285b425e61623530c5430f20e5d222.jpg",
       "https://media.rawg.io/media/screenshots/80f/80fae78e5c12be23386e1f68786c8b4b.jpg",
@@ -155,8 +145,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/6cd/6cd9d62ddb5771993d67a565f51c648d.jpg",
     ],
     badge: "Top Rated",
-    description:
-      "A high-octane shooter with precise gunplay and intense firefights.",
+    description: "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 5,
@@ -164,8 +153,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Puzzle"],
     rating: 9.3,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/9ec/9ec21d4df840d70c1621372f2450e3ca.jpg",
+    image: "https://media.rawg.io/media/screenshots/9ec/9ec21d4df840d70c1621372f2450e3ca.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/9ec/9ec21d4df840d70c1621372f2450e3ca.jpg",
       "https://media.rawg.io/media/screenshots/959/959f7935c6c6ded891fb5cc0dd3742b3.jpg",
@@ -176,8 +164,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d08/d08b5bfdb1b1e3d122881acdaeda592d.jpg",
     ],
     badge: "Trending",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 6,
@@ -185,8 +172,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 9.3,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/71d/71df9e759b2246f9769126c98ac997fc.jpg",
+    image: "https://media.rawg.io/media/games/71d/71df9e759b2246f9769126c98ac997fc.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/71d/71df9e759b2246f9769126c98ac997fc.jpg",
       "https://media.rawg.io/media/screenshots/723/7232dfba2a746be21a0e8548b5333dd7.jpg",
@@ -197,8 +183,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/7cb/7cb256eecd9dd0bb54d4524dc2a9b7ee.jpg",
     ],
     badge: "Trending",
-    description:
-      "A high-octane shooter with precise gunplay and intense firefights.",
+    description: "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 7,
@@ -206,8 +191,7 @@ export const games: Game[] = [
     genres: ["Shooter", "Action"],
     rating: 9.3,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/screenshots/df8/df8f7f1b8ddf5f4021cda1254d82ab29.jpg",
+    image: "https://media.rawg.io/media/screenshots/df8/df8f7f1b8ddf5f4021cda1254d82ab29.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/df8/df8f7f1b8ddf5f4021cda1254d82ab29.jpg",
       "https://media.rawg.io/media/screenshots/e85/e858f0baed5c6df4df43c0fc08e8cafe.jpg",
@@ -218,8 +202,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/129/129f174964951dd991a61d1d9479cd2e.jpg",
     ],
     badge: "Trending",
-    description:
-      "A high-octane shooter with precise gunplay and intense firefights.",
+    description: "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 8,
@@ -227,8 +210,7 @@ export const games: Game[] = [
     genres: ["Action", "Shooter"],
     rating: 9.2,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/screenshots/95d/95df624f84b7bca99b56da01aeea4789.jpg",
+    image: "https://media.rawg.io/media/screenshots/95d/95df624f84b7bca99b56da01aeea4789.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/95d/95df624f84b7bca99b56da01aeea4789.jpg",
       "https://media.rawg.io/media/screenshots/2f6/2f6816c288af8ed154a0d0d0e9b21e4d.jpg",
@@ -239,8 +221,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/1de/1dea9477eb9182564ef0e9f1fda02967.jpg",
     ],
     badge: "Trending",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 9,
@@ -248,8 +229,7 @@ export const games: Game[] = [
     genres: ["Shooter", "Action"],
     rating: 9.2,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/bc3/bc38deccf8bfab8b588d29817c68c1ff.jpg",
+    image: "https://media.rawg.io/media/games/bc3/bc38deccf8bfab8b588d29817c68c1ff.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/bc3/bc38deccf8bfab8b588d29817c68c1ff.jpg",
       "https://media.rawg.io/media/screenshots/666/6668b544c9cc99de2e1a5e34c9de4482.jpg",
@@ -260,8 +240,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/338/33801c81159dc90f13235158bc1d7a1e.jpg",
     ],
     badge: "Trending",
-    description:
-      "A high-octane shooter with precise gunplay and intense firefights.",
+    description: "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 10,
@@ -269,8 +248,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Casual"],
     rating: 9.2,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/eec/eec7618dc71bc714dbeae5bf16e7667d.jpg",
+    image: "https://media.rawg.io/media/screenshots/eec/eec7618dc71bc714dbeae5bf16e7667d.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/eec/eec7618dc71bc714dbeae5bf16e7667d.jpg",
       "https://media.rawg.io/media/screenshots/66c/66cc28112f51f36ab2825ae04301c2cc.jpg",
@@ -280,8 +258,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/eec/eec7618dc71bc714dbeae5bf16e7667d.jpg",
     ],
     badge: "Trending",
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 11,
@@ -289,8 +266,7 @@ export const games: Game[] = [
     genres: ["Action", "Shooter"],
     rating: 9.2,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/51a/51a404b9918a0b19fc704a3ca248c69f.jpg",
+    image: "https://media.rawg.io/media/games/51a/51a404b9918a0b19fc704a3ca248c69f.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/51a/51a404b9918a0b19fc704a3ca248c69f.jpg",
       "https://media.rawg.io/media/screenshots/26c/26c298b0426461ebbca4a17d14a8c87b.jpg",
@@ -301,8 +277,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d55/d55e1c4da132fb3de2138586f1b75848.jpg",
     ],
     badge: "Trending",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 12,
@@ -310,8 +285,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Puzzle"],
     rating: 9.1,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/1ec/1ec196fc63bc5ea94a8b7da52daa9f5f.jpg",
+    image: "https://media.rawg.io/media/games/1ec/1ec196fc63bc5ea94a8b7da52daa9f5f.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/1ec/1ec196fc63bc5ea94a8b7da52daa9f5f.jpg",
       "https://media.rawg.io/media/screenshots/e00/e004bb4ba27b1418f1790cd72a41e051.jpg",
@@ -321,8 +295,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/f27/f27d8051758c4318b2591cfa8d533c1c.jpg",
     ],
     badge: "Trending",
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 13,
@@ -330,8 +303,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 9.1,
     year: 2026,
-    image:
-      "https://media.rawg.io/media/games/ed6/ed613937e113a4d43fa0db771e527a2f.jpg",
+    image: "https://media.rawg.io/media/games/ed6/ed613937e113a4d43fa0db771e527a2f.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/ed6/ed613937e113a4d43fa0db771e527a2f.jpg",
       "https://media.rawg.io/media/screenshots/7ea/7ea1b2a87e47df90eaf5ae6847b7c6f5.jpg",
@@ -341,8 +313,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/cd5/cd51046ddebe53b6faae1787305e52b1.jpg",
     ],
     badge: "New",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 14,
@@ -350,8 +321,7 @@ export const games: Game[] = [
     genres: ["Puzzle", "Strategy"],
     rating: 9.1,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/efa/efa54dd8d3e1a8efebfd7dcb4c77e0eb.jpg",
+    image: "https://media.rawg.io/media/screenshots/efa/efa54dd8d3e1a8efebfd7dcb4c77e0eb.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/efa/efa54dd8d3e1a8efebfd7dcb4c77e0eb.jpg",
       "https://media.rawg.io/media/screenshots/249/2499c390f28ce890f6dab2e155ccbae8.jpg",
@@ -361,8 +331,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/efa/efa54dd8d3e1a8efebfd7dcb4c77e0eb.jpg",
     ],
     badge: "Trending",
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 15,
@@ -370,8 +339,7 @@ export const games: Game[] = [
     genres: ["Casual", "Adventure"],
     rating: 9.1,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/bd2/bd2269675a8e09060677c6583ae5012a.jpg",
+    image: "https://media.rawg.io/media/screenshots/bd2/bd2269675a8e09060677c6583ae5012a.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/bd2/bd2269675a8e09060677c6583ae5012a.jpg",
       "https://media.rawg.io/media/screenshots/e10/e10a7bf296ce33706f7c050c5e9e1804.jpg",
@@ -382,8 +350,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/5e4/5e41b778eec66453bbdedb1b0cb4f22c.jpg",
     ],
     badge: "Trending",
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 16,
@@ -391,8 +358,7 @@ export const games: Game[] = [
     genres: ["Action", "Shooter"],
     rating: 9.1,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/193/1930910695d1adc6716d88163cb4c088.jpg",
+    image: "https://media.rawg.io/media/screenshots/193/1930910695d1adc6716d88163cb4c088.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/193/1930910695d1adc6716d88163cb4c088.jpg",
       "https://media.rawg.io/media/screenshots/213/2138b53692ddee7f2e9ddf27a1b2f89c.jpg",
@@ -403,8 +369,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/424/424ea828a9d975bd0ec0ffab060db57b.jpg",
     ],
     badge: "Trending",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 17,
@@ -412,8 +377,7 @@ export const games: Game[] = [
     genres: ["Strategy", "Simulation"],
     rating: 9.1,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/2f6/2f6c45362818859574ac0e37edf3d3c4.jpg",
+    image: "https://media.rawg.io/media/games/2f6/2f6c45362818859574ac0e37edf3d3c4.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/2f6/2f6c45362818859574ac0e37edf3d3c4.jpg",
       "https://media.rawg.io/media/screenshots/9a7/9a79e8f8376b1046f7fc316e6630e787.jpg",
@@ -422,8 +386,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/335/335a75b273e4744a7a445148c1247a13.jpg",
     ],
     badge: "Trending",
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 18,
@@ -431,8 +394,7 @@ export const games: Game[] = [
     genres: ["Simulation", "Casual"],
     rating: 9.1,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/screenshots/c1c/c1cb32f5148e50ebe068897567505c9c.jpg",
+    image: "https://media.rawg.io/media/screenshots/c1c/c1cb32f5148e50ebe068897567505c9c.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/c1c/c1cb32f5148e50ebe068897567505c9c.jpg",
       "https://media.rawg.io/media/screenshots/c2e/c2ed39d56c6bf30170bec012e5fc5f57.jpg",
@@ -443,8 +405,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/c1c/c1cb32f5148e50ebe068897567505c9c.jpg",
     ],
     badge: "Trending",
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 19,
@@ -452,8 +413,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 9.1,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/games/d09/d099b508a1cfb5bd2f2928b50e0784a5.jpg",
+    image: "https://media.rawg.io/media/games/d09/d099b508a1cfb5bd2f2928b50e0784a5.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/d09/d099b508a1cfb5bd2f2928b50e0784a5.jpg",
       "https://media.rawg.io/media/screenshots/6dc/6dc21b83139e586dd56755b352b921c5.jpg",
@@ -464,8 +424,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e2b/e2bf9482bb198af39cd6ac7431e7e1a7.jpg",
     ],
     badge: "Trending",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 20,
@@ -473,8 +432,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 9,
     year: 2026,
-    image:
-      "https://media.rawg.io/media/games/9b2/9b20adbf00491d56ad6793654067f2fd.jpg",
+    image: "https://media.rawg.io/media/games/9b2/9b20adbf00491d56ad6793654067f2fd.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/9b2/9b20adbf00491d56ad6793654067f2fd.jpg",
       "https://media.rawg.io/media/screenshots/ca1/ca18d0aae36eb9111d699e5fc301792c.jpg",
@@ -485,8 +443,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/524/524ef9b98451f60200b5f6169577fe06_VxBdSyL.jpg",
     ],
     badge: "New",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 21,
@@ -494,8 +451,7 @@ export const games: Game[] = [
     genres: ["Simulation", "Casual"],
     rating: 9,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/screenshots/df3/df373c179cd08f0a549ef1f1635b8864.jpg",
+    image: "https://media.rawg.io/media/screenshots/df3/df373c179cd08f0a549ef1f1635b8864.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/df3/df373c179cd08f0a549ef1f1635b8864.jpg",
       "https://media.rawg.io/media/screenshots/feb/feb364fef8bab063873f08a49362cd86.jpg",
@@ -506,8 +462,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/453/453c569af5a8540b635ee826e0b3a896.jpg",
     ],
     badge: "Trending",
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 22,
@@ -515,15 +470,13 @@ export const games: Game[] = [
     genres: ["RPG", "Adventure"],
     rating: 9,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/screenshots/aae/aaee2d143052bfafe7cae5806587485d.jpg",
+    image: "https://media.rawg.io/media/screenshots/aae/aaee2d143052bfafe7cae5806587485d.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/aae/aaee2d143052bfafe7cae5806587485d.jpg",
       "https://media.rawg.io/media/screenshots/aae/aaee2d143052bfafe7cae5806587485d.jpg",
     ],
     badge: "Trending",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 23,
@@ -531,8 +484,7 @@ export const games: Game[] = [
     genres: ["Action", "Strategy"],
     rating: 9,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/b2d/b2d52ba144e772f12b4c842c7cd1dbcf.jpg",
+    image: "https://media.rawg.io/media/screenshots/b2d/b2d52ba144e772f12b4c842c7cd1dbcf.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/b2d/b2d52ba144e772f12b4c842c7cd1dbcf.jpg",
       "https://media.rawg.io/media/screenshots/425/425ea473a12cda930963202052c2d085.jpg",
@@ -541,8 +493,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/b2d/b2d52ba144e772f12b4c842c7cd1dbcf.jpg",
     ],
     badge: "Trending",
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 24,
@@ -550,8 +501,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 9,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/games/9f5/9f537017b13d32459fa129185648a858.jpg",
+    image: "https://media.rawg.io/media/games/9f5/9f537017b13d32459fa129185648a858.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/9f5/9f537017b13d32459fa129185648a858.jpg",
       "https://media.rawg.io/media/screenshots/788/78853feb214d0438067c393b6877adb7.jpg",
@@ -562,8 +512,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/b58/b584f698fd936e15a78a09332ecc08aa.jpg",
     ],
     badge: "Trending",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 25,
@@ -571,15 +520,13 @@ export const games: Game[] = [
     genres: ["Strategy", "RPG"],
     rating: 9,
     year: 2026,
-    image:
-      "https://media.rawg.io/media/screenshots/69e/69ece38d22dcc1c44de7ddb7901a1a41.jpg",
+    image: "https://media.rawg.io/media/screenshots/69e/69ece38d22dcc1c44de7ddb7901a1a41.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/69e/69ece38d22dcc1c44de7ddb7901a1a41.jpg",
       "https://media.rawg.io/media/screenshots/69e/69ece38d22dcc1c44de7ddb7901a1a41.jpg",
     ],
     badge: "New",
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 26,
@@ -587,8 +534,7 @@ export const games: Game[] = [
     genres: ["Puzzle", "Casual"],
     rating: 9,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/screenshots/8db/8db51a9a93c825439443c3252947e7d3.jpg",
+    image: "https://media.rawg.io/media/screenshots/8db/8db51a9a93c825439443c3252947e7d3.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/8db/8db51a9a93c825439443c3252947e7d3.jpg",
       "https://media.rawg.io/media/screenshots/ede/ede3939d7b16fb1c3367cdebce06cb91.jpg",
@@ -599,8 +545,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/fe6/fe67dbdf481a9a3e30e17036a85f3e9d.jpg",
     ],
     badge: "Trending",
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 27,
@@ -608,8 +553,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Simulation"],
     rating: 9,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/460/460c3df0b652c4fa8ca3f015c1e8a2d7.jpg",
+    image: "https://media.rawg.io/media/games/460/460c3df0b652c4fa8ca3f015c1e8a2d7.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/460/460c3df0b652c4fa8ca3f015c1e8a2d7.jpg",
       "https://media.rawg.io/media/screenshots/840/8401c15cbebdf248b40dae60b3eb2cbf.jpg",
@@ -620,8 +564,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/cfa/cfa4608c55a80f70ec080d412bd70dc9.jpg",
     ],
     badge: "Trending",
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 28,
@@ -629,8 +572,7 @@ export const games: Game[] = [
     genres: ["Platformer", "Action"],
     rating: 9,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/01b/01b85423bbfb5f8bc6bcf29dc0cfd6d9.jpg",
+    image: "https://media.rawg.io/media/games/01b/01b85423bbfb5f8bc6bcf29dc0cfd6d9.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/01b/01b85423bbfb5f8bc6bcf29dc0cfd6d9.jpg",
       "https://media.rawg.io/media/screenshots/7c0/7c05123051ac759263d2e5df7e70c81c.jpg",
@@ -641,8 +583,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/baf/baf7ffe898003830e6755cffc1921def.jpg",
     ],
     badge: "Trending",
-    description:
-      "Precision platforming with tight controls and creative level design.",
+    description: "Precision platforming with tight controls and creative level design.",
   },
   {
     id: 29,
@@ -650,8 +591,7 @@ export const games: Game[] = [
     genres: ["Casual", "Simulation"],
     rating: 9,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/screenshots/252/252fea2a340c8f398ca56ddb7649a20e.jpg",
+    image: "https://media.rawg.io/media/screenshots/252/252fea2a340c8f398ca56ddb7649a20e.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/252/252fea2a340c8f398ca56ddb7649a20e.jpg",
       "https://media.rawg.io/media/screenshots/0a0/0a005561eeb8a9e178529ccca3d623f7.jpg",
@@ -661,8 +601,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/252/252fea2a340c8f398ca56ddb7649a20e.jpg",
     ],
     badge: "Trending",
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 30,
@@ -670,8 +609,7 @@ export const games: Game[] = [
     genres: ["Action", "RPG"],
     rating: 9,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/0ba/0bae7160eedc1f7d85a8d2db70cf1ec9.jpg",
+    image: "https://media.rawg.io/media/screenshots/0ba/0bae7160eedc1f7d85a8d2db70cf1ec9.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/0ba/0bae7160eedc1f7d85a8d2db70cf1ec9.jpg",
       "https://media.rawg.io/media/screenshots/ba6/ba6675855ee539784357aed3ca095ce2.jpg",
@@ -682,8 +620,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/cb2/cb27a3f806860ac667e6edf9a1f8dd1d.jpg",
     ],
     badge: "Trending",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 31,
@@ -691,8 +628,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 9,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/games/09b/09b41c1a2c5761c5b1772a4ae238bb0e.jpg",
+    image: "https://media.rawg.io/media/games/09b/09b41c1a2c5761c5b1772a4ae238bb0e.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/09b/09b41c1a2c5761c5b1772a4ae238bb0e.jpg",
       "https://media.rawg.io/media/screenshots/b84/b84bf73824e8387369157ac7906421bd.jpg",
@@ -703,8 +639,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/b34/b34b5833595e77a8c16fb81fdf62ca52.jpg",
     ],
     badge: "Trending",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 32,
@@ -712,8 +647,7 @@ export const games: Game[] = [
     genres: ["RPG", "Adventure"],
     rating: 9,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/466/4667f17fdee9ebbcea2049e54f8e2b96.jpg",
+    image: "https://media.rawg.io/media/games/466/4667f17fdee9ebbcea2049e54f8e2b96.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/466/4667f17fdee9ebbcea2049e54f8e2b96.jpg",
       "https://media.rawg.io/media/screenshots/1e4/1e4dcb884c03242be7dab30fad77d7b2.jpg",
@@ -724,8 +658,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/7bb/7bb0c8b67c9add59d1a13ebb7da790b1.jpg",
     ],
     badge: "Trending",
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 33,
@@ -733,8 +666,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 8.9,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg",
+    image: "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg",
       "https://media.rawg.io/media/screenshots/587/5875f080a704a56dd4183a8e4c6a9dd5.jpg",
@@ -744,8 +676,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/c96/c96b9b3a6a8155a5835f99c5a391cd31.jpg",
       "https://media.rawg.io/media/screenshots/399/399c968a06e9d1fe42aa9a23d69f0d7f.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 34,
@@ -753,8 +684,7 @@ export const games: Game[] = [
     genres: ["Arcade", "Casual"],
     rating: 8.9,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/801/801b23ccc4ffac44e91a05990199e686.jpg",
+    image: "https://media.rawg.io/media/screenshots/801/801b23ccc4ffac44e91a05990199e686.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/801/801b23ccc4ffac44e91a05990199e686.jpg",
       "https://media.rawg.io/media/screenshots/6f0/6f018745d9bf4c198844c7135f2ca861.jpg",
@@ -764,8 +694,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d98/d9832ef451dbcfb49e4b80d78eac4249.jpg",
       "https://media.rawg.io/media/screenshots/502/502f104ff658f340c9fd2711a7221c2c.jpg",
     ],
-    description:
-      "Classic arcade-style fun with addictive pick-up-and-play loops.",
+    description: "Classic arcade-style fun with addictive pick-up-and-play loops.",
   },
   {
     id: 35,
@@ -773,8 +702,7 @@ export const games: Game[] = [
     genres: ["Action", "Arcade"],
     rating: 8.9,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/f9e/f9e56960654865428323477c3b03712e.jpg",
+    image: "https://media.rawg.io/media/screenshots/f9e/f9e56960654865428323477c3b03712e.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/f9e/f9e56960654865428323477c3b03712e.jpg",
       "https://media.rawg.io/media/screenshots/89e/89e30aecdfff0151ddc4b48278cd23f6.jpg",
@@ -784,8 +712,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d00/d00c6a55e85ddc9828ffd3611a5d5c11.jpg",
       "https://media.rawg.io/media/screenshots/f57/f57c75e2180f6cb3007ccc0ade243a75.jpg",
     ],
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 36,
@@ -793,8 +720,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 8.9,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/02a/02ac22b3b90717dabaa535640c38534c.jpg",
+    image: "https://media.rawg.io/media/games/02a/02ac22b3b90717dabaa535640c38534c.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/02a/02ac22b3b90717dabaa535640c38534c.jpg",
       "https://media.rawg.io/media/screenshots/dc1/dc10dd68a2e7472b7ed40feda3a16c54.jpg",
@@ -804,8 +730,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/640/640ae66a49a93b16ba5d2537e78b75c1.jpg",
       "https://media.rawg.io/media/screenshots/f5a/f5a69af83f67e75cb404b2dd334e2197.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 37,
@@ -813,8 +738,7 @@ export const games: Game[] = [
     genres: ["RPG", "Strategy"],
     rating: 8.9,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg",
+    image: "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg",
       "https://media.rawg.io/media/screenshots/a67/a676cdec0eadc42a133ac49e7f2e1aac.jpg",
@@ -825,8 +749,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/92c/92cbe16a795afbc9d9837ed9eae4f22b.jpg",
     ],
     badge: "Editor's Pick",
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 38,
@@ -834,8 +757,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Puzzle"],
     rating: 8.9,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/games/896/896854355c6516444323c9e085d562d7.jpg",
+    image: "https://media.rawg.io/media/games/896/896854355c6516444323c9e085d562d7.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/896/896854355c6516444323c9e085d562d7.jpg",
       "https://media.rawg.io/media/screenshots/e14/e1490a3ee6877ee2fc8a70ab7c42d909.jpg",
@@ -845,8 +767,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/6dd/6dd0c702e5cf4ea58d0bfa0d40dee1ba.jpg",
       "https://media.rawg.io/media/screenshots/fd6/fd6eac6d52850bc8c797e9721493f221.jpg",
     ],
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 39,
@@ -854,8 +775,7 @@ export const games: Game[] = [
     genres: ["Simulation", "Casual"],
     rating: 8.9,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/eec/eec1d91768080988c5f768d9b0d2291c.jpg",
+    image: "https://media.rawg.io/media/screenshots/eec/eec1d91768080988c5f768d9b0d2291c.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/eec/eec1d91768080988c5f768d9b0d2291c.jpg",
       "https://media.rawg.io/media/screenshots/085/0856b3b03e5502188d981b660f79a6fe.jpg",
@@ -865,8 +785,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/ec0/ec0ed218dc82924d83c1032a01c543cd.jpg",
       "https://media.rawg.io/media/screenshots/9b5/9b5be62504b992306c3b81f5351ee78c.jpg",
     ],
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 40,
@@ -874,16 +793,14 @@ export const games: Game[] = [
     genres: ["Casual"],
     rating: 8.9,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/91e/91e0e9cfd762c41753ba231d5cce7f76.jpg",
+    image: "https://media.rawg.io/media/games/91e/91e0e9cfd762c41753ba231d5cce7f76.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/91e/91e0e9cfd762c41753ba231d5cce7f76.jpg",
       "https://media.rawg.io/media/screenshots/0ae/0ae4bf4d57f56b0ce9432be0c0da6387.jpg",
       "https://media.rawg.io/media/screenshots/8d0/8d043794cc1dda7363224d3019575f6e.jpg",
       "https://media.rawg.io/media/screenshots/c12/c1209b5bc3a3d36236c1cb0f0abda120.jpg",
     ],
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 41,
@@ -891,8 +808,7 @@ export const games: Game[] = [
     genres: ["Platformer", "Puzzle"],
     rating: 8.9,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/66d/66d6665c96dde6a76bc869f3828013b8.jpg",
+    image: "https://media.rawg.io/media/games/66d/66d6665c96dde6a76bc869f3828013b8.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/66d/66d6665c96dde6a76bc869f3828013b8.jpg",
       "https://media.rawg.io/media/screenshots/f0f/f0fd82d33994626f554ae23d0aeee2b7.jpg",
@@ -901,8 +817,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/ec8/ec8bb7b37fc046de531c3ac91502e395.jpg",
       "https://media.rawg.io/media/screenshots/6f5/6f507992e58631e83dab530ac8b8ed84.jpg",
     ],
-    description:
-      "High-speed racing with tight controls and competitive thrills.",
+    description: "High-speed racing with tight controls and competitive thrills.",
   },
   {
     id: 42,
@@ -910,8 +825,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 8.9,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/21c/21cb898a6eb030e8b930a6c55b803ebb.jpg",
+    image: "https://media.rawg.io/media/screenshots/21c/21cb898a6eb030e8b930a6c55b803ebb.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/21c/21cb898a6eb030e8b930a6c55b803ebb.jpg",
       "https://media.rawg.io/media/screenshots/867/867a7ce4735b8c5c52772ce8f2347c30.jpg",
@@ -921,8 +835,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/abc/abcf22bfbf79beafa971f626c06019e0.jpg",
       "https://media.rawg.io/media/screenshots/8fa/8fa5675a565a012ea3fbcd17f4d8f494.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 43,
@@ -930,8 +843,7 @@ export const games: Game[] = [
     genres: ["Action", "Shooter"],
     rating: 8.9,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/235/23507cdd4268752b10f4dfc9cba52e9c.jpg",
+    image: "https://media.rawg.io/media/games/235/23507cdd4268752b10f4dfc9cba52e9c.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/235/23507cdd4268752b10f4dfc9cba52e9c.jpg",
       "https://media.rawg.io/media/screenshots/91c/91ce93f0f0f75a2e16e141c09ecc8bfe.jpg",
@@ -941,8 +853,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d04/d04985b0ff5dd56fb752a0a797193b39.jpg",
       "https://media.rawg.io/media/screenshots/41a/41af212e8bee768adc1c022fcec14a34.jpg",
     ],
-    description:
-      "A high-octane shooter with precise gunplay and intense firefights.",
+    description: "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 44,
@@ -950,8 +861,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 8.9,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/1c3/1c305096502c475c00276c827f0fd697.jpg",
+    image: "https://media.rawg.io/media/games/1c3/1c305096502c475c00276c827f0fd697.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/1c3/1c305096502c475c00276c827f0fd697.jpg",
       "https://media.rawg.io/media/screenshots/55f/55fe715e129d5365b48b35b5fc8052be.jpg",
@@ -961,8 +871,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/87d/87d0502ad973a922615bb585ead18661.jpg",
       "https://media.rawg.io/media/screenshots/001/00156acba9a5a3316893c22f4bd15edf.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 45,
@@ -970,8 +879,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Casual"],
     rating: 8.8,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
+    image: "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
       "https://media.rawg.io/media/screenshots/04d/04dd720ee04c19fab77803696340b888.jpg",
@@ -980,8 +888,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/4c3/4c34d1d696d3f4a666568cd275278089.jpg",
       "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
     ],
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 46,
@@ -989,8 +896,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Casual"],
     rating: 8.8,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/c18/c180a02a53ce8c8cf23f11f182184103.jpg",
+    image: "https://media.rawg.io/media/games/c18/c180a02a53ce8c8cf23f11f182184103.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/c18/c180a02a53ce8c8cf23f11f182184103.jpg",
       "https://media.rawg.io/media/screenshots/bdb/bdbd272ec86b99b9c86026b35fe84828.jpg",
@@ -1000,8 +906,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/02c/02c61b14e0d8b2f0f15a085522137bdb.jpg",
       "https://media.rawg.io/media/screenshots/14b/14b7daff2f189e2c1019010d2b2645a3.jpg",
     ],
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 47,
@@ -1009,14 +914,12 @@ export const games: Game[] = [
     genres: ["Platformer", "Action"],
     rating: 8.8,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/db4/db4348b029d2cdaf826d7536bd75b71c.jpg",
+    image: "https://media.rawg.io/media/games/db4/db4348b029d2cdaf826d7536bd75b71c.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/db4/db4348b029d2cdaf826d7536bd75b71c.jpg",
       "https://media.rawg.io/media/screenshots/b82/b82e3b723c20c92dbdcde19a8816cce2.jpg",
     ],
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 48,
@@ -1024,8 +927,7 @@ export const games: Game[] = [
     genres: ["Puzzle", "Casual"],
     rating: 8.8,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/f7a/f7af9c3c70d7acf49430e525e5d3825f.jpg",
+    image: "https://media.rawg.io/media/screenshots/f7a/f7af9c3c70d7acf49430e525e5d3825f.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/f7a/f7af9c3c70d7acf49430e525e5d3825f.jpg",
       "https://media.rawg.io/media/screenshots/dd3/dd3ea90d0dcdda28c4ea3f552863e2d8.jpg",
@@ -1033,8 +935,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d09/d091040cff0eb7c3113a57e7590beb5e.jpg",
       "https://media.rawg.io/media/screenshots/f7a/f7af9c3c70d7acf49430e525e5d3825f.jpg",
     ],
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 49,
@@ -1042,16 +943,14 @@ export const games: Game[] = [
     genres: ["Action", "Shooter"],
     rating: 8.8,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
+    image: "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
       "https://media.rawg.io/media/screenshots/24c/24c7a1d89229448f6c0e0d79a05d7e5c.jpg",
       "https://media.rawg.io/media/screenshots/856/856257407fee5824ea417e6c35e43ba8.jpg",
       "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
     ],
-    description:
-      "A high-octane shooter with precise gunplay and intense firefights.",
+    description: "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 50,
@@ -1059,8 +958,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Puzzle"],
     rating: 8.8,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/games/7c7/7c7fc7ac07c17fad71095cca1c78bc65.jpg",
+    image: "https://media.rawg.io/media/games/7c7/7c7fc7ac07c17fad71095cca1c78bc65.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/7c7/7c7fc7ac07c17fad71095cca1c78bc65.jpg",
       "https://media.rawg.io/media/screenshots/27c/27c7a1cecbbab1bea1a9d74b49be5955.jpg",
@@ -1070,8 +968,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e23/e230f05baac230737191c6005a49b688.jpg",
       "https://media.rawg.io/media/screenshots/7c3/7c3d9752c03944ef92523b23c163ea1f.jpg",
     ],
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 51,
@@ -1079,8 +976,7 @@ export const games: Game[] = [
     genres: ["Action", "Shooter"],
     rating: 8.8,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/games/077/07790746d9caa0542203febd069ac764.jpg",
+    image: "https://media.rawg.io/media/games/077/07790746d9caa0542203febd069ac764.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/077/07790746d9caa0542203febd069ac764.jpg",
       "https://media.rawg.io/media/screenshots/722/7227bad1c2febf42f525efd951b46ed8.jpg",
@@ -1090,8 +986,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/4e6/4e64a81a960594268dd123360c192161.jpg",
       "https://media.rawg.io/media/screenshots/b03/b03555bfa558788b6d6d2c3c171bbbd4.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 52,
@@ -1099,8 +994,7 @@ export const games: Game[] = [
     genres: ["Platformer", "Action"],
     rating: 8.8,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg",
+    image: "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg",
       "https://media.rawg.io/media/screenshots/9f9/9f9a0edd1478facde5209abe4000c015.jpg",
@@ -1110,8 +1004,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/404/4048fa94127cec67d8464aaa13f6d588.jpg",
       "https://media.rawg.io/media/screenshots/79a/79a5026c9032d626d59b57e5d6edb45a_EiUzDAs.jpg",
     ],
-    description:
-      "Precision platforming with tight controls and creative level design.",
+    description: "Precision platforming with tight controls and creative level design.",
   },
   {
     id: 53,
@@ -1119,8 +1012,7 @@ export const games: Game[] = [
     genres: ["Action", "RPG"],
     rating: 8.8,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg",
+    image: "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg",
       "https://media.rawg.io/media/screenshots/9a8/9a8ecc33989862e3be29132189c3f7f6.jpg",
@@ -1130,8 +1022,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/0ce/0ce56603d0deb0f66f969ccdee51284b.jpg",
       "https://media.rawg.io/media/screenshots/ab2/ab2e1086144e9722aba95d012aadcc66.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 54,
@@ -1139,8 +1030,7 @@ export const games: Game[] = [
     genres: ["Action", "RPG"],
     rating: 8.8,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg",
+    image: "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg",
       "https://media.rawg.io/media/screenshots/36f/36f941f72e2b2a41629f5fb3bd448688.jpg",
@@ -1151,8 +1041,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/3a2/3a2e5f31e2061bc566bcfd30fda56a17.jpg",
     ],
     badge: "Editor's Pick",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 55,
@@ -1160,14 +1049,12 @@ export const games: Game[] = [
     genres: ["Casual", "Strategy"],
     rating: 8.8,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
+    image: "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
       "https://media.rawg.io/media/screenshots/116/1165a0a83237dfc6e393d466c2124cae.jpg",
     ],
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 56,
@@ -1175,8 +1062,7 @@ export const games: Game[] = [
     genres: ["Simulation", "Casual"],
     rating: 8.8,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/326/326267a294202a9d93e55879a6f61d48.jpg",
+    image: "https://media.rawg.io/media/screenshots/326/326267a294202a9d93e55879a6f61d48.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/326/326267a294202a9d93e55879a6f61d48.jpg",
       "https://media.rawg.io/media/screenshots/491/491dd2cbacc142ae901d1bda3d458ba2.jpg",
@@ -1185,8 +1071,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/22b/22bad148e80732be27db151f30703e56.jpg",
       "https://media.rawg.io/media/screenshots/326/326267a294202a9d93e55879a6f61d48.jpg",
     ],
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 57,
@@ -1194,8 +1079,7 @@ export const games: Game[] = [
     genres: ["Simulation"],
     rating: 8.8,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/screenshots/1a5/1a582842654560cde2979cc25cea0e9b.jpg",
+    image: "https://media.rawg.io/media/screenshots/1a5/1a582842654560cde2979cc25cea0e9b.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/1a5/1a582842654560cde2979cc25cea0e9b.jpg",
       "https://media.rawg.io/media/screenshots/53f/53fcac444ecaaf69ef0b9737776218f2.jpg",
@@ -1205,8 +1089,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/639/639dd3e2e6a2b299b0edbf4f23fc608f.jpg",
       "https://media.rawg.io/media/screenshots/0a0/0a0ae121556609f586e7b06946592658.jpg",
     ],
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 58,
@@ -1214,8 +1097,7 @@ export const games: Game[] = [
     genres: ["Simulation", "Casual"],
     rating: 8.8,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/e8a/e8a79474fcbcd0d1bc595ec25dd7536f.jpg",
+    image: "https://media.rawg.io/media/games/e8a/e8a79474fcbcd0d1bc595ec25dd7536f.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/e8a/e8a79474fcbcd0d1bc595ec25dd7536f.jpg",
       "https://media.rawg.io/media/screenshots/0de/0debf7af58a435b997e503cb6c75fe3f.jpg",
@@ -1225,8 +1107,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e84/e84ef63acd3d591545e5ab4a603b3703.jpg",
       "https://media.rawg.io/media/screenshots/853/853d6fa6820b4f63d7b1632058e48bb7.jpg",
     ],
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 59,
@@ -1234,8 +1115,7 @@ export const games: Game[] = [
     genres: ["Puzzle", "Adventure"],
     rating: 8.8,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/bc8/bc8e49daf53d39b599f5fdb012177569.jpg",
+    image: "https://media.rawg.io/media/screenshots/bc8/bc8e49daf53d39b599f5fdb012177569.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/bc8/bc8e49daf53d39b599f5fdb012177569.jpg",
       "https://media.rawg.io/media/screenshots/cc1/cc168369ac0cad2bad5586deb494600f.jpg",
@@ -1244,8 +1124,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/5b8/5b87af21dfc8e695ad201e1cf4241ac9.jpg",
       "https://media.rawg.io/media/screenshots/bc8/bc8e49daf53d39b599f5fdb012177569.jpg",
     ],
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 60,
@@ -1253,8 +1132,7 @@ export const games: Game[] = [
     genres: ["Strategy", "Casual"],
     rating: 8.8,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/d09/d091eb9147f87728c0e6f0bacbbcd2b6.jpg",
+    image: "https://media.rawg.io/media/screenshots/d09/d091eb9147f87728c0e6f0bacbbcd2b6.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/d09/d091eb9147f87728c0e6f0bacbbcd2b6.jpg",
       "https://media.rawg.io/media/screenshots/4df/4df691f147607e6ccc977460eff3dec2.jpg",
@@ -1264,8 +1142,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/441/4412fe20f3b3006e05672953628ee926.jpg",
       "https://media.rawg.io/media/screenshots/9a5/9a5f9dcad96688e6bd9971565748734b.jpg",
     ],
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 61,
@@ -1273,8 +1150,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Casual"],
     rating: 8.8,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/1fa/1fa542171e580af49fabd094bd232659.jpg",
+    image: "https://media.rawg.io/media/games/1fa/1fa542171e580af49fabd094bd232659.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/1fa/1fa542171e580af49fabd094bd232659.jpg",
       "https://media.rawg.io/media/screenshots/d5b/d5b1a95b909ef05ed14cf5acf59f4963.jpg",
@@ -1284,8 +1160,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/21e/21e05d1dfbad0085dbf1a094d5ade36c.jpg",
       "https://media.rawg.io/media/screenshots/ea2/ea23f760e2825f6a1dab466d64e33f09.jpg",
     ],
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 62,
@@ -1293,8 +1168,7 @@ export const games: Game[] = [
     genres: ["Casual", "Adventure"],
     rating: 8.8,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/a92/a92d76ba93b22b7add9b9502fa52d0ce.jpg",
+    image: "https://media.rawg.io/media/screenshots/a92/a92d76ba93b22b7add9b9502fa52d0ce.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/a92/a92d76ba93b22b7add9b9502fa52d0ce.jpg",
       "https://media.rawg.io/media/screenshots/791/7919ab8034daac28eb435cb34cb5034a.jpg",
@@ -1304,8 +1178,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d1c/d1cb0e6a8eb6e42d11541bef71d3ad8a.jpg",
       "https://media.rawg.io/media/screenshots/6d8/6d8547614cf2fb6856a3b673ca9815fa.jpg",
     ],
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 63,
@@ -1313,8 +1186,7 @@ export const games: Game[] = [
     genres: ["Simulation", "Adventure"],
     rating: 8.8,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/5ad/5ade5501c6e154c24af4b257128e1c13.jpg",
+    image: "https://media.rawg.io/media/screenshots/5ad/5ade5501c6e154c24af4b257128e1c13.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/5ad/5ade5501c6e154c24af4b257128e1c13.jpg",
       "https://media.rawg.io/media/screenshots/6fa/6fa29d0f9d324c79b2ae8d931b3d6204.jpg",
@@ -1324,8 +1196,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/eda/eda9d3c1549135373146bc12d9562348.jpg",
       "https://media.rawg.io/media/screenshots/f2f/f2fbff15fc20e8ccdc66834eb4fc88c1.jpg",
     ],
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 64,
@@ -1333,8 +1204,7 @@ export const games: Game[] = [
     genres: ["Casual", "Strategy"],
     rating: 8.8,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/461/461540af873745450cdd3d39dfcc695d.jpg",
+    image: "https://media.rawg.io/media/screenshots/461/461540af873745450cdd3d39dfcc695d.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/461/461540af873745450cdd3d39dfcc695d.jpg",
       "https://media.rawg.io/media/screenshots/d94/d94f0e5254fed11da348ca6867b017ce.jpg",
@@ -1344,8 +1214,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d72/d72077ae14546a5488a11a939ed3b3f3.jpg",
       "https://media.rawg.io/media/screenshots/c62/c624cb3a41a58bcaaff19b7368ff2eed.jpg",
     ],
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 65,
@@ -1353,8 +1222,7 @@ export const games: Game[] = [
     genres: ["Casual", "Adventure"],
     rating: 8.8,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/465/465d819b711ed1251bdaed0759ef185e.jpg",
+    image: "https://media.rawg.io/media/games/465/465d819b711ed1251bdaed0759ef185e.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/465/465d819b711ed1251bdaed0759ef185e.jpg",
       "https://media.rawg.io/media/screenshots/c68/c68bb3f3637c6cc12ea27cd7cc6a28bd.jpg",
@@ -1364,8 +1232,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/5fd/5fd37b00ca53dc53e5996bd62053d64f.jpg",
       "https://media.rawg.io/media/screenshots/e9a/e9ab1b847b8c5ba7f764aa36d6a697a7.jpg",
     ],
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 66,
@@ -1373,8 +1240,7 @@ export const games: Game[] = [
     genres: ["Simulation", "Adventure"],
     rating: 8.8,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/screenshots/624/624f7fc033c4afbdff09df3aa10866ac.jpg",
+    image: "https://media.rawg.io/media/screenshots/624/624f7fc033c4afbdff09df3aa10866ac.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/624/624f7fc033c4afbdff09df3aa10866ac.jpg",
       "https://media.rawg.io/media/screenshots/f7c/f7c11624ff17c66b5ed0f76c98998323.jpg",
@@ -1384,8 +1250,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/b66/b66e71edd66f2a577c5804c3cc83d191.jpg",
       "https://media.rawg.io/media/screenshots/e48/e48c7bbcf89973a6242ce2d739b84022.jpg",
     ],
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 67,
@@ -1393,8 +1258,7 @@ export const games: Game[] = [
     genres: ["Action", "Strategy"],
     rating: 8.8,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/073/073b560fa5ab283c03e4a9a698d001af.jpg",
+    image: "https://media.rawg.io/media/games/073/073b560fa5ab283c03e4a9a698d001af.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/073/073b560fa5ab283c03e4a9a698d001af.jpg",
       "https://media.rawg.io/media/screenshots/8f5/8f596c58c4377a38ff2258d90377b79e.jpg",
@@ -1403,8 +1267,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d4c/d4c30d5e701ac3688528a53085e4c058.jpg",
       "https://media.rawg.io/media/screenshots/93b/93b0108e7a6b096980830cf01b4b2b0b.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 68,
@@ -1412,8 +1275,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/556/55684bfd048706f4266d331d70050b37.jpg",
+    image: "https://media.rawg.io/media/games/556/55684bfd048706f4266d331d70050b37.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/556/55684bfd048706f4266d331d70050b37.jpg",
       "https://media.rawg.io/media/screenshots/51f/51f7928a2630fc4bbb3dac59b8f31448.jpg",
@@ -1423,8 +1285,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/c63/c63fda6df2574a7d071f96082438e820.jpg",
       "https://media.rawg.io/media/screenshots/c92/c92c2acf519b3dc613c0f0085cc34b34.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 69,
@@ -1432,8 +1293,7 @@ export const games: Game[] = [
     genres: ["Puzzle", "Adventure"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/153/153e8d78ac19e959214dadefb8c27310.jpg",
+    image: "https://media.rawg.io/media/games/153/153e8d78ac19e959214dadefb8c27310.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/153/153e8d78ac19e959214dadefb8c27310.jpg",
       "https://media.rawg.io/media/screenshots/829/829957d7e23eda85709922650b91daa8.jpg",
@@ -1442,8 +1302,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/52f/52fdb83092551e87ffb17303e6dbb52c.jpg",
       "https://media.rawg.io/media/screenshots/344/34450dcf901ada55cde6aa59a422de23.jpg",
     ],
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 70,
@@ -1451,8 +1310,7 @@ export const games: Game[] = [
     genres: ["RPG", "Strategy"],
     rating: 8.7,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/games/29a/29a78d7b6be61673c910d588bf188e2c.jpg",
+    image: "https://media.rawg.io/media/games/29a/29a78d7b6be61673c910d588bf188e2c.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/29a/29a78d7b6be61673c910d588bf188e2c.jpg",
       "https://media.rawg.io/media/screenshots/8b2/8b2e6f8646c226a8624c6b7c7f457550.jpg",
@@ -1461,8 +1319,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/1ef/1efe8366b01627b8392f3b5f4ae57eab.jpg",
       "https://media.rawg.io/media/screenshots/819/8190e350e79551705a1bd881b6c36ecb.jpg",
     ],
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 71,
@@ -1470,15 +1327,13 @@ export const games: Game[] = [
     genres: ["Casual", "Adventure"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/c4e/c4e3ad247e93d3a5dc40aa215a778a9c.jpg",
+    image: "https://media.rawg.io/media/games/c4e/c4e3ad247e93d3a5dc40aa215a778a9c.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/c4e/c4e3ad247e93d3a5dc40aa215a778a9c.jpg",
       "https://media.rawg.io/media/screenshots/c45/c45a2a5e4290c13ddefe015f3d46b19a.jpg",
       "https://media.rawg.io/media/screenshots/e6f/e6fccc52fe023c0c216dd56413faa19d.jpg",
     ],
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 72,
@@ -1486,8 +1341,7 @@ export const games: Game[] = [
     genres: ["Strategy", "RPG"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/edf/edf3bd3ffa486f5d6a84bda020765839.jpg",
+    image: "https://media.rawg.io/media/games/edf/edf3bd3ffa486f5d6a84bda020765839.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/edf/edf3bd3ffa486f5d6a84bda020765839.jpg",
       "https://media.rawg.io/media/screenshots/70c/70cbe2dc0b134104e88bd31d98ac4bbb.jpg",
@@ -1497,8 +1351,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/220/220afc7e4f6d9c0efbc06de351a8ff0d.jpg",
       "https://media.rawg.io/media/screenshots/64f/64fd7baa23071741602bee8f928e43ba.jpg",
     ],
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 73,
@@ -1506,8 +1359,7 @@ export const games: Game[] = [
     genres: ["Shooter", "Action"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/f2f/f2f9f11997ee841550ba2b8ccf3c51e9.jpg",
+    image: "https://media.rawg.io/media/games/f2f/f2f9f11997ee841550ba2b8ccf3c51e9.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/f2f/f2f9f11997ee841550ba2b8ccf3c51e9.jpg",
       "https://media.rawg.io/media/screenshots/dd5/dd5a7731f6ebd4587b4d72dee859c19c.jpg",
@@ -1517,8 +1369,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/c11/c117dcc8231d31c4a11db8261a61aa18.jpg",
       "https://media.rawg.io/media/screenshots/dc7/dc7c3ae2081cca749ad7b086c0ea9225.jpg",
     ],
-    description:
-      "A high-octane shooter with precise gunplay and intense firefights.",
+    description: "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 74,
@@ -1526,8 +1377,7 @@ export const games: Game[] = [
     genres: ["Puzzle", "Adventure"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/5e9/5e9ce1121cbc4f30cb54cec20820df04.jpg",
+    image: "https://media.rawg.io/media/games/5e9/5e9ce1121cbc4f30cb54cec20820df04.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/5e9/5e9ce1121cbc4f30cb54cec20820df04.jpg",
       "https://media.rawg.io/media/screenshots/fcc/fccc7dfa436c62ddb5517a6bc496bce5.jpg",
@@ -1537,8 +1387,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/5bd/5bdfe10ca60df92cbfc85a2d494aece3.jpg",
       "https://media.rawg.io/media/screenshots/bf6/bf6562808f75118ed144c899c9e06064.jpg",
     ],
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 75,
@@ -1546,8 +1395,7 @@ export const games: Game[] = [
     genres: ["Strategy", "Action"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/screenshots/7a2/7a23a81875145336576e24b682d3ede7.jpg",
+    image: "https://media.rawg.io/media/screenshots/7a2/7a23a81875145336576e24b682d3ede7.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/7a2/7a23a81875145336576e24b682d3ede7.jpg",
       "https://media.rawg.io/media/screenshots/ad9/ad9201c4a0105eb9ae82189d6ff9acd0.jpg",
@@ -1557,8 +1405,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/461/46189ff0373fa935f2bcdb2b77fa8dad.jpg",
       "https://media.rawg.io/media/screenshots/7d1/7d14be9ee36ab9d1e67fbea0795ae602.jpg",
     ],
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 76,
@@ -1566,8 +1413,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/7ae/7ae5a14cdb4ab222a134c15f4629e430.jpg",
+    image: "https://media.rawg.io/media/games/7ae/7ae5a14cdb4ab222a134c15f4629e430.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/7ae/7ae5a14cdb4ab222a134c15f4629e430.jpg",
       "https://media.rawg.io/media/screenshots/89b/89b077deb2a3ce38e071fdb5caae69c0.jpg",
@@ -1577,8 +1423,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/7d1/7d112ad515211a01639d22eef5093c47.jpg",
       "https://media.rawg.io/media/screenshots/6ff/6ff530af3788338486569ce723d503bd.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 77,
@@ -1586,8 +1431,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/480/480295ba922318bb052d169174ec88aa.jpg",
+    image: "https://media.rawg.io/media/games/480/480295ba922318bb052d169174ec88aa.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/480/480295ba922318bb052d169174ec88aa.jpg",
       "https://media.rawg.io/media/screenshots/1ba/1ba77befb152970f5b21546aa1aef370.jpg",
@@ -1597,8 +1441,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/0a3/0a337262e0cc880a5222cafa9128c6bd.jpg",
       "https://media.rawg.io/media/screenshots/81d/81d38f9d4f011debb22d25d4b8497960.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 78,
@@ -1606,8 +1449,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Puzzle"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/d00/d0088d5ffce4e167241b65eb18a28cb4.jpg",
+    image: "https://media.rawg.io/media/games/d00/d0088d5ffce4e167241b65eb18a28cb4.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/d00/d0088d5ffce4e167241b65eb18a28cb4.jpg",
       "https://media.rawg.io/media/screenshots/c6e/c6e80508286fc81756dd8cd31dbd3379.jpg",
@@ -1617,8 +1459,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/2ad/2adc2e9ab98d2555a4282c0fb89f4a3c.jpg",
       "https://media.rawg.io/media/screenshots/21a/21a336614c2a77a5cb063387f58e1af7.jpg",
     ],
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 79,
@@ -1626,8 +1467,7 @@ export const games: Game[] = [
     genres: ["Action", "RPG"],
     rating: 8.7,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/8fd/8fd2e8317849fd265ad8781c324d4ec2.jpg",
+    image: "https://media.rawg.io/media/games/8fd/8fd2e8317849fd265ad8781c324d4ec2.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/8fd/8fd2e8317849fd265ad8781c324d4ec2.jpg",
       "https://media.rawg.io/media/screenshots/59e/59e9ba1215b11e43ad64f363bfb7f65b.jpg",
@@ -1637,8 +1477,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/971/971f056ee50927f331f880271b0ab414.jpg",
       "https://media.rawg.io/media/screenshots/565/565801fac627e1d6828fe56ea172d5ff.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 80,
@@ -1646,8 +1485,7 @@ export const games: Game[] = [
     genres: ["Platformer", "Action"],
     rating: 8.7,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/games/cee/cee02d983e2e1e457caa562420f532fb.jpg",
+    image: "https://media.rawg.io/media/games/cee/cee02d983e2e1e457caa562420f532fb.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/cee/cee02d983e2e1e457caa562420f532fb.jpg",
       "https://media.rawg.io/media/screenshots/466/4667e5767784f82f1ef4350b016b04b3.jpg",
@@ -1657,8 +1495,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/acd/acd9198b085e1caec3d79cc8d0dd6ccc.jpg",
       "https://media.rawg.io/media/screenshots/9d1/9d165bb2dc0caa71a995172a69f109aa.jpg",
     ],
-    description:
-      "Precision platforming with tight controls and creative level design.",
+    description: "Precision platforming with tight controls and creative level design.",
   },
   {
     id: 81,
@@ -1666,8 +1503,7 @@ export const games: Game[] = [
     genres: ["Platformer", "Action"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg",
+    image: "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg",
       "https://media.rawg.io/media/screenshots/319/31931839e14e813b3fb46c92aebd4ee5.jpg",
@@ -1677,8 +1513,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e83/e83bce3afbefd7058957d980b84bd1c0.jpeg",
       "https://media.rawg.io/media/screenshots/4ba/4ba1eff24d2ca57b08f6e510c8286918.jpeg",
     ],
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 82,
@@ -1686,8 +1521,7 @@ export const games: Game[] = [
     genres: ["Shooter", "Action"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/360/360ac0a839ab0f0d9a70b35d38264cb0.jpg",
+    image: "https://media.rawg.io/media/games/360/360ac0a839ab0f0d9a70b35d38264cb0.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/360/360ac0a839ab0f0d9a70b35d38264cb0.jpg",
       "https://media.rawg.io/media/screenshots/52a/52ab56f49dacec085803b93e20cde2d8.jpg",
@@ -1697,8 +1531,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/ea6/ea669a514a8fdd905b5d67384561014b.jpg",
       "https://media.rawg.io/media/screenshots/441/44158afb4810a7141760dc3b03d143ba.jpg",
     ],
-    description:
-      "A high-octane shooter with precise gunplay and intense firefights.",
+    description: "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 83,
@@ -1706,16 +1539,14 @@ export const games: Game[] = [
     genres: ["RPG", "Adventure"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/f0a/f0ac99c638c25a5975cd74919564bda5.jpg",
+    image: "https://media.rawg.io/media/games/f0a/f0ac99c638c25a5975cd74919564bda5.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/f0a/f0ac99c638c25a5975cd74919564bda5.jpg",
       "https://media.rawg.io/media/screenshots/a18/a184248c506dee8c2927bd78966b1190.jpg",
       "https://media.rawg.io/media/screenshots/b71/b71fba569c141095ce35f81c9b449011.jpg",
       "https://media.rawg.io/media/screenshots/bd4/bd4ae45c86104d44bf4753bcb848be1f.jpg",
     ],
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 84,
@@ -1723,8 +1554,7 @@ export const games: Game[] = [
     genres: ["Puzzle", "Adventure"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/b2d/b2d4e1f3fc468c104efb7c5a576b4206.jpg",
+    image: "https://media.rawg.io/media/games/b2d/b2d4e1f3fc468c104efb7c5a576b4206.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/b2d/b2d4e1f3fc468c104efb7c5a576b4206.jpg",
       "https://media.rawg.io/media/screenshots/7d8/7d8acd844be0eadb9eb3d692241ca77f.jpg",
@@ -1733,8 +1563,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/dbc/dbc18dce388e1270a7e337a4c357d026.jpg",
       "https://media.rawg.io/media/screenshots/f79/f799ad9397f18cfd2f9df08c9db76db3.jpg",
     ],
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 85,
@@ -1742,8 +1571,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Strategy"],
     rating: 8.7,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/18f/18fba094d4ba0dda019131ea9b585446.jpg",
+    image: "https://media.rawg.io/media/games/18f/18fba094d4ba0dda019131ea9b585446.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/18f/18fba094d4ba0dda019131ea9b585446.jpg",
       "https://media.rawg.io/media/screenshots/eda/eda60996530ac10e728ebb894c2b4406.jpg",
@@ -1753,8 +1581,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/740/740ac3f6e840a3294dabecafdcfc5662.jpg",
       "https://media.rawg.io/media/screenshots/9a8/9a83e62ec33dd43a6bd9d41552d208bf.jpg",
     ],
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 86,
@@ -1762,8 +1589,7 @@ export const games: Game[] = [
     genres: ["Shooter", "Action"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/a12/a120fc7faed7666f8c320a755137e316.jpg",
+    image: "https://media.rawg.io/media/games/a12/a120fc7faed7666f8c320a755137e316.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/a12/a120fc7faed7666f8c320a755137e316.jpg",
       "https://media.rawg.io/media/screenshots/d80/d80f355d433a4c3e65c03f895cce13fb.jpg",
@@ -1772,8 +1598,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/64b/64bd9f163c7e793c79f1df68bccab021.jpg",
       "https://media.rawg.io/media/screenshots/9af/9af75d8e658125b90f9cf3d96d434ae5.jpg",
     ],
-    description:
-      "A high-octane shooter with precise gunplay and intense firefights.",
+    description: "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 87,
@@ -1781,8 +1606,7 @@ export const games: Game[] = [
     genres: ["Strategy", "RPG"],
     rating: 8.7,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/e4d/e4d2d9720f0962ca4f6a6dd02cef331e.jpeg",
+    image: "https://media.rawg.io/media/screenshots/e4d/e4d2d9720f0962ca4f6a6dd02cef331e.jpeg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/e4d/e4d2d9720f0962ca4f6a6dd02cef331e.jpeg",
       "https://media.rawg.io/media/screenshots/8a8/8a886e7c0291de9c8ed8c63224013342.jpeg",
@@ -1792,8 +1616,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/c70/c706916cf1e6a106d26cc8a74ce39b54.jpeg",
       "https://media.rawg.io/media/screenshots/c27/c2764e10b3757383fc1503bd88f41c83.jpeg",
     ],
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 88,
@@ -1801,8 +1624,7 @@ export const games: Game[] = [
     genres: ["Action", "Shooter"],
     rating: 8.7,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/018/01897340a06b9ed8e92ed1cc1b1eecb9.jpg",
+    image: "https://media.rawg.io/media/games/018/01897340a06b9ed8e92ed1cc1b1eecb9.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/018/01897340a06b9ed8e92ed1cc1b1eecb9.jpg",
       "https://media.rawg.io/media/screenshots/8f1/8f19f2c0d824633e97bfe32117a8cdd1.jpg",
@@ -1812,8 +1634,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/051/05130fce78273b4c4bae87b74d1994ec.jpg",
       "https://media.rawg.io/media/screenshots/6bb/6bb96822b69428fd474ad54da6dfbefa.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 89,
@@ -1821,8 +1642,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 8.7,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/b85/b85bc300d42588af66fb516b7563f74f.jpg",
+    image: "https://media.rawg.io/media/games/b85/b85bc300d42588af66fb516b7563f74f.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/b85/b85bc300d42588af66fb516b7563f74f.jpg",
       "https://media.rawg.io/media/screenshots/7a9/7a97a649fde5f258651ae5e69abf0ed0.jpg",
@@ -1832,8 +1652,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/8a8/8a87fa3c9a671416715d9ba29789cd7f.jpg",
       "https://media.rawg.io/media/screenshots/901/901efd17e514cede763eeb9837a80614.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 90,
@@ -1841,8 +1660,7 @@ export const games: Game[] = [
     genres: ["Puzzle", "Adventure"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/4e4/4e42fc297c028630262a4abcc7769576.jpg",
+    image: "https://media.rawg.io/media/games/4e4/4e42fc297c028630262a4abcc7769576.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/4e4/4e42fc297c028630262a4abcc7769576.jpg",
       "https://media.rawg.io/media/screenshots/c1d/c1d9ec44b9a8b81633c6923cf663e157.jpg",
@@ -1852,8 +1670,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e6f/e6f520e663649b31257b11f68212e092.jpg",
       "https://media.rawg.io/media/screenshots/39d/39d3a158501f55f44182a39c610697ae.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 91,
@@ -1861,16 +1678,14 @@ export const games: Game[] = [
     genres: ["Action", "Shooter"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/ea6/ea6a1382b15d749e15fdfbf0aece7689.jpg",
+    image: "https://media.rawg.io/media/games/ea6/ea6a1382b15d749e15fdfbf0aece7689.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/ea6/ea6a1382b15d749e15fdfbf0aece7689.jpg",
       "https://media.rawg.io/media/screenshots/16b/16b2cb24c12e995b8842c6c1542e3aa1.jpg",
       "https://media.rawg.io/media/screenshots/ac9/ac93d0f12fe3681dc37becad9885ef5e.jpg",
       "https://media.rawg.io/media/screenshots/217/217828b40ae05d789a1bcd9fdb7bd9fa.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 92,
@@ -1878,8 +1693,7 @@ export const games: Game[] = [
     genres: ["Action", "Platformer"],
     rating: 8.7,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/games/5eb/5eb783656623aa13d6fc65e470dd5dba.jpg",
+    image: "https://media.rawg.io/media/games/5eb/5eb783656623aa13d6fc65e470dd5dba.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/5eb/5eb783656623aa13d6fc65e470dd5dba.jpg",
       "https://media.rawg.io/media/screenshots/7de/7deaff1818f5ae1d6ecb72f35a8ec2c1.jpg",
@@ -1888,8 +1702,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/8d9/8d944744ce9fc7d307a008de166ae051.jpg",
       "https://media.rawg.io/media/screenshots/4f5/4f53dea6cdd1b50ff5dd035ffcb04a57.jpg",
     ],
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 93,
@@ -1897,8 +1710,7 @@ export const games: Game[] = [
     genres: ["Action", "Adventure"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/5b9/5b963d7633cd640fa2dbc4069d1c6377.jpg",
+    image: "https://media.rawg.io/media/games/5b9/5b963d7633cd640fa2dbc4069d1c6377.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/5b9/5b963d7633cd640fa2dbc4069d1c6377.jpg",
       "https://media.rawg.io/media/screenshots/6b8/6b8fe21f070edc4c9184062f9dc714e3.jpg",
@@ -1908,8 +1720,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/df2/df20dab4bfbfd611aa496116cca810bc.jpg",
       "https://media.rawg.io/media/screenshots/1eb/1eb720bb7d9eea3f352fbf881666aaeb.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 94,
@@ -1917,8 +1728,7 @@ export const games: Game[] = [
     genres: ["Casual", "Simulation"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/5cc/5cc0fe59150a7d40b476c16115fc30e1.jpg",
+    image: "https://media.rawg.io/media/screenshots/5cc/5cc0fe59150a7d40b476c16115fc30e1.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/5cc/5cc0fe59150a7d40b476c16115fc30e1.jpg",
       "https://media.rawg.io/media/screenshots/795/795993853c3ef2f16f0148208c9b1c82.jpg",
@@ -1927,8 +1737,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/6fb/6fb94b6852ddd037a4e7bb3c9b7c7579.jpg",
       "https://media.rawg.io/media/screenshots/5cc/5cc0fe59150a7d40b476c16115fc30e1.jpg",
     ],
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 95,
@@ -1936,8 +1745,7 @@ export const games: Game[] = [
     genres: ["Action", "RPG"],
     rating: 8.7,
     year: 2026,
-    image:
-      "https://media.rawg.io/media/screenshots/880/880bec24bf308de14746c9966e09d719.jpg",
+    image: "https://media.rawg.io/media/screenshots/880/880bec24bf308de14746c9966e09d719.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/880/880bec24bf308de14746c9966e09d719.jpg",
       "https://media.rawg.io/media/screenshots/c84/c842dbb0dcd7e2689ca2f587ef28f99f.jpg",
@@ -1948,8 +1756,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/35a/35a316f71d0f8892691427f5809d96e3.jpg",
     ],
     badge: "New",
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 96,
@@ -1957,8 +1764,7 @@ export const games: Game[] = [
     genres: ["Action", "Arcade"],
     rating: 8.7,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/798/798705b4f25e958e4ab8edf570e215f8.jpg",
+    image: "https://media.rawg.io/media/games/798/798705b4f25e958e4ab8edf570e215f8.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/798/798705b4f25e958e4ab8edf570e215f8.jpg",
       "https://media.rawg.io/media/screenshots/592/592546d38aa4b289309d9d506c2c59e4.jpg",
@@ -1968,8 +1774,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/7bb/7bb0f128f5608cf772d19a336490d6d7.jpg",
       "https://media.rawg.io/media/screenshots/ea7/ea77ee754498a243179669b3579ea021.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 97,
@@ -1977,8 +1782,7 @@ export const games: Game[] = [
     genres: ["Simulation", "Puzzle"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/840/84070ec840c2209ebbed054efd82eb13.jpg",
+    image: "https://media.rawg.io/media/screenshots/840/84070ec840c2209ebbed054efd82eb13.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/840/84070ec840c2209ebbed054efd82eb13.jpg",
       "https://media.rawg.io/media/screenshots/aeb/aebfb82e4ac06e6f627c0bda8dcb778b.jpg",
@@ -1988,8 +1792,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/20a/20a42adb974547e92fc9ada9b77d2850.jpg",
       "https://media.rawg.io/media/screenshots/59b/59b46229187e62b6fbde0cb357d517fd.jpg",
     ],
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 98,
@@ -1997,8 +1800,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Casual"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/screenshots/55b/55bda84104dd31bcd7477f234b573594.jpg",
+    image: "https://media.rawg.io/media/screenshots/55b/55bda84104dd31bcd7477f234b573594.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/55b/55bda84104dd31bcd7477f234b573594.jpg",
       "https://media.rawg.io/media/screenshots/22c/22cc7f535f6d892005fac122f3a40278.jpg",
@@ -2007,8 +1809,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/f0e/f0e5ca1ac9941aad31411468c6227c6d.jpg",
       "https://media.rawg.io/media/screenshots/55b/55bda84104dd31bcd7477f234b573594.jpg",
     ],
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 99,
@@ -2016,8 +1817,7 @@ export const games: Game[] = [
     genres: ["Action", "Platformer"],
     rating: 8.7,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/159/159ef6e50522aaf27650cc418a1bf411.jpg",
+    image: "https://media.rawg.io/media/screenshots/159/159ef6e50522aaf27650cc418a1bf411.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/159/159ef6e50522aaf27650cc418a1bf411.jpg",
       "https://media.rawg.io/media/screenshots/da4/da464c61e70ca39d39b1710e59222be5.jpg",
@@ -2026,8 +1826,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e5a/e5a3c757cbc201d0616666bacbc4183a.jpg",
       "https://media.rawg.io/media/screenshots/159/159ef6e50522aaf27650cc418a1bf411.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 100,
@@ -2035,16 +1834,14 @@ export const games: Game[] = [
     genres: ["Puzzle", "Adventure"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/7ab/7ab4d3a9c687a4245b37343e381777b5.jpg",
+    image: "https://media.rawg.io/media/screenshots/7ab/7ab4d3a9c687a4245b37343e381777b5.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/7ab/7ab4d3a9c687a4245b37343e381777b5.jpg",
       "https://media.rawg.io/media/screenshots/1fc/1fc205348dd5ac9bb865465ce1d8f9dd.jpg",
       "https://media.rawg.io/media/screenshots/8af/8af72ad48469dcb39e968dce18c1c25f.jpg",
       "https://media.rawg.io/media/screenshots/7ab/7ab4d3a9c687a4245b37343e381777b5.jpg",
     ],
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 101,
@@ -2052,8 +1849,7 @@ export const games: Game[] = [
     genres: ["Strategy", "RPG"],
     rating: 8.7,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/2dc/2dca6588235a31df977f69b273848641.jpg",
+    image: "https://media.rawg.io/media/screenshots/2dc/2dca6588235a31df977f69b273848641.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/2dc/2dca6588235a31df977f69b273848641.jpg",
       "https://media.rawg.io/media/screenshots/74a/74ae2cf7566127af97838c31f325e6ce.jpg",
@@ -2063,8 +1859,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/857/857eec2bf4b51953521706308bcb5c3f.jpg",
       "https://media.rawg.io/media/screenshots/815/8157b5ae3544a702dfb440fec9379ae3.jpg",
     ],
-    description:
-      "A cerebral strategy game demanding careful planning and execution.",
+    description: "A cerebral strategy game demanding careful planning and execution.",
   },
   {
     id: 102,
@@ -2072,8 +1867,7 @@ export const games: Game[] = [
     genres: ["Platformer", "Action"],
     rating: 8.7,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/screenshots/797/797fc5d525fd1ec461268f43aad06dfd.jpg",
+    image: "https://media.rawg.io/media/screenshots/797/797fc5d525fd1ec461268f43aad06dfd.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/797/797fc5d525fd1ec461268f43aad06dfd.jpg",
       "https://media.rawg.io/media/screenshots/a6b/a6bf8c1476e9e5bd2660679c9fb64e4a.jpg",
@@ -2083,8 +1877,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/08b/08bf0372deb73a616c588df6ca1b98d2.jpg",
       "https://media.rawg.io/media/screenshots/2f1/2f1f0043c3b5aad20c94d47672a90016.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 103,
@@ -2092,8 +1885,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Puzzle"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/72d/72d5532d7533c105b9900cca2e23f773.jpg",
+    image: "https://media.rawg.io/media/games/72d/72d5532d7533c105b9900cca2e23f773.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/72d/72d5532d7533c105b9900cca2e23f773.jpg",
       "https://media.rawg.io/media/screenshots/d3a/d3a3a1b930e48973d037519eadd2a208.jpg",
@@ -2103,8 +1895,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/91f/91f9440855fbdd51a1bf52271224db77.jpg",
       "https://media.rawg.io/media/screenshots/f00/f00854f141aa969abef379d740ef3ff3.jpg",
     ],
-    description:
-      "A detailed simulation offering a realistic and immersive experience.",
+    description: "A detailed simulation offering a realistic and immersive experience.",
   },
   {
     id: 104,
@@ -2112,8 +1903,7 @@ export const games: Game[] = [
     genres: ["Platformer", "Action"],
     rating: 8.7,
     year: 2025,
-    image:
-      "https://media.rawg.io/media/games/3f4/3f47e8c4e97f884f032b686021530478.jpg",
+    image: "https://media.rawg.io/media/games/3f4/3f47e8c4e97f884f032b686021530478.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/3f4/3f47e8c4e97f884f032b686021530478.jpg",
       "https://media.rawg.io/media/screenshots/b49/b497b8e981eb23bb2908f5467812e238.jpg",
@@ -2122,8 +1912,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/1bc/1bc61ef22310067ca4adf0ba0d708ca9.jpg",
       "https://media.rawg.io/media/screenshots/36d/36d195e2b13f280b8efb3f6ee53448d3.jpg",
     ],
-    description:
-      "Precision platforming with tight controls and creative level design.",
+    description: "Precision platforming with tight controls and creative level design.",
   },
   {
     id: 105,
@@ -2131,8 +1920,7 @@ export const games: Game[] = [
     genres: ["Platformer", "Action"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/8fd/8fddf3eec9b26d7d40965d57da53cce0.jpg",
+    image: "https://media.rawg.io/media/games/8fd/8fddf3eec9b26d7d40965d57da53cce0.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/8fd/8fddf3eec9b26d7d40965d57da53cce0.jpg",
       "https://media.rawg.io/media/screenshots/c21/c213369fd9cdf8d655a408114f3521d4.jpg",
@@ -2142,8 +1930,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/2a2/2a208babc05d1be733872dbe22171abe.jpg",
       "https://media.rawg.io/media/screenshots/ce8/ce8083228a726b436b36b794e801015b.jpg",
     ],
-    description:
-      "Precision platforming with tight controls and creative level design.",
+    description: "Precision platforming with tight controls and creative level design.",
   },
   {
     id: 106,
@@ -2151,8 +1938,7 @@ export const games: Game[] = [
     genres: ["Action", "Arcade"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/ca7/ca7ca88681ad87eccd12e2acc65a2f6d.jpg",
+    image: "https://media.rawg.io/media/games/ca7/ca7ca88681ad87eccd12e2acc65a2f6d.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/ca7/ca7ca88681ad87eccd12e2acc65a2f6d.jpg",
       "https://media.rawg.io/media/screenshots/d1b/d1b34773a00141a80d0e5ff424641f52.jpg",
@@ -2162,8 +1948,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/f9e/f9ed532cb116ba817b6dff4d8aaa7e3b.jpg",
       "https://media.rawg.io/media/screenshots/ba8/ba862e937b57824461d1f2671e317566.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 107,
@@ -2171,16 +1956,14 @@ export const games: Game[] = [
     genres: ["Shooter", "Action"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/b7f/b7ffcaad681e81cc93a885054588af94.jpg",
+    image: "https://media.rawg.io/media/screenshots/b7f/b7ffcaad681e81cc93a885054588af94.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/b7f/b7ffcaad681e81cc93a885054588af94.jpg",
       "https://media.rawg.io/media/screenshots/1ce/1ce92b5278fbda7540b6978390b2f488.jpg",
       "https://media.rawg.io/media/screenshots/f2e/f2e4f1246835e9454539fabc70f20e5c.jpg",
       "https://media.rawg.io/media/screenshots/b7f/b7ffcaad681e81cc93a885054588af94.jpg",
     ],
-    description:
-      "A high-octane shooter with precise gunplay and intense firefights.",
+    description: "A high-octane shooter with precise gunplay and intense firefights.",
   },
   {
     id: 108,
@@ -2188,8 +1971,7 @@ export const games: Game[] = [
     genres: ["Puzzle", "Casual"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/screenshots/b4a/b4a2f7a51a91f2298586afab99b3b164.jpg",
+    image: "https://media.rawg.io/media/screenshots/b4a/b4a2f7a51a91f2298586afab99b3b164.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/b4a/b4a2f7a51a91f2298586afab99b3b164.jpg",
       "https://media.rawg.io/media/screenshots/39f/39fb9994982fa466953575e497972a4e.jpg",
@@ -2199,8 +1981,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/e97/e97f50f55a15edecf8e31b49ff7fd433.jpg",
       "https://media.rawg.io/media/screenshots/339/339ac5e2748113a8326495a6cc1f0195.jpg",
     ],
-    description:
-      "Mind-bending puzzles that challenge your logic and creativity.",
+    description: "Mind-bending puzzles that challenge your logic and creativity.",
   },
   {
     id: 109,
@@ -2208,8 +1989,7 @@ export const games: Game[] = [
     genres: ["Adventure", "Puzzle"],
     rating: 8.7,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/c28/c28f9a27ef017d2086fef7ed2ab984b3.jpg",
+    image: "https://media.rawg.io/media/games/c28/c28f9a27ef017d2086fef7ed2ab984b3.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/c28/c28f9a27ef017d2086fef7ed2ab984b3.jpg",
       "https://media.rawg.io/media/screenshots/30b/30b886d1505cc0aeed15ab29900f3a19.jpg",
@@ -2219,8 +1999,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/4e5/4e57c9a271623b1d0fe793fc5456c2de.jpg",
       "https://media.rawg.io/media/screenshots/5f0/5f0a889136952d2bb91fa06db37ad1a5.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 110,
@@ -2228,8 +2007,7 @@ export const games: Game[] = [
     genres: ["Casual", "Puzzle"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/screenshots/2ce/2ce6d3cd3017ff5fb0d0ad1ff880d6a8.jpg",
+    image: "https://media.rawg.io/media/screenshots/2ce/2ce6d3cd3017ff5fb0d0ad1ff880d6a8.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/2ce/2ce6d3cd3017ff5fb0d0ad1ff880d6a8.jpg",
       "https://media.rawg.io/media/screenshots/7ff/7ff13013a5a0e5453abdbad1fce2edec.jpg",
@@ -2239,8 +2017,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/8a4/8a46b35732ee23fec35c362a6e0b8d30.jpg",
       "https://media.rawg.io/media/screenshots/c50/c50e86a2bc7cfe4e74518560fabde43b.jpg",
     ],
-    description:
-      "Easy to pick up and play with relaxing and enjoyable gameplay.",
+    description: "Easy to pick up and play with relaxing and enjoyable gameplay.",
   },
   {
     id: 111,
@@ -2248,8 +2025,7 @@ export const games: Game[] = [
     genres: ["Action"],
     rating: 8.7,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/screenshots/f8d/f8d5f569e09e357edc1f12aa670b5066.jpg",
+    image: "https://media.rawg.io/media/screenshots/f8d/f8d5f569e09e357edc1f12aa670b5066.jpg",
     screenshots: [
       "https://media.rawg.io/media/screenshots/f8d/f8d5f569e09e357edc1f12aa670b5066.jpg",
       "https://media.rawg.io/media/screenshots/f73/f731fcf601106012ee2b2b14546a3965.jpg",
@@ -2259,8 +2035,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/d9c/d9c0b94d602ede83b4b8bf3c662d5b8d.jpg",
       "https://media.rawg.io/media/screenshots/f8d/f8d5f569e09e357edc1f12aa670b5066.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 112,
@@ -2268,8 +2043,7 @@ export const games: Game[] = [
     genres: ["RPG", "Adventure"],
     rating: 8.6,
     year: 2022,
-    image:
-      "https://media.rawg.io/media/games/ae7/ae7cfc9a66232839112663899d2c8d8d.jpg",
+    image: "https://media.rawg.io/media/games/ae7/ae7cfc9a66232839112663899d2c8d8d.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/ae7/ae7cfc9a66232839112663899d2c8d8d.jpg",
       "https://media.rawg.io/media/screenshots/39e/39e3f875efaa7e216cfde29e50378ef2.jpg",
@@ -2279,8 +2053,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/b2f/b2fc926a2612b7abcf058636f2a1805a.jpg",
       "https://media.rawg.io/media/screenshots/36e/36ec533ef6ac8b9e895b18451b1686c7.jpg",
     ],
-    description:
-      "An immersive adventure filled with exploration and discovery.",
+    description: "An immersive adventure filled with exploration and discovery.",
   },
   {
     id: 113,
@@ -2288,8 +2061,7 @@ export const games: Game[] = [
     genres: ["Action", "RPG"],
     rating: 8.6,
     year: 2024,
-    image:
-      "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg",
+    image: "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg",
       "https://media.rawg.io/media/screenshots/207/20782c3c3da967ca955dfa0e942d0acc.jpg",
@@ -2298,8 +2070,7 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/4e0/4e0b5ba1ef94973b14cede218159b82c.jpg",
       "https://media.rawg.io/media/screenshots/f29/f29eace60587e49e7b6f91875c7fadae.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
   {
     id: 114,
@@ -2307,8 +2078,7 @@ export const games: Game[] = [
     genres: ["Action", "RPG"],
     rating: 8.6,
     year: 2023,
-    image:
-      "https://media.rawg.io/media/games/0c1/0c10aa5a41d64c0bb6ca9fe30173488d.jpg",
+    image: "https://media.rawg.io/media/games/0c1/0c10aa5a41d64c0bb6ca9fe30173488d.jpg",
     screenshots: [
       "https://media.rawg.io/media/games/0c1/0c10aa5a41d64c0bb6ca9fe30173488d.jpg",
       "https://media.rawg.io/media/screenshots/ac6/ac6a0f5cf10cbfd84cdf699ac3a0a946.jpg",
@@ -2317,7 +2087,6 @@ export const games: Game[] = [
       "https://media.rawg.io/media/screenshots/af3/af3bbb759d8d7c154881b8b418ecf580.jpg",
       "https://media.rawg.io/media/screenshots/041/041a54bc965e6e2bffcc3bbbfd8c47a1.jpg",
     ],
-    description:
-      "Fast-paced action with intense combat and thrilling gameplay.",
+    description: "Fast-paced action with intense combat and thrilling gameplay.",
   },
 ];

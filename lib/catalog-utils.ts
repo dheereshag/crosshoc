@@ -2,9 +2,7 @@ import { games, type Genre, type SortKey } from "@/constants/catalog";
 
 // Deterministic pseudo-shuffle: multiply by prime 37 and mod by prime 101
 // so the catalog doesn't default to insertion order.
-export const shuffledGames = [...games].sort(
-  (a, b) => ((a.id * 37) % 101) - ((b.id * 37) % 101),
-);
+export const shuffledGames = [...games].sort((a, b) => ((a.id * 37) % 101) - ((b.id * 37) % 101));
 
 const popularityWeightByBadge: Record<string, number> = {
   Trending: 4,
@@ -35,9 +33,7 @@ export function getVisibleGames(
   let visibleGames = [...shuffledGames];
 
   if (genre) {
-    visibleGames = visibleGames.filter((game) =>
-      game.genres.includes(genre as Genre),
-    );
+    visibleGames = visibleGames.filter((game) => game.genres.includes(genre as Genre));
   }
 
   if (section === "new") {

@@ -1,8 +1,8 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function buildHref(
@@ -22,10 +22,6 @@ export function buildHref(
   return queryString ? `/?${queryString}` : "/";
 }
 
-export function pluralize(
-  count: number,
-  singular: string,
-  plural = `${singular}s`,
-) {
+export function pluralize(count: number, singular: string, plural = `${singular}s`) {
   return `${count} ${count === 1 ? singular : plural}`;
 }

@@ -26,15 +26,12 @@ export function GameImageGallery({
   const [activeIndex, setActiveIndex] = useState(0);
   const [api, setApi] = useState<CarouselApi>();
 
-  const onApiSet = useCallback(
-    (carouselApi: CarouselApi) => {
-      setApi(carouselApi);
-      carouselApi?.on("select", () => {
-        setActiveIndex(carouselApi.selectedScrollSnap());
-      });
-    },
-    [],
-  );
+  const onApiSet = useCallback((carouselApi: CarouselApi) => {
+    setApi(carouselApi);
+    carouselApi?.on("select", () => {
+      setActiveIndex(carouselApi.selectedScrollSnap());
+    });
+  }, []);
 
   function scrollTo(index: number) {
     api?.scrollTo(index);
@@ -56,11 +53,7 @@ export function GameImageGallery({
 
       {/* Thumbnail carousel */}
       {images.length > 1 && (
-        <Carousel
-          setApi={onApiSet}
-          opts={{ align: "start", dragFree: true }}
-          className="w-full"
-        >
+        <Carousel setApi={onApiSet} opts={{ align: "start", dragFree: true }} className="w-full">
           <CarouselContent className="-ml-2">
             {images.map((src, i) => (
               <CarouselItem
@@ -71,9 +64,7 @@ export function GameImageGallery({
                 <div
                   className={cn(
                     "relative aspect-video overflow-hidden rounded-md border-2 transition-colors",
-                    activeIndex === i
-                      ? "border-primary"
-                      : "border-transparent hover:border-border",
+                    activeIndex === i ? "border-primary" : "border-transparent hover:border-border",
                   )}
                 >
                   <Image

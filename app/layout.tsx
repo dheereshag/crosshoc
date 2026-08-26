@@ -40,9 +40,14 @@ export default function RootLayout({
             {children}
           </main>
         </SidebarProvider>
-        <Toaster richColors theme="light" closeButton toastOptions={{
-          className: geist.className,
-        }} />
+        <Toaster
+          richColors
+          theme="light"
+          closeButton
+          toastOptions={{
+            className: geist.className,
+          }}
+        />
       </body>
     </html>
   );

@@ -12,12 +12,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  genres,
-  sortOptions,
-  type Genre,
-  type SortKey,
-} from "@/constants/catalog";
+import { genres, sortOptions, type Genre, type SortKey } from "@/constants/catalog";
 import { genreIconComponents } from "@/constants/sidebar";
 import { buildHref } from "@/lib/utils";
 
@@ -51,9 +46,7 @@ export function FilterBar({ searchParams, genre, sort }: FilterBarProps) {
         </span>
         {filterChips.map((item) => {
           const active = genre === item.value;
-          const Icon = item.value
-            ? genreIconComponents[item.value as Genre]
-            : LayoutGridIcon;
+          const Icon = item.value ? genreIconComponents[item.value as Genre] : LayoutGridIcon;
           return (
             <Button
               key={item.label}
@@ -61,11 +54,7 @@ export function FilterBar({ searchParams, genre, sort }: FilterBarProps) {
               size="sm"
               className="rounded-full px-3"
               nativeButton={false}
-              render={
-                <Link
-                  href={buildHref(searchParams, { genre: item.value, sort })}
-                />
-              }
+              render={<Link href={buildHref(searchParams, { genre: item.value, sort })} />}
             >
               <Icon className="size-3.5" />
               <span>{item.label}</span>
@@ -88,9 +77,7 @@ export function FilterBar({ searchParams, genre, sort }: FilterBarProps) {
               size="sm"
               className="rounded-full px-3"
               nativeButton={false}
-              render={
-                <Link href={buildHref(searchParams, { sort: item.value })} />
-              }
+              render={<Link href={buildHref(searchParams, { sort: item.value })} />}
             >
               <Icon className="size-3.5" />
               <span>{item.label}</span>

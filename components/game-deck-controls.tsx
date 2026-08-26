@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import {
@@ -12,7 +12,7 @@ import {
 import { useForm, useWatch } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
@@ -32,32 +32,27 @@ type GameDeckControlsProps = {
   className?: string;
 };
 
-const leasePeriods = [1, 3, 6, 12] as const
+const leasePeriods = [1, 3, 6, 12] as const;
 
 const leasePeriodDiscounts: Record<(typeof leasePeriods)[number], number> = {
   1: 1,
   3: 0.95,
   6: 0.9,
   12: 0.85,
-}
+};
 
 const deckFormSchema = z.object({
-  leasePeriod: z.union([
-    z.literal(1),
-    z.literal(3),
-    z.literal(6),
-    z.literal(12),
-  ]),
+  leasePeriod: z.union([z.literal(1), z.literal(3), z.literal(6), z.literal(12)]),
   copies: z.number().int().min(1, "Select at least 1 copy").max(9),
 });
 
 type DeckFormValues = z.infer<typeof deckFormSchema>;
 
 function getLeasePeriodPrice(game: Game, months: (typeof leasePeriods)[number]) {
-  const monthlyPrice = computeBasePrice(game)
-  const discountedTotal = monthlyPrice * months * leasePeriodDiscounts[months]
+  const monthlyPrice = computeBasePrice(game);
+  const discountedTotal = monthlyPrice * months * leasePeriodDiscounts[months];
 
-  return Math.max(12, Math.round(discountedTotal))
+  return Math.max(12, Math.round(discountedTotal));
 }
 
 export function GameDeckControls({ game, className }: GameDeckControlsProps) {
@@ -86,8 +81,7 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
           </CardTitle>
         </div>
         <p className="text-sm text-muted-foreground">
-          Choose a lease period and number of copies before adding this game to
-          your Deck.
+          Choose a lease period and number of copies before adding this game to your Deck.
         </p>
       </CardHeader>
       <CardContent className="flex flex-col gap-6">
@@ -130,9 +124,7 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
                     }}
                   >
                     <span>{pluralize(months, "month")}</span>
-                    <span className="text-[0.72rem] font-normal opacity-80">
-                      ${periodPrice}
-                    </span>
+                    <span className="text-[0.72rem] font-normal opacity-80">${periodPrice}</span>
                   </Button>
                 );
               })}
@@ -193,9 +185,7 @@ export function GameDeckControls({ game, className }: GameDeckControlsProps) {
               <CalculatorIcon className="size-3.5" />
               Estimated total
             </span>
-            <span className="font-semibold text-foreground">
-              ${selectedPeriodPrice * copies}
-            </span>
+            <span className="font-semibold text-foreground">${selectedPeriodPrice * copies}</span>
           </div>
         </form>
       </CardContent>

@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import type { ComponentPropsWithoutRef } from "react"
+import type { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
 
 import {
@@ -9,17 +9,17 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
 export function NavSecondary({
   items,
   ...props
 }: {
   items: {
-    title: string
-    url: string
-    icon: React.ReactNode
-  }[]
+    title: string;
+    url: string;
+    icon: React.ReactNode;
+  }[];
 } & ComponentPropsWithoutRef<typeof SidebarGroup>) {
   return (
     <SidebarGroup {...props}>

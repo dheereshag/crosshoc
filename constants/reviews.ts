@@ -38,32 +38,28 @@ const reviewTemplates: ReviewTemplate[] = [
     author: "Jordan",
     avatar: "https://picsum.photos/seed/reviewer-jordan/64/64",
     postedOn: "2026-04-10",
-    comment:
-      "Visual style and controls are excellent. Easy to jump in and play without friction.",
+    comment: "Visual style and controls are excellent. Easy to jump in and play without friction.",
     ratingDelta: 0.2,
   },
   {
     author: "Nina",
     avatar: "https://picsum.photos/seed/reviewer-nina/64/64",
     postedOn: "2026-03-29",
-    comment:
-      "Smooth onboarding and polished presentation. Co-op sessions were especially fun.",
+    comment: "Smooth onboarding and polished presentation. Co-op sessions were especially fun.",
     ratingDelta: -0.1,
   },
   {
     author: "Mateo",
     avatar: "https://picsum.photos/seed/reviewer-mateo/64/64",
     postedOn: "2026-03-12",
-    comment:
-      "The pacing stays engaging, and the controls feel responsive throughout.",
+    comment: "The pacing stays engaging, and the controls feel responsive throughout.",
     ratingDelta: 0.1,
   },
   {
     author: "Sana",
     avatar: "https://picsum.photos/seed/reviewer-sana/64/64",
     postedOn: "2026-02-25",
-    comment:
-      "Very replayable with different styles. Worth leasing for a longer term.",
+    comment: "Very replayable with different styles. Worth leasing for a longer term.",
     ratingDelta: 0.3,
   },
 ];

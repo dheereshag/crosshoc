@@ -1,12 +1,8 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -17,23 +13,23 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@/components/ui/sidebar"
-import { ChevronRightIcon } from "lucide-react"
+} from "@/components/ui/sidebar";
+import { ChevronRightIcon } from "lucide-react";
 
 export function NavMain({
   items,
 }: {
   items: {
-    title: string
-    url: string
-    icon: ReactNode
-    isActive?: boolean
+    title: string;
+    url: string;
+    icon: ReactNode;
+    isActive?: boolean;
     items?: {
-      title: string
-      url: string
-      icon: ReactNode
-    }[]
-  }[]
+      title: string;
+      url: string;
+      icon: ReactNode;
+    }[];
+  }[];
 }) {
   return (
     <SidebarGroup>
@@ -45,19 +41,14 @@ export function NavMain({
             defaultOpen={item.isActive ?? true}
             render={<SidebarMenuItem />}
           >
-            <SidebarMenuButton
-              tooltip={item.title}
-              render={<Link href={item.url} />}
-            >
+            <SidebarMenuButton tooltip={item.title} render={<Link href={item.url} />}>
               {item.icon}
               <span>{item.title}</span>
             </SidebarMenuButton>
             {item.items?.length ? (
               <>
                 <CollapsibleTrigger
-                  render={
-                    <SidebarMenuAction className="aria-expanded:rotate-90" />
-                  }
+                  render={<SidebarMenuAction className="aria-expanded:rotate-90" />}
                 >
                   <ChevronRightIcon />
                   <span className="sr-only">Toggle</span>
@@ -66,9 +57,7 @@ export function NavMain({
                   <SidebarMenuSub>
                     {item.items.map((subItem) => (
                       <SidebarMenuSubItem key={subItem.title}>
-                        <SidebarMenuSubButton
-                          render={<Link href={subItem.url} />}
-                        >
+                        <SidebarMenuSubButton render={<Link href={subItem.url} />}>
                           {subItem.icon}
                           <span>{subItem.title}</span>
                         </SidebarMenuSubButton>
